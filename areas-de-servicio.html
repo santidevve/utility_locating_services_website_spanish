@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áreas de Servicio - Proyectos R&F</title>
+    <meta name="description"
+        content="Nuestras áreas de servicio para localización de utilidades subterráneas. Operamos en Virginia, North Carolina, South Carolina, Georgia, Florida y más.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="R&F Servicios de Localización Logo">
+                </a>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#clientes">Clientes</a></li>
+                    <li><a href="areas-de-servicio.html" class="active">Áreas de Servicio</a></li>
+                    <li><a href="index.html#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="index.html#galeria">Galería</a></li>
+                    <li><a href="index.html#contacto" class="btn-contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Encuéntranos Aquí</h1>
+            <p>Brindamos servicios de localización en los siguientes estados y ciudades:</p>
+            <ul class="service-list">
+                <li>Virginia</li>
+                <li>North Carolina</li>
+                <li>South Carolina</li>
+                <li>Georgia</li>
+                <li>Florida</li>
+                <li>Tennessee</li>
+                <li>Indianapolis</li>
+                <li>Kentucky</li>
+                <li>Texas</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="map-section">
+        <div id="map"></div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Trabajemos Juntos</h2>
+            <p>Conéctate con nosotros para explorar las soluciones que podemos ofrecer. Únete a nosotros, estamos aquí
+                para asistirte y resolver tus necesidades.</p>
+            <a href="index.html#contacto" class="btn-primary">Contáctanos</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>Teléfono: (844) 756-2286</p>
+                <p>Email: contacto@utilitylocatingservices-ryf.com</p>
+                <div class="footer-desc">
+                    <p>PROJECTS R&F USA INC - Somos una empresa de Servicios de Detección para instalaciones
+                        subterráneas, con altos niveles de rendimiento, fiabilidad y calidad.</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Menú Rápido</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="areas-de-servicio.html">Áreas de Servicio</a></li>
+                    <li><a href="index.html#contacto">Solicitar Presupuesto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Utility Locating Services R&F. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize map centered on South Carolina/Georgia region to show all markers
+            const map = L.map('map').setView([33.7490, -84.3880], 6);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Add markers for service areas
+            const locations = [
+                { name: "Richmond, VA", coords: [37.5407, -77.4360] },
+                { name: "Raleigh, NC", coords: [35.7796, -78.6382] },
+                { name: "Columbia, SC", coords: [34.0007, -81.0348] },
+                { name: "Atlanta, GA", coords: [33.7490, -84.3880] },
+                { name: "Jacksonville, FL", coords: [30.3322, -81.6557] },
+                { name: "Nashville, TN", coords: [36.1627, -86.7816] },
+                { name: "Indianapolis, IN", coords: [39.7684, -86.1581] },
+                { name: "Louisville, KY", coords: [38.2527, -85.7585] },
+                { name: "Austin, TX", coords: [30.2672, -97.7431] }
+            ];
+
+            locations.forEach(loc => {
+                L.marker(loc.coords).addTo(map)
+                    .bindPopup(`<b>${loc.name}</b><br>Área de Servicio`);
+            });
+        });
+    </script>
+</body>
+
+</html>
