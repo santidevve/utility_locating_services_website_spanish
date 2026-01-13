@@ -1,0 +1,347 @@
+:root {
+    --color-primary-green: #3A6905;
+    --color-primary-blue: #14344D;
+    --color-text: #2F302C;
+    --color-white: #FFFFFF;
+    --color-light-gray: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--color-white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--color-primary-blue);
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--color-primary-green);
+}
+
+.btn-contact {
+    background-color: var(--color-primary-green);
+    color: var(--color-white) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: #2e5404;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(rgba(20, 52, 77, 0.7), rgba(58, 105, 5, 0.7)), url('images/hero.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-white);
+    padding-top: 80px; /* Offset for fixed header */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #2e5404;
+}
+
+/* Three Columns / Values */
+.values-section {
+    padding: 80px 0;
+    background-color: var(--color-light-gray);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background: var(--color-white);
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    color: var(--color-primary-blue);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--color-white);
+}
+
+.mission-section h2 {
+    color: var(--color-primary-blue);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.mission-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: var(--color-text);
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 80px 0;
+    background-color: var(--color-light-gray);
+}
+
+.gallery-section h2 {
+    text-align: center;
+    color: var(--color-primary-blue);
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    height: 300px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background-color: var(--color-white);
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: var(--color-primary-blue);
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.faq-item h3 {
+    color: var(--color-primary-green);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    padding: 60px 0 20px;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-col h3 {
+    color: var(--color-white);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-primary-green);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-col p {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: var(--color-white);
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background-color: var(--color-white);
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+        left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
