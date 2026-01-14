@@ -52,6 +52,10 @@ def index():
 def areas():
     return render_template('areas-de-servicio.html')
 
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
 @app.route('/solicitar-presupuesto.html', methods=['GET', 'POST'])
 
 def quote():

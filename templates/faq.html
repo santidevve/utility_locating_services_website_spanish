@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - Proyectos R&F</title>
+    <meta name="description"
+        content="Preguntas frecuentes sobre nuestros servicios de localización de utilidades subterráneas.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}"
+                        alt="R&F Servicios de Localización Logo">
+                </a>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('index') }}#servicios">Servicios</a></li>
+                    <li><a href="{{ url_for('areas') }}">Áreas de Servicio</a></li>
+                    <li><a href="{{ url_for('faq') }}" class="active">FAQ</a></li>
+                    <li><a href="{{ url_for('index') }}#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="{{ url_for('quote') }}" class="btn-contact">Solicitar Presupuesto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Preguntas Frecuentes</h1>
+            <p>Respuestas a las dudas más comunes sobre nuestros servicios.</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-item reveal">
+                <h3>¿Son una empresa 811?</h3>
+                <p>No, somos localizadores privados. Realizamos el mismo servicio que el 811, pero nuestros servicios
+                    tienen un costo. El 811 solo marca servicios públicos hasta el medidor.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h3>¿Qué servicios ofrecen?</h3>
+                <p>Localización de fosas sépticas, líneas de alcantarillado, líneas de agua, cables enterrados,
+                    servicios privados y marcado de utilidades.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h3>¿Son localizadores privados?</h3>
+                <p>Sí, somos una empresa de Localización de Servicios Privados. Localizamos y marcamos los servicios que
+                    el 811 no marca en su propiedad o proyecto.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h3>¿Pueden localizar tuberías de plástico?</h3>
+                <p>Sí, localizamos tuberías de plástico enterradas utilizando equipos especializados de tecnología
+                    acústica (como el RD500).</p>
+            </div>
+            <div class="faq-item reveal">
+                <h3>¿A qué profundidad están enterrados los servicios públicos?</h3>
+                <p>Las profundidades varían según el tipo de servicio y están estandarizadas. No hay una profundidad
+                    única para todos.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h3>¿Qué entrega Projects R&F USA después del servicio?</h3>
+                <p>Entregamos un informe escrito detallando los servicios localizados, junto con fotos y croquis del
+                    área marcada.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h3>¿Cómo se identifican los servicios?</h3>
+                <p>Los servicios enterrados se marcan con pintura y/o banderas de colores según el código universal (ej.
+                    naranja para comunicación, azul para agua, etc.).</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>Teléfono: (844) 756-2286</p>
+                <p>Email: contacto@utilitylocatingservices-ryf.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Menú Rápido</h3>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('areas') }}">Áreas de Servicio</a></li>
+                    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                    <li><a href="{{ url_for('quote') }}">Solicitar Presupuesto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Utility Locating Services R&F. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
