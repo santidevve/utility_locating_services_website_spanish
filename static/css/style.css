@@ -2,8 +2,16 @@
     --primary-green: #3A6905;
     --primary-blue: #14344D;
     --text-dark: #2F302C;
+    --text-light: #555555;
     --white: #FFFFFF;
+    --off-white: #F8F9FA;
+    --bg-light: #F4F6F8;
     --transition: all 0.3s ease;
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
 }
 
 * {
@@ -13,9 +21,20 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-body);
     color: var(--text-dark);
-    line-height: 1.6;
+    line-height: 1.7;
+    background-color: var(--bg-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
 }
 
 a {
@@ -51,28 +70,59 @@ img {
 
 .btn-primary:hover {
     background-color: #2e5404;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(58, 105, 5, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
 }
 
 /* Header */
+/* Header */
 header {
-    background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
     position: fixed;
     width: 100%;
     z-index: 1000;
+    height: 90px;
+    transition: var(--transition);
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 100%;
 }
 
 .logo img {
-    height: 60px;
-    /* Adjust height as needed */
+    height: 70px;
+    /* Refined size */
     width: auto;
+}
+
+/* Alerts */
+.alert {
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }
 
 #navbar ul {
@@ -82,13 +132,31 @@ header .container {
 }
 
 #navbar a {
-    font-weight: 500;
-    color: var(--text-dark);
+    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--primary-blue);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+#navbar a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-green);
     transition: var(--transition);
 }
 
 #navbar a:hover {
     color: var(--primary-green);
+}
+
+#navbar a:hover:after {
+    width: 100%;
 }
 
 .btn-contact {
@@ -100,6 +168,8 @@ header .container {
 
 .btn-contact:hover {
     background-color: #0f2639 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(20, 52, 77, 0.3);
 }
 
 .menu-toggle {
@@ -118,88 +188,122 @@ header .container {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    background-image: linear-gradient(rgba(20, 52, 77, 0.7), rgba(58, 105, 5, 0.7)), url('/static/images/hero.jpg');
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(20, 52, 77, 0.85), rgba(58, 105, 5, 0.75)), url('/static/images/hero.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    /* Parallax effect */
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--white);
-    padding-top: 80px;
+    padding-top: 90px;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
     line-height: 1.2;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: -1px;
 }
 
 .hero p {
     font-size: 1.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    opacity: 0.95;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Values Section */
 .values-section {
-    padding: 80px 0;
-    background-color: #f9f9f9;
+    padding: 100px 0;
+    background-color: var(--white);
 }
 
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
 }
 
 .value-card {
     background: var(--white);
-    padding: 40px;
-    border-radius: 10px;
+    padding: 50px 30px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    /* Default state cleaner */
     transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .value-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
 }
 
 .value-card img {
-    margin: 0 auto 20px;
-    width: 64px;
+    margin: 0 auto 25px;
+    width: 72px;
+    /* Slightly larger */
+    height: auto;
+    object-fit: contain;
 }
 
 .value-card h3 {
     color: var(--primary-blue);
     margin-bottom: 15px;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+}
+
+.value-card p {
+    color: var(--text-light);
+    font-size: 1.05rem;
 }
 
 /* Mission Section */
 .mission-section {
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
-    background-color: var(--white);
+    background-color: var(--bg-light);
 }
 
 .mission-section h2 {
     color: var(--primary-green);
-    margin-bottom: 20px;
-    font-size: 2rem;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.mission-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-blue);
+    margin: 15px auto 0;
 }
 
 .mission-section p {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.8;
 }
 
 /* Gallery Section */
@@ -276,7 +380,7 @@ header .container {
 
 /* FAQ Section */
 .faq-section {
-    padding: 80px 0;
+    padding: 100px 0;
     background-color: var(--white);
 }
 
@@ -570,4 +674,39 @@ footer p {
     .hero h1 {
         font-size: 2rem;
     }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
+
+/* Animations & Visual Effects */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Stagger updates for cards/items using nth-child if desired, 
+   but for now JS observer is cleaner for scroll reveal */

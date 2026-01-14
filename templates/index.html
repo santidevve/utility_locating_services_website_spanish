@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -49,18 +51,18 @@
 
     <section id="servicios" class="values-section">
         <div class="container grid-3">
-            <div class="value-card">
+            <div class="value-card reveal">
                 <img src="{{ url_for('static', filename='images/productivity.png') }}" alt="Icono de Productividad">
                 <h3>Productividad</h3>
                 <p>Nuestra experiencia es la clave. Optimizamos cada proyecto para garantizar resultados rápidos y
                     precisos.</p>
             </div>
-            <div class="value-card">
+            <div class="value-card reveal">
                 <img src="{{ url_for('static', filename='images/efficiency.png') }}" alt="Icono de Eficiencia">
                 <h3>Eficiencia</h3>
                 <p>Utilizamos el mejor equipo del mercado para asegurar la máxima precisión en cada localización.</p>
             </div>
-            <div class="value-card">
+            <div class="value-card reveal">
                 <img src="{{ url_for('static', filename='images/safety.png') }}" alt="Icono de Seguridad">
                 <h3>Seguridad</h3>
                 <p>Nuestro profesionalismo garantiza un entorno de trabajo seguro. Prevenir daños es nuestra prioridad.
@@ -70,7 +72,7 @@
     </section>
 
     <section id="nosotros" class="mission-section">
-        <div class="container">
+        <div class="container reveal">
             <h2>Nuestra Misión</h2>
             <p>Estamos dedicados a proporcionar servicios de detección de utilidades subterráneas de la más alta
                 calidad. Nuestro compromiso con la excelencia y la satisfacción del cliente nos impulsa a mantener los
@@ -83,19 +85,19 @@
         <div class="container">
             <h2>Nuestros Proyectos</h2>
             <div class="gallery-grid">
-                <div class="gallery-item">
+                <div class="gallery-item reveal">
                     <img src="{{ url_for('static', filename='images/gallery1.png') }}" alt="Proyecto de localización 1">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item reveal">
                     <img src="{{ url_for('static', filename='images/gallery2.png') }}" alt="Proyecto de localización 2">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item reveal">
                     <img src="{{ url_for('static', filename='images/gallery3.png') }}" alt="Proyecto de localización 3">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item reveal">
                     <img src="{{ url_for('static', filename='images/gallery4.png') }}" alt="Proyecto de localización 4">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item reveal">
                     <img src="{{ url_for('static', filename='images/gallery5.png') }}" alt="Proyecto de localización 5">
                 </div>
             </div>
@@ -105,7 +107,7 @@
     <section id="clientes" class="clients-section">
         <div class="container">
             <h2>Nuestros Clientes Principales</h2>
-            <div class="clients-grid">
+            <div class="clients-grid reveal">
                 <div class="client-item"><img src="{{ url_for('static', filename='images/client1.png') }}"
                         alt="Cliente 1"></div>
                 <div class="client-item"><img src="{{ url_for('static', filename='images/client2.png') }}"
@@ -173,13 +175,13 @@
     <section id="faq" class="faq-section">
         <div class="container">
             <h2>Preguntas Frecuentes</h2>
-            <div class="faq-item">
+            <div class="faq-item reveal">
                 <h3>¿Por qué necesito un localizador privado si llamo al 811?</h3>
                 <p>El servicio 811 solo marca las líneas de servicios públicos hasta el medidor. Más allá del medidor,
                     las líneas se consideran privadas y son responsabilidad del propietario. Nosotros localizamos esas
                     líneas privadas.</p>
             </div>
-            <div class="faq-item">
+            <div class="faq-item reveal">
                 <h3>¿Pueden localizar tuberías de plástico?</h3>
                 <p>Sí, contamos con equipos especializados como georradares (GPR) que nos permiten detectar materiales
                     no conductivos como el plástico y el concreto.</p>
@@ -198,9 +200,11 @@
             <div class="footer-col">
                 <h3>Síguenos</h3>
                 <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
+                    <a href="https://www.facebook.com/ProjectsRFUSA/" target="_blank"
+                        rel="noopener noreferrer">Facebook</a>
+                    <a href="https://www.instagram.com/projectsrfusa/" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                    <a href="https://twitter.com/ProjectsRFUSA" target="_blank" rel="noopener noreferrer">Twitter</a>
                 </div>
             </div>
         </div>

@@ -49,6 +49,19 @@
         </div>
     </section>
 
+    <!-- Flash Messages -->
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+
     <section class="form-section">
         <div class="container">
             <form action="#" method="POST" class="quote-form">
