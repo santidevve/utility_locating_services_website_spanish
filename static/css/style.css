@@ -78,6 +78,30 @@ img {
     transform: translateY(0);
 }
 
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: var(--transition);
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-center {
+    text-align: center;
+}
+
 /* Header */
 /* Header */
 header {
@@ -277,8 +301,22 @@ header .container {
 /* Mission Section */
 .mission-section {
     padding: 100px 0;
-    text-align: center;
     background-color: var(--bg-light);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.mission-content {
+    text-align: left;
+}
+
+.mission-content .btn-primary {
+    margin-top: 30px;
 }
 
 .mission-section h2 {
@@ -295,15 +333,42 @@ header .container {
     width: 60px;
     height: 3px;
     background: var(--primary-blue);
-    margin: 15px auto 0;
+    margin: 15px 0 0;
 }
 
 .mission-section p {
-    max-width: 850px;
-    margin: 0 auto;
     font-size: 1.2rem;
     color: var(--text-light);
     line-height: 1.8;
+}
+
+.mission-image img {
+    width: 100%;
+    border-radius: 20px;
+    /* Matching the screenshot rounded/modern look */
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.mission-image:hover img {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments for Mission Section */
+@media (max-width: 900px) {
+    .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .mission-content {
+        text-align: center;
+    }
+
+    .mission-section h2::after {
+        margin: 15px auto 0;
+    }
 }
 
 /* Gallery Section */
@@ -619,17 +684,48 @@ footer p {
 }
 
 .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Glass feel */
     color: var(--white);
-    font-size: 0.9rem;
-    border: 1px solid var(--white);
-    padding: 5px 10px;
-    border-radius: 3px;
-    transition: var(--transition);
+    border-radius: 12px;
+    /* Rounded Square - App Icon Style */
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy effect */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .social-links a:hover {
-    background-color: var(--primary-green);
-    border-color: var(--primary-green);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Brand Colors on Hover */
+.social-icon-fb:hover {
+    background-color: #1877F2;
+    color: white;
+    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3);
+}
+
+.social-icon-ig:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
+    box-shadow: 0 8px 20px rgba(214, 36, 159, 0.3);
+}
+
+.social-icon-x:hover {
+    background-color: #000000;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .copyright {
