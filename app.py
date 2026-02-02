@@ -1,18 +1,45 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+from dotenv import load_dotenv
+from datetime import datetime, timedelta
+import os
+
+# Cargar variables de entorno
+load_dotenv()
 
 app = Flask(__name__)
-# Default to local Postgres, but allow for environment variable override
-# Fallback to sqlite if postgres fails or for easier local dev without setup
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///utility.db' 
+
+# Configuración desde variables de entorno
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'fallback-dev-key')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI', 'sqlite:///utility.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
-#     "client_encoding": "utf8"
-# }
-app.secret_key = 'super_secret_key' # Needed for flash messages
+
+# Configuración de sesión - Timeout de 5 minutos de inactividad
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=5)
+app.config['SESSION_PERMANENT'] = True  # Las sesiones se marcan como permanentes por defecto
+
+# Configurar Flask-Login
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+login_manager.login_message = 'Por favor inicia sesión para acceder al sitio.'
+login_manager.login_message_category = 'info'
 
 db = SQLAlchemy(app)
+
+# Clase User simple para autenticación
+class User(UserMixin):
+    """Usuario simple para autenticación basada en .env"""
+    def __init__(self, username):
+        self.id = username
+
+@login_manager.user_loader
+def load_user(user_id):
+    """Cargar usuario desde el ID de sesión"""
+    if user_id == os.getenv('PREVIEW_USERNAME'):
+        return User(user_id)
+    return None
 
 class Quote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -45,20 +72,27 @@ with app.app_context():
         # Ideally fallback to SQLite here if strictly needed, but kept simple for now
 
 @app.route('/')
+@login_required
 def index():
+    """Página principal - protegida por autenticación"""
     return render_template('index.html')
 
 @app.route('/areas-de-servicio.html')
+@login_required
 def areas():
+    """Página de áreas de servicio - protegida por autenticación"""
     return render_template('areas-de-servicio.html')
 
 @app.route('/faq')
+@login_required
 def faq():
+    """Página de FAQ - protegida por autenticación"""
     return render_template('faq.html')
 
 @app.route('/solicitar-presupuesto.html', methods=['GET', 'POST'])
-
+@login_required
 def quote():
+    """Página de solicitud de presupuesto - protegida por autenticación"""
     if request.method == 'POST':
         try:
             # Extract data from form
@@ -91,5 +125,44 @@ def quote():
 
     return render_template('solicitar-presupuesto.html')
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    """Página de login - única ruta pública"""
+    # Si ya está autenticado, redirigir al inicio
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        
+        # Validar credenciales contra variables de entorno
+        if username == os.getenv('PREVIEW_USERNAME') and password == os.getenv('PREVIEW_PASSWORD'):
+            user = User(username)
+            login_user(user)
+            
+            # Marcar la sesión como permanente para aplicar el timeout de 5 minutos
+            session.permanent = True
+            
+            flash('¡Bienvenido! Has iniciado sesión correctamente.', 'success')
+            
+            # Redirigir a la página solicitada o al inicio
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('index'))
+        else:
+            flash('Usuario o contraseña incorrectos.', 'error')
+    
+    return render_template('login.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    """Cerrar sesión del usuario"""
+    logout_user()
+    flash('Has cerrado sesión correctamente.', 'info')
+    return redirect(url_for('login'))
+
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Configuración del servidor desde variables de entorno
+    debug_mode = os.getenv('FLASK_ENV') == 'development'
+    app.run(debug=debug_mode, host='0.0.0.0', port=5000)

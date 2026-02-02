@@ -5,8 +5,9 @@ This is a modern, responsive website for a Utility Locating Services company. It
 ## 🚀 Features
 
 *   **Modern UI/UX**: Implements Glassmorphism design, smooth scrolling animations, and responsive layouts.
+*   **Secure Preview**: Protected by login authentication for professional client demonstrations.
 *   **Quote System**: Users can submit service requests which are stored in a local SQLite database.
-*   **Tech Stack**: Built with Python (Flask), SQLAlchemy, HTML5, CSS3, and Vanilla JavaScript.
+*   **Tech Stack**: Built with Python (Flask), Flask-Login, SQLAlchemy, HTML5, CSS3, and Vanilla JavaScript.
 
 ## 📋 Prerequisites
 
@@ -41,6 +42,20 @@ Before you begin, ensure you have the following installed:
     pip install -r requirements.txt
     ```
 
+4.  **Configure Environment Variables**
+    
+    Create a `.env` file in the project root:
+    ```bash
+    cp .env.example .env
+    ```
+    
+    Edit the `.env` file with your credentials:
+    - `SECRET_KEY`: Generate a random secret key
+    - `PREVIEW_USERNAME`: Username for site access (e.g., "cliente")
+    - `PREVIEW_PASSWORD`: A secure password
+    
+    **⚠️ IMPORTANT**: The `.env` file is already in `.gitignore` and will NOT be committed to Git.
+
 ## ▶️ Running the Application
 
 1.  **Start the local server**
@@ -48,9 +63,33 @@ Before you begin, ensure you have the following installed:
     python app.py
     ```
 
-2.  **View locally**
+2.  **Access the site**
     Open your web browser and go to:
     [http://localhost:5000](http://localhost:5000)
+    
+    You will be redirected to the login page.
+
+3.  **Login**
+    Use the credentials you configured in your `.env` file:
+    - Username: The value of `PREVIEW_USERNAME`
+    - Password: The value of `PREVIEW_PASSWORD`
+
+4.  **Navigate the site**
+    After successful authentication, you can freely browse all pages.
+
+## 🔒 Security Features
+
+The site includes a simple authentication barrier for production previews:
+
+- **Protected Routes**: All pages require authentication except `/login`
+- **Session Management**: Uses Flask-Login for secure session handling
+- **Environment Variables**: Credentials stored securely in `.env` file
+- **Auto-redirect**: Unauthenticated users are automatically redirected to login
+
+**For Production Deployment**: 
+1. Update `.env` with production credentials
+2. Set `FLASK_ENV=production`
+3. Share login credentials securely with your client
 
 ## 🗄️ Database
 
