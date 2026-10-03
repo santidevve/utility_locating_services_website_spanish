@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -50,10 +50,10 @@
             <nav class="nav-desktop">
                 <ul class="nav-desktop-list">
                     <li><a href="#inicio" class="nav-desktop-link active">Inicio</a></li>
-                    <li><a href="#nosotros" class="nav-desktop-link">Quiénes Somos</a></li>
-                    <li><a href="#politicas" class="nav-desktop-link">Políticas SHA</a></li>
+                    <li><a href="#nosotros" class="nav-desktop-link">Nosotros</a></li>
+                    <li><a href="#servicios-destacados" class="nav-desktop-link">Capacidades</a></li>
                     <li><a href="#servicios" class="nav-desktop-link">Servicios</a></li>
-                    <li><a href="#maquinaria" class="nav-desktop-link">Equipos</a></li>
+                    <li><a href="#sectores" class="nav-desktop-link">Sectores</a></li>
                     <li><a href="#contratos" class="nav-desktop-link">Contratos</a></li>
                     <li><a href="#clientes" class="nav-desktop-link">Clientes</a></li>
                     <li><a href="{{ url_for('areas') }}" class="nav-desktop-link">Cobertura</a></li>
@@ -99,8 +99,9 @@
             <ul class="drawer-menu-list">
                 <li><a href="#inicio" class="drawer-link"><i class="fas fa-house"></i> <span>Inicio</span></a></li>
                 <li><a href="#nosotros" class="drawer-link"><i class="fas fa-building"></i> <span>Quiénes Somos</span></a></li>
-                <li><a href="#politicas" class="drawer-link"><i class="fas fa-shield-halved"></i> <span>Políticas Corporativas</span></a></li>
-                <li><a href="#servicios" class="drawer-link"><i class="fas fa-cogs"></i> <span>Portafolio de 7 Servicios</span></a></li>
+                <li><a href="#servicios-destacados" class="drawer-link"><i class="fas fa-layer-group"></i> <span>Capacidades Técnicas</span></a></li>
+                <li><a href="#servicios" class="drawer-link"><i class="fas fa-cogs"></i> <span>Portafolio de Servicios</span></a></li>
+                <li><a href="#sectores" class="drawer-link"><i class="fas fa-industry"></i> <span>Sectores Estratégicos</span></a></li>
                 <li><a href="#maquinaria" class="drawer-link"><i class="fas fa-truck-pickup"></i> <span>Maquinaria y Equipos</span></a></li>
                 <li><a href="#contratos" class="drawer-link"><i class="fas fa-clipboard-check"></i> <span>Historial de Contratos (100%)</span></a></li>
                 <li><a href="#galeria" class="drawer-link"><i class="fas fa-camera"></i> <span>Galería de Proyectos en Campo</span></a></li>
@@ -132,22 +133,14 @@
         </nav>
     </aside>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-radar-grid" aria-hidden="true">
-            <div class="radar-circle circle-1"></div>
-            <div class="radar-circle circle-2"></div>
-            <div class="radar-circle circle-3"></div>
-            <div class="radar-scanner-beam"></div>
-            <div class="radar-crosshair"></div>
-        </div>
-
+    <!-- Hero Section (Estilo Corporativo Hafran) -->
+    <section id="inicio" class="hero hero-hafran">
         <div class="hero-content">
-            <div class="hero-badge reveal">
-                <span class="beacon-dot"></span>
-                <span>Fundada en 2010 • RIF: J-29843884-3 • Barcelona, Anzoátegui</span>
+            <div class="hafran-eyebrow reveal">
+                <span class="hafran-bullet">■</span>
+                <span>FUNDADA EN 2010 • RIF: J-29843884-3 • ANZOÁTEGUI, VENEZUELA</span>
             </div>
-            <h1 class="reveal">Soluciones Integrales de <br><span class="highlight">Ingeniería, Soldadura</span> y Mantenimiento Industrial</h1>
+            <h1 class="reveal">Soluciones Integrales de <br><span class="highlight-corp">Ingeniería, Soldadura</span> y Mantenimiento Industrial</h1>
             
             <!-- Cita / Lema del Fundador con Diseño VIP Glassmorphic -->
             <div class="founder-quote-card reveal">
@@ -170,39 +163,14 @@
             </p>
             
             <div class="hero-buttons reveal">
-                <a href="{{ url_for('quote') }}" class="btn btn-hero-primary">
-                    <i class="fas fa-file-signature"></i>
-                    <span>Solicitar Cotización de Servicio</span>
-                    <i class="fas fa-arrow-right btn-arrow"></i>
+                <a href="#servicios-destacados" class="btn-hafran-primary">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <span>Ver Portafolio de Servicios</span>
                 </a>
-                <a href="#servicios" class="btn btn-hero-secondary">
-                    <i class="fas fa-toolbox"></i>
-                    <span>Conocer Portafolio</span>
+                <a href="{{ url_for('quote') }}" class="btn-hafran-secondary">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Solicitar Cotización</span>
                 </a>
-            </div>
-        </div>
-
-        <!-- Estadísticas Clave Bento Grid de PROYECTOS R&F -->
-        <div class="hero-stats reveal">
-            <div class="stat-item">
-                <div class="stat-icon-wrapper"><i class="fas fa-calendar-check"></i></div>
-                <div class="stat-number" data-target="15" data-suffix="+">15<span>+</span></div>
-                <div class="stat-label">Años de Trayectoria (Fund. 2010)</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon-wrapper"><i class="fas fa-award"></i></div>
-                <div class="stat-number" data-target="100" data-suffix="%">100<span>%</span></div>
-                <div class="stat-label">Avance y Culminación de Obras</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon-wrapper"><i class="fas fa-cubes-stacked"></i></div>
-                <div class="stat-number" data-target="1500" data-suffix=" m³">1500<span> m³</span></div>
-                <div class="stat-label">Andamios Tipo Cup-Lock</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon-wrapper"><i class="fas fa-gauge-high"></i></div>
-                <div class="stat-number" data-target="15000" data-suffix=" PSI">15000<span> PSI</span></div>
-                <div class="stat-label">Capacidad Pruebas Hidrostáticas</div>
             </div>
         </div>
     </section>
@@ -212,7 +180,10 @@
         <div class="container reveal">
             <div class="mission-grid">
                 <div class="mission-content">
-                    <span class="section-tag"><i class="fas fa-building"></i> Nuestra Empresa</span>
+                    <div class="hafran-eyebrow">
+                        <span class="hafran-bullet">■</span>
+                        <span>SOBRE NOSOTROS</span>
+                    </div>
                     <h2>Quiénes Somos</h2>
                     <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-main); margin-bottom: 1.25rem;">
                         <strong>PROYECTOS R&F, C.A.</strong> es una empresa venezolana de ingeniería, construcción y mantenimiento industrial fundada el <strong>16 de Octubre de 2010</strong> en la ciudad de Barcelona, Estado Anzoátegui.
@@ -241,7 +212,7 @@
                     </div>
 
                     <div style="margin-top: 2rem;">
-                        <a href="#servicios" class="btn btn-blue"><i class="fas fa-list-check"></i> Ver Portafolio de Servicios</a>
+                        <a href="#servicios-destacados" class="btn btn-blue"><i class="fas fa-list-check"></i> Ver Portafolio de Servicios</a>
                     </div>
                 </div>
                 <div class="mission-image" style="display: flex; justify-content: center; align-items: center;">
@@ -249,6 +220,47 @@
                         <source src="{{ url_for('static', filename='videos/logo animado.mp4') }}" type="video/mp4">
                         Tu navegador no soporta reproducción de video.
                     </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Métrica al estilo Hafran: Solidez que se traduce en resultados -->
+    <section class="hafran-stats-section reveal">
+        <div class="container">
+            <div class="hafran-stats-header">
+                <div class="hafran-stats-title-col">
+                    <div class="hafran-eyebrow">
+                        <span class="hafran-bullet">■</span>
+                        <span>TRAYECTORIA & SOLVENCIA</span>
+                    </div>
+                    <h2 class="hafran-headline">Solidez que se traduce en resultados</h2>
+                </div>
+                <div class="hafran-stats-desc-col">
+                    <p>No solo ejecutamos obras; garantizamos la continuidad operacional y la confiabilidad estructural de la industria nacional. Nuestra trayectoria refleja el compromiso inquebrantable con la precisión técnica y el riesgo cero bajo estándares ASME, API y AWS.</p>
+                </div>
+            </div>
+
+            <div class="hafran-metrics-grid">
+                <div class="hafran-metric-box">
+                    <div class="metric-val" data-target="15" data-suffix="+">+15</div>
+                    <div class="metric-caption">Años de Trayectoria (Fund. 2010)</div>
+                </div>
+                <div class="hafran-metric-box">
+                    <div class="metric-val" data-target="100" data-suffix="%">100%</div>
+                    <div class="metric-caption">Eficiencia – Compromiso HSE Estricto</div>
+                </div>
+                <div class="hafran-metric-box">
+                    <div class="metric-val" data-target="1500" data-suffix=" m³">1.500 m³</div>
+                    <div class="metric-caption">Andamios Tipo Cup-Lock</div>
+                </div>
+                <div class="hafran-metric-box">
+                    <div class="metric-val" data-target="15000" data-suffix=" PSI">15.000 PSI</div>
+                    <div class="metric-caption">Capacidad Pruebas Hidrostáticas</div>
+                </div>
+                <div class="hafran-metric-box">
+                    <div class="metric-val" data-target="50" data-suffix="+">+50</div>
+                    <div class="metric-caption">Proyectos de Envergadura Ejecutados</div>
                 </div>
             </div>
         </div>
@@ -287,28 +299,31 @@
         </div>
     </section>
 
-    <!-- Sección Políticas Corporativas (Diapositivas 4, 5, 6) -->
-    <section id="politicas" style="background: var(--color-dark); color: #ffffff; padding: 5rem 0;">
+    <!-- Sección Políticas Corporativas (Diapositivas 4, 5, 6 - Tema Claro) -->
+    <section id="politicas" style="background: #F8FAFC; color: var(--color-text-main); padding: 5rem 0; border-bottom: 1px solid var(--color-border);">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #86efac; border-color: rgba(134,239,172,0.3);"><i class="fas fa-shield-alt"></i> Compromiso y Estándares</span>
-                <h2 style="color: #ffffff;">Políticas de Gestión Integral</h2>
-                <p style="color: #94a3b8;">La seguridad, la preservación ecológica y la calidad total son directrices no negociables en cada una de nuestras intervenciones.</p>
+            <div class="section-header reveal text-center">
+                <div class="hafran-eyebrow">
+                    <span class="hafran-bullet">■</span>
+                    <span>COMPROMISO Y ESTÁNDARES</span>
+                </div>
+                <h2 style="font-family: var(--font-display); color: #0F172A;">Políticas de Gestión Integral</h2>
+                <p style="color: #475569;">La seguridad, la preservación ecológica y la calidad total son directrices no negociables en cada una de nuestras intervenciones.</p>
             </div>
 
             <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <!-- Política de Seguridad y Salud en el Trabajo (Diapositiva 4) -->
-                <div class="value-card reveal" style="background: var(--color-dark-surface); border: 1px solid var(--color-dark-border); border-radius: 14px; padding: 2rem; color: #ffffff;">
+                <div class="value-card reveal" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 14px; padding: 2rem; color: var(--color-text-main); box-shadow: 0 4px 15px rgba(15, 44, 89, 0.04);">
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="background: rgba(239, 68, 68, 0.15); color: #f87171; width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        <div style="background: rgba(239, 68, 68, 0.12); color: #dc2626; width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
                             <i class="fas fa-helmet-safety"></i>
                         </div>
-                        <h3 style="color: #ffffff; font-size: 1.25rem; margin: 0;">Seguridad y Salud en el Trabajo</h3>
+                        <h3 style="color: #0F172A; font-size: 1.25rem; margin: 0; font-family: var(--font-display);">Seguridad y Salud en el Trabajo</h3>
                     </div>
-                    <p style="font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 1rem;">
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin-bottom: 1rem;">
                         En <strong>PROYECTOS R&F, C.A.</strong> consideramos la seguridad como una responsabilidad indelegable de la gerencia general:
                     </p>
-                    <ul style="font-size: 0.9rem; line-height: 1.6; color: #94a3b8; padding-left: 1.2rem; margin: 0;">
+                    <ul style="font-size: 0.9rem; line-height: 1.6; color: #64748B; padding-left: 1.2rem; margin: 0;">
                         <li style="margin-bottom: 0.5rem;">Propiciamos y conservamos condiciones laborales que salvaguardan la integridad física de todos los trabajadores.</li>
                         <li style="margin-bottom: 0.5rem;">Aplicación permanente de medidas de prevención, control y corrección contra riesgos laborales.</li>
                         <li>Evaluación rigurosa de las causas de cualquier contingencia para implementar mejoras inmediatas.</li>
@@ -316,17 +331,17 @@
                 </div>
 
                 <!-- Política de Protección Ambiental (Diapositiva 5) -->
-                <div class="value-card reveal" style="background: var(--color-dark-surface); border: 1px solid var(--color-dark-border); border-radius: 14px; padding: 2rem; color: #ffffff;">
+                <div class="value-card reveal" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 14px; padding: 2rem; color: var(--color-text-main); box-shadow: 0 4px 15px rgba(15, 44, 89, 0.04);">
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="background: rgba(34, 197, 94, 0.15); color: #4ade80; width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        <div style="background: rgba(4, 120, 87, 0.12); color: #047857; width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
                             <i class="fas fa-leaf"></i>
                         </div>
-                        <h3 style="color: #ffffff; font-size: 1.25rem; margin: 0;">Protección Ambiental</h3>
+                        <h3 style="color: #0F172A; font-size: 1.25rem; margin: 0; font-family: var(--font-display);">Protección Ambiental</h3>
                     </div>
-                    <p style="font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 1rem;">
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin-bottom: 1rem;">
                         Comprometidos con el desarrollo sustentable y la preservación ecológica en todas nuestras operaciones:
                     </p>
-                    <ul style="font-size: 0.9rem; line-height: 1.6; color: #94a3b8; padding-left: 1.2rem; margin: 0;">
+                    <ul style="font-size: 0.9rem; line-height: 1.6; color: #64748B; padding-left: 1.2rem; margin: 0;">
                         <li style="margin-bottom: 0.5rem;">Prevenir la contaminación y mitigar el impacto ambiental mediante tecnologías de bajo impacto y procesos limpios.</li>
                         <li style="margin-bottom: 0.5rem;">Uso eficiente y racional de recursos naturales, energía y materiales en campo.</li>
                         <li>Cumplimiento estricto de las normativas ambientales venezolanas e internacionales en cada frente de trabajo.</li>
@@ -334,17 +349,17 @@
                 </div>
 
                 <!-- Política de Calidad (Diapositiva 6) -->
-                <div class="value-card reveal" style="background: var(--color-dark-surface); border: 1px solid var(--color-dark-border); border-radius: 14px; padding: 2rem; color: #ffffff;">
+                <div class="value-card reveal" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 14px; padding: 2rem; color: var(--color-text-main); box-shadow: 0 4px 15px rgba(15, 44, 89, 0.04);">
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        <div style="background: rgba(15, 44, 89, 0.1); color: #0F2C59; width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
                             <i class="fas fa-medal"></i>
                         </div>
-                        <h3 style="color: #ffffff; font-size: 1.25rem; margin: 0;">Política de Calidad</h3>
+                        <h3 style="color: #0F172A; font-size: 1.25rem; margin: 0; font-family: var(--font-display);">Política de Calidad</h3>
                     </div>
-                    <p style="font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 1rem;">
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin-bottom: 1rem;">
                         Gestión orientada a la satisfacción de clientes, proveedores y colaboradores mediante la mejora continua:
                     </p>
-                    <ul style="font-size: 0.9rem; line-height: 1.6; color: #94a3b8; padding-left: 1.2rem; margin: 0;">
+                    <ul style="font-size: 0.9rem; line-height: 1.6; color: #64748B; padding-left: 1.2rem; margin: 0;">
                         <li style="margin-bottom: 0.5rem;">Asegurar la conformidad de cada servicio respecto a las especificaciones técnicas contratadas.</li>
                         <li style="margin-bottom: 0.5rem;">Capacitación y desarrollo continuo del personal para fortalecer sus competencias operativas.</li>
                         <li>Equipos de medición, calibración y registro certificados por laboratorios autorizados.</li>
@@ -354,12 +369,83 @@
         </div>
     </section>
 
-    <!-- Sección Portafolio de 7 Servicios Principales (Diapositiva 8) -->
+    <!-- Sección Vitrina Principal Destacada: Expanding Content Cards al estilo Hafran -->
+    <section id="servicios-destacados" class="hafran-expanding-section reveal">
+        <div class="container">
+            <div class="hafran-section-head text-center">
+                <div class="hafran-eyebrow">
+                    <span class="hafran-bullet">■</span>
+                    <span>SERVICIOS PRINCIPALES</span>
+                </div>
+                <h2 class="hafran-headline">Nuestras Áreas de Operación y Capacidad Técnica</h2>
+                <p class="hafran-subhead">Ofrecemos soluciones integrales de ingeniería pesada y mantenimiento especializado. Combinamos activos tecnológicos de última generación con un riguroso cumplimiento de los estándares internacionales para garantizar la solvencia técnica en cada maniobra.</p>
+            </div>
+
+            <!-- Expanding Content Cards Container -->
+            <div class="rf-expanding-cards" id="rf-expanding-cards">
+                <!-- Card 1 -->
+                <div class="rf-card-item active" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/metor_soldadura_1.jpg') }}');">
+                    <div class="rf-card-overlay"></div>
+                    <div class="rf-card-content">
+                        <span class="rf-card-num">01</span>
+                        <h3 class="rf-card-title">Soldadura Calificada & Spools</h3>
+                        <p class="rf-card-desc">Fabricación y montaje de tuberías bajo normas ASME B31.3/B31.4, API 1104 y AWS D1.1 con soldadores homologados 6G.</p>
+                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Ver especificaciones técnicas</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="rf-card-item" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/deteccion_metales_1.jpg') }}');">
+                    <div class="rf-card-overlay"></div>
+                    <div class="rf-card-content">
+                        <span class="rf-card-num">02</span>
+                        <h3 class="rf-card-title">Detección de Utilidades Subterráneas</h3>
+                        <p class="rf-card-desc">Georadar de penetración terrestre (GPR) y localizadores electromagnéticos para mapeo subterráneo 3D y excavación segura de riesgo cero.</p>
+                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Ver metodología de mapeo</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="rf-card-item" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/santa_barbara_andamios_1.jpg') }}');">
+                    <div class="rf-card-overlay"></div>
+                    <div class="rf-card-content">
+                        <span class="rf-card-num">03</span>
+                        <h3 class="rf-card-title">Andamios Certificados Cup-Lock</h3>
+                        <p class="rf-card-desc">Suministro, ingeniería, armado y certificación de más de 1.500 m³ de andamios modulares tipo Cup-Lock para trabajos en altura.</p>
+                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Ver capacidad de andamiaje</a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="rf-card-item" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/prueba_hidrostatica_1.jpg') }}');">
+                    <div class="rf-card-overlay"></div>
+                    <div class="rf-card-content">
+                        <span class="rf-card-num">04</span>
+                        <h3 class="rf-card-title">Pruebas Hidrostáticas hasta 15.000 PSI</h3>
+                        <p class="rf-card-desc">Pruebas de presión de alta capacidad, llenado, presurización controlada y registro gráfico certificado para gasoductos y recipientes.</p>
+                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Conocer equipos y bombas</a>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="rf-card-item" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/mantenimiento_civil_1.jpg') }}');">
+                    <div class="rf-card-overlay"></div>
+                    <div class="rf-card-content">
+                        <span class="rf-card-num">05</span>
+                        <h3 class="rf-card-title">Paradas de Planta & Mantenimiento</h3>
+                        <p class="rf-card-desc">Intervención integral de plantas petroquímicas e industriales con cuadrillas especializadas, equipos pesados y estricto control SHA.</p>
+                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Ver contratos y experiencia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Portafolio de Servicios Detallado (Diapositiva 8) -->
     <section id="servicios" class="services-portfolio-section" style="padding: 5rem 0; background: var(--color-bg);">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i class="fas fa-cogs"></i> Catálogo Integral</span>
-                <h2>Nuestros Servicios Especializados</h2>
+            <div class="section-header reveal text-center">
+                <div class="hafran-eyebrow">
+                    <span class="hafran-bullet">■</span>
+                    <span>CATÁLOGO TÉCNICO DETALLADO</span>
+                </div>
+                <h2 style="font-family: var(--font-display);">Desglose de Servicios Industriales</h2>
                 <p>Brindamos soluciones integrales de alta ingeniería, con personal calificado y equipos de vanguardia para la industria energética y manufacturera.</p>
             </div>
 
@@ -491,12 +577,15 @@
     </section>
 
     <!-- Demostración Interactiva de Localización Subterránea (Servicio 2) -->
-    <section class="scanner-section" style="background: var(--color-dark); padding: 5rem 0;">
+    <section class="scanner-section" style="background: #F8FAFC; padding: 5rem 0; border-bottom: 1px solid var(--color-border);">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #86efac; border-color: rgba(134,239,172,0.3);"><i class="fas fa-satellite-dish"></i> Tecnología en Campo (Servicio 02)</span>
-                <h2 style="color: #ffffff;">Simulador de Detección Electromagnética Subterránea</h2>
-                <p style="color: #94a3b8;">Desliza el localizador sobre el terreno para simular la detección no destructiva de tuberías de gas, cables eléctricos y líneas de proceso.</p>
+            <div class="section-header reveal text-center">
+                <div class="hafran-eyebrow">
+                    <span class="hafran-bullet">■</span>
+                    <span>TECNOLOGÍA EN CAMPO (SERVICIO 02)</span>
+                </div>
+                <h2 style="font-family: var(--font-display); color: #0F172A;">Simulador de Detección Electromagnética Subterránea</h2>
+                <p style="color: #475569;">Desliza el localizador sobre el terreno para simular la detección no destructiva de tuberías de gas, cables eléctricos y líneas de proceso.</p>
             </div>
 
             <div class="scanner-container reveal">
@@ -803,6 +892,51 @@
         </div>
     </section>
 
+    <!-- Sección Sectores Estratégicos al estilo Hafran: Casos de Éxito y Solvencia Operativa -->
+    <section id="sectores" class="hafran-sectors-section reveal">
+        <div class="container">
+            <div class="hafran-sectors-header">
+                <div class="hafran-eyebrow">
+                    <span class="hafran-bullet">■</span>
+                    <span>SECTORES ESTRATÉGICOS</span>
+                </div>
+                <h2 class="hafran-headline">Casos de Éxito y Solvencia Operativa</h2>
+                <p class="hafran-subhead">Respaldamos los requerimientos estructurales de las industrias más exigentes de la región. Cada obra representa un Caso de Éxito fundamentado en rigurosos estándares internacionales y un compromiso inquebrantable con el riesgo cero.</p>
+            </div>
+
+            <div class="hafran-sectors-grid">
+                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/metor_izamiento_1.jpg') }}');">
+                    <div class="sector-overlay"></div>
+                    <div class="sector-content">
+                        <span class="sector-tag">INDUSTRIA</span>
+                        <h3 class="sector-title">Sector Petrolero & Refinación</h3>
+                    </div>
+                </div>
+                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/metor_mantenimiento_1.jpg') }}');">
+                    <div class="sector-overlay"></div>
+                    <div class="sector-content">
+                        <span class="sector-tag">PROCESOS</span>
+                        <h3 class="sector-title">Sector Petroquímico & Gas</h3>
+                    </div>
+                </div>
+                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/trabajos_mecanicos_1.jpg') }}');">
+                    <div class="sector-overlay"></div>
+                    <div class="sector-content">
+                        <span class="sector-tag">ESPECIALIDAD</span>
+                        <h3 class="sector-title">Metalmecánica & Piping Especializado</h3>
+                    </div>
+                </div>
+                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/mantenimiento_civil_3.jpg') }}');">
+                    <div class="sector-overlay"></div>
+                    <div class="sector-content">
+                        <span class="sector-tag">OBRAS</span>
+                        <h3 class="sector-title">Infraestructura Civil & Mantenimiento</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Historial de 19 Contratos Ejecutados con 100% de Avance (Diapositivas 9 a 14) -->
     <section id="contratos" class="contracts-section">
         <div class="container">
@@ -833,7 +967,7 @@
                     </div>
                 </div>
                 <div class="contracts-trust-pill">
-                    <div class="trust-icon-box amber">
+                    <div class="trust-icon-box navy">
                         <i class="fas fa-industry"></i>
                     </div>
                     <div class="trust-text">
@@ -1781,7 +1915,7 @@
                 </div>
 
                 <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-bolt" style="color: #d97706; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
+                    <i class="fas fa-bolt" style="color: #2563eb; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
                     <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">PROENERGY SERVICES</strong>
                     <span style="font-size: 0.75rem; color: var(--color-text-muted);">Generación Eléctrica</span>
                 </div>
@@ -1892,19 +2026,30 @@
         </div>
     </section>
 
-    <!-- Banner Pre-Footer CTA -->
-    <section class="cta-section">
+    <!-- Banner de Contacto Corporativo al estilo Hafran -->
+    <div class="hafran-cta-banner reveal">
         <div class="container">
-            <div class="cta-content">
-                <h2>¿Planificando una Parada de Planta o Proyecto de Ingeniería?</h2>
-                <p>Equipos certificados, soldadores calificados y disponibilidad inmediata de andamios Cup-Lock, pruebas hidrostáticas e inspección con Holliday detector en todo el territorio nacional.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                    <a href="{{ url_for('quote') }}" class="btn btn-primary"><i class="fas fa-file-invoice"></i> Solicitar Presupuesto</a>
-                    <a href="{{ url_for('areas') }}" class="btn btn-secondary" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3);"><i class="fas fa-map-location-dot"></i> Ver Cobertura Operativa</a>
+            <div class="hafran-cta-inner">
+                <div class="hafran-cta-text">
+                    <div class="hafran-eyebrow">
+                        <span class="hafran-bullet">■</span>
+                        <span>CONTACTO & LICITACIONES</span>
+                    </div>
+                    <h2 class="hafran-headline">El respaldo que su infraestructura necesita.</h2>
+                    <p>Transformamos desafíos complejos en hitos de ingeniería con precisión milimétrica, personal homologado y riesgo cero en paradas de planta y obras de envergadura.</p>
+                </div>
+                <div class="hafran-cta-action">
+                    <a href="{{ url_for('quote') }}" class="btn-hafran-primary">
+                        <i class="fas fa-arrow-circle-right"></i>
+                        <span>Solicitar Cotización</span>
+                    </a>
+                    <a href="mailto:proyectos.ryf@gmail.com" class="hafran-email-link">
+                        <i class="fas fa-envelope"></i> proyectos.ryf@gmail.com
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer Oficial de PROYECTOS R&F, C.A. (Diapositivas 1 y 17) -->
     <footer id="contacto">
@@ -1954,7 +2099,7 @@
                 </p>
                 <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone" style="color: #60a5fa;"></i> Tel: (0281) 271 93 50</p>
                 <p style="margin-bottom: 0.5rem;"><i class="fas fa-mobile-screen" style="color: #4ade80;"></i> Cel: (0424) 814 96 51</p>
-                <p style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="color: #facc15;"></i> proyectos.ryf@gmail.com</p>
+                <p style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="color: #10b981;"></i> proyectos.ryf@gmail.com</p>
                 <a href="{{ url_for('quote') }}" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;"><i class="fas fa-file-invoice"></i> Solicitar Presupuesto</a>
             </div>
         </div>

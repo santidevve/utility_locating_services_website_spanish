@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.classList.add('active');
 
                 // If this is the hero stats container, trigger the number counter
-                if (entry.target.classList.contains('hero-stats') || entry.target.querySelector('.stat-number')) {
+                if (entry.target.classList.contains('hero-stats') || entry.target.classList.contains('hafran-stats-section') || entry.target.querySelector('.stat-number') || entry.target.querySelector('.metric-val')) {
                     initCounters(entry.target);
                 }
 
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------
     function initCounters(container) {
         if (prefersReducedMotion) {
-            container.querySelectorAll('.stat-number').forEach(stat => {
+            container.querySelectorAll('.stat-number, .metric-val').forEach(stat => {
                 const target = stat.dataset.target;
                 const suffix = stat.dataset.suffix || '';
                 stat.innerHTML = `${target}<span>${suffix}</span>`;
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const statNumbers = container.querySelectorAll('.stat-number[data-target]');
+        const statNumbers = container.querySelectorAll('.stat-number[data-target], .metric-val[data-target]');
         statNumbers.forEach(stat => {
             const target = parseInt(stat.dataset.target, 10);
             const suffix = stat.dataset.suffix || '';
@@ -382,5 +382,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainHeader.classList.remove('scrolled');
             }
         }, { passive: true });
+    }
+
+    // -------------------------------------------------------------
+    // Hafran-style Expanding Content Cards Interactive Engine
+    // -------------------------------------------------------------
+    const expandingCards = document.querySelectorAll('.rf-card-item');
+    if (expandingCards.length > 0) {
+        expandingCards.forEach(card => {
+            const activateCard = (e) => {
+                // Si hizo clic en un link interno, no prevenir navegación
+                if (e.target.closest('.rf-card-link')) return;
+
+                expandingCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+            };
+
+            card.addEventListener('mouseenter', activateCard);
+            card.addEventListener('click', activateCard);
+        });
     }
 });
