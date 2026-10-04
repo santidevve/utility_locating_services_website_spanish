@@ -95,8 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
 
-                // If this is the hero stats container, trigger the number counter
-                if (entry.target.classList.contains('hero-stats') || entry.target.classList.contains('hafran-stats-section') || entry.target.querySelector('.stat-number') || entry.target.querySelector('.metric-val')) {
+                // If this is the hero stats or metrics ribbon container, trigger the number counter
+                if (entry.target.classList.contains('hero-stats') || entry.target.classList.contains('hafran-stats-section') || entry.target.classList.contains('metrics-ribbon-section') || entry.target.querySelector('.stat-number') || entry.target.querySelector('.metric-val') || entry.target.querySelector('.metric-ribbon-val')) {
                     initCounters(entry.target);
                 }
 
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------
     function initCounters(container) {
         if (prefersReducedMotion) {
-            container.querySelectorAll('.stat-number, .metric-val').forEach(stat => {
+            container.querySelectorAll('.stat-number, .metric-val, .metric-ribbon-val').forEach(stat => {
                 const target = stat.dataset.target;
                 const suffix = stat.dataset.suffix || '';
                 stat.innerHTML = `${target}<span>${suffix}</span>`;
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const statNumbers = container.querySelectorAll('.stat-number[data-target], .metric-val[data-target]');
+        const statNumbers = container.querySelectorAll('.stat-number[data-target], .metric-val[data-target], .metric-ribbon-val[data-target]');
         statNumbers.forEach(stat => {
             const target = parseInt(stat.dataset.target, 10);
             const suffix = stat.dataset.suffix || '';
@@ -385,13 +385,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------
-    // Hafran-style Expanding Content Cards Interactive Engine
+    // Minimalist Premium Services: Filas Editoriales + Dynamic Backdrop
     // -------------------------------------------------------------
+    const editorialRows = document.querySelectorAll('.editorial-service-row');
+    const servicesBackdrop = document.getElementById('services-backdrop') || document.querySelector('.services-backdrop-canvas');
+
+    if (editorialRows.length > 0) {
+        editorialRows.forEach(row => {
+            const activateRow = (e) => {
+                if (e && e.target.closest('.service-arrow-btn')) return; // No bloquear click de enlace
+
+                editorialRows.forEach(r => r.classList.remove('active'));
+                row.classList.add('active');
+
+                const bgUrl = row.dataset.bg;
+                if (bgUrl && servicesBackdrop) {
+                    servicesBackdrop.style.backgroundImage = `url('${bgUrl}')`;
+                }
+            };
+
+            row.addEventListener('mouseenter', activateRow);
+            row.addEventListener('click', activateRow);
+        });
+    }
+
+    // Compatibilidad con Expanding Cards (si aplica en otras secciones)
     const expandingCards = document.querySelectorAll('.rf-card-item');
     if (expandingCards.length > 0) {
         expandingCards.forEach(card => {
             const activateCard = (e) => {
-                // Si hizo clic en un link interno, no prevenir navegación
                 if (e.target.closest('.rf-card-link')) return;
 
                 expandingCards.forEach(c => c.classList.remove('active'));

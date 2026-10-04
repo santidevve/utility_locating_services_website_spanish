@@ -38,7 +38,7 @@
         <div class="container">
             <div class="logo">
                 <a href="#inicio">
-                    <img src="{{ url_for('static', filename='images/rf/logo_rf.png') }}" alt="PROYECTOS R&F Logo Oficial">
+                    <img src="{{ url_for('static', filename='images/rf/logo_rf.webp') }}" alt="PROYECTOS R&F Logo Oficial">
                     <div class="logo-text-block">
                         <span class="logo-title">PROYECTOS R&F, C.A.</span>
                         <span class="logo-subtitle">INGENIERÍA & MANTENIMIENTO INDUSTRIAL</span>
@@ -84,7 +84,7 @@
     <aside class="drawer-navigation" id="drawer-navigation" aria-label="Menú principal de navegación">
         <div class="drawer-header">
             <div class="drawer-brand">
-                <img src="{{ url_for('static', filename='images/rf/logo_rf.png') }}" alt="Logo PROYECTOS R&F">
+                <img src="{{ url_for('static', filename='images/rf/logo_rf.webp') }}" alt="Logo PROYECTOS R&F">
                 <div>
                     <span class="drawer-brand-title">PROYECTOS R&F, C.A.</span>
                     <span class="drawer-brand-sub">RIF: J-29843884-3</span>
@@ -133,8 +133,11 @@
         </nav>
     </aside>
 
-    <!-- Hero Section (Estilo Corporativo Hafran) -->
-    <section id="inicio" class="hero hero-hafran">
+    <!-- Hero Section: Minimalist Mesh Gradient + Fusión Fotográfica -->
+    <section id="inicio" class="hero hero-mesh-gradient">
+        <!-- Imagen de Fondo Hero (Editable directamente desde el HTML) -->
+        <div class="hero-backdrop" id="hero-backdrop" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/santa_barbara_flare.webp') }}');"></div>
+
         <div class="hero-content">
             <div class="hafran-eyebrow reveal">
                 <span class="hafran-bullet">■</span>
@@ -142,18 +145,15 @@
             </div>
             <h1 class="reveal">Soluciones Integrales de <br><span class="highlight-corp">Ingeniería, Soldadura</span> y Mantenimiento Industrial</h1>
             
-            <!-- Cita / Lema del Fundador con Diseño VIP Glassmorphic -->
-            <div class="founder-quote-card reveal">
-                <div class="founder-quote-icon">
-                    <i class="fas fa-quote-left"></i>
-                </div>
-                <div class="founder-quote-body">
+            <!-- Cita del Fundador en Diseño Editorial Abierto (Sin Cajas ni Tarjetas) -->
+            <div class="founder-editorial-quote reveal">
+                <div>
                     <p class="founder-quote-text">
                         “No es tu <span class="quote-kw">APTITUD</span>, sino tu <span class="quote-kw">ACTITUD</span>, lo que determina tu <span class="quote-kw">ALTITUD</span>.”
                     </p>
-                    <div class="founder-quote-author">
+                    <div class="founder-quote-meta">
                         <span class="founder-name">Ing. Civil Edilberto Rojas</span>
-                        <span class="founder-badge"><i class="fas fa-shield-halved"></i> Fundador • +20 Años en Industria Petrolera</span>
+                        <span class="founder-role"><span class="role-dot"></span> Fundador • +20 Años en Industria Petrolera</span>
                     </div>
                 </div>
             </div>
@@ -216,7 +216,7 @@
                     </div>
                 </div>
                 <div class="mission-image" style="display: flex; justify-content: center; align-items: center;">
-                    <video autoplay loop muted playsinline preload="auto" poster="{{ url_for('static', filename='images/rf/logo_rf.png') }}" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+                    <video autoplay loop muted playsinline preload="auto" poster="{{ url_for('static', filename='images/rf/logo_rf.webp') }}" style="width: 100%; height: auto; display: block; border-radius: 12px;">
                         <source src="{{ url_for('static', filename='videos/logo animado.mp4') }}" type="video/mp4">
                         Tu navegador no soporta reproducción de video.
                     </video>
@@ -225,10 +225,10 @@
         </div>
     </section>
 
-    <!-- Sección Métrica al estilo Hafran: Solidez que se traduce en resultados -->
-    <section class="hafran-stats-section reveal">
+    <!-- Sección Métrica: Banda Continua con Divisores Hairline (Sin Tarjetas) -->
+    <section class="metrics-ribbon-section reveal">
         <div class="container">
-            <div class="hafran-stats-header">
+            <div class="metrics-ribbon-header">
                 <div class="hafran-stats-title-col">
                     <div class="hafran-eyebrow">
                         <span class="hafran-bullet">■</span>
@@ -241,26 +241,26 @@
                 </div>
             </div>
 
-            <div class="hafran-metrics-grid">
-                <div class="hafran-metric-box">
-                    <div class="metric-val" data-target="15" data-suffix="+">+15</div>
-                    <div class="metric-caption">Años de Trayectoria (Fund. 2010)</div>
+            <div class="metrics-ribbon-row">
+                <div class="metric-ribbon-item">
+                    <div class="metric-ribbon-val" data-target="15" data-suffix="+">+15</div>
+                    <div class="metric-ribbon-caption">Años de Trayectoria (Fund. 2010)</div>
                 </div>
-                <div class="hafran-metric-box">
-                    <div class="metric-val" data-target="100" data-suffix="%">100%</div>
-                    <div class="metric-caption">Eficiencia – Compromiso HSE Estricto</div>
+                <div class="metric-ribbon-item">
+                    <div class="metric-ribbon-val" data-target="100" data-suffix="%">100%</div>
+                    <div class="metric-ribbon-caption">Eficiencia – Compromiso HSE Estricto</div>
                 </div>
-                <div class="hafran-metric-box">
-                    <div class="metric-val" data-target="1500" data-suffix=" m³">1.500 m³</div>
-                    <div class="metric-caption">Andamios Tipo Cup-Lock</div>
+                <div class="metric-ribbon-item">
+                    <div class="metric-ribbon-val" data-target="1500" data-suffix=" m³">1.500 m³</div>
+                    <div class="metric-ribbon-caption">Andamios Tipo Cup-Lock</div>
                 </div>
-                <div class="hafran-metric-box">
-                    <div class="metric-val" data-target="15000" data-suffix=" PSI">15.000 PSI</div>
-                    <div class="metric-caption">Capacidad Pruebas Hidrostáticas</div>
+                <div class="metric-ribbon-item">
+                    <div class="metric-ribbon-val" data-target="15000" data-suffix=" PSI">15.000 PSI</div>
+                    <div class="metric-ribbon-caption">Capacidad Pruebas Hidrostáticas</div>
                 </div>
-                <div class="hafran-metric-box">
-                    <div class="metric-val" data-target="50" data-suffix="+">+50</div>
-                    <div class="metric-caption">Proyectos de Envergadura Ejecutados</div>
+                <div class="metric-ribbon-item">
+                    <div class="metric-ribbon-val" data-target="50" data-suffix="+">+50</div>
+                    <div class="metric-ribbon-caption">Proyectos de Envergadura Ejecutados</div>
                 </div>
             </div>
         </div>
@@ -300,68 +300,57 @@
     </section>
 
     <!-- Sección Políticas Corporativas (Diapositivas 4, 5, 6 - Tema Claro) -->
-    <section id="politicas" style="background: #F8FAFC; color: var(--color-text-main); padding: 5rem 0; border-bottom: 1px solid var(--color-border);">
+    <!-- Sección Políticas de Gestión Integral: Arquitectura Editorial Abierta (Sin Tarjetas) -->
+    <section id="politicas" class="policies-editorial-section">
         <div class="container">
             <div class="section-header reveal text-center">
                 <div class="hafran-eyebrow">
                     <span class="hafran-bullet">■</span>
                     <span>COMPROMISO Y ESTÁNDARES</span>
                 </div>
-                <h2 style="font-family: var(--font-display); color: #0F172A;">Políticas de Gestión Integral</h2>
-                <p style="color: #475569;">La seguridad, la preservación ecológica y la calidad total son directrices no negociables en cada una de nuestras intervenciones.</p>
+                <h2 class="hafran-headline">Políticas de Gestión Integral</h2>
+                <p class="hafran-subhead">La seguridad, la preservación ecológica y la calidad total son directrices no negociables en cada una de nuestras intervenciones.</p>
             </div>
 
-            <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <!-- Política de Seguridad y Salud en el Trabajo (Diapositiva 4) -->
-                <div class="value-card reveal" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 14px; padding: 2rem; color: var(--color-text-main); box-shadow: 0 4px 15px rgba(15, 44, 89, 0.04);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="background: rgba(239, 68, 68, 0.12); color: #dc2626; width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-helmet-safety"></i>
-                        </div>
-                        <h3 style="color: #0F172A; font-size: 1.25rem; margin: 0; font-family: var(--font-display);">Seguridad y Salud en el Trabajo</h3>
+            <div class="policies-editorial-grid">
+                <!-- Política de Seguridad y Salud en el Trabajo -->
+                <div class="policy-editorial-col reveal">
+                    <div class="policy-icon-badge safety">
+                        <i class="fas fa-helmet-safety"></i>
                     </div>
-                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin-bottom: 1rem;">
-                        En <strong>PROYECTOS R&F, C.A.</strong> consideramos la seguridad como una responsabilidad indelegable de la gerencia general:
-                    </p>
-                    <ul style="font-size: 0.9rem; line-height: 1.6; color: #64748B; padding-left: 1.2rem; margin: 0;">
-                        <li style="margin-bottom: 0.5rem;">Propiciamos y conservamos condiciones laborales que salvaguardan la integridad física de todos los trabajadores.</li>
-                        <li style="margin-bottom: 0.5rem;">Aplicación permanente de medidas de prevención, control y corrección contra riesgos laborales.</li>
+                    <h3>Seguridad y Salud en el Trabajo</h3>
+                    <p>En <strong>PROYECTOS R&F, C.A.</strong> consideramos la seguridad como una responsabilidad indelegable de la gerencia general:</p>
+                    <ul>
+                        <li>Propiciamos y conservamos condiciones laborales que salvaguardan la integridad física de todos los trabajadores.</li>
+                        <li>Aplicación permanente de medidas de prevención, control y corrección contra riesgos laborales.</li>
                         <li>Evaluación rigurosa de las causas de cualquier contingencia para implementar mejoras inmediatas.</li>
                     </ul>
                 </div>
 
-                <!-- Política de Protección Ambiental (Diapositiva 5) -->
-                <div class="value-card reveal" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 14px; padding: 2rem; color: var(--color-text-main); box-shadow: 0 4px 15px rgba(15, 44, 89, 0.04);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="background: rgba(4, 120, 87, 0.12); color: #047857; width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <h3 style="color: #0F172A; font-size: 1.25rem; margin: 0; font-family: var(--font-display);">Protección Ambiental</h3>
+                <!-- Política de Protección Ambiental -->
+                <div class="policy-editorial-col reveal">
+                    <div class="policy-icon-badge env">
+                        <i class="fas fa-leaf"></i>
                     </div>
-                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin-bottom: 1rem;">
-                        Comprometidos con el desarrollo sustentable y la preservación ecológica en todas nuestras operaciones:
-                    </p>
-                    <ul style="font-size: 0.9rem; line-height: 1.6; color: #64748B; padding-left: 1.2rem; margin: 0;">
-                        <li style="margin-bottom: 0.5rem;">Prevenir la contaminación y mitigar el impacto ambiental mediante tecnologías de bajo impacto y procesos limpios.</li>
-                        <li style="margin-bottom: 0.5rem;">Uso eficiente y racional de recursos naturales, energía y materiales en campo.</li>
+                    <h3>Protección Ambiental</h3>
+                    <p>Comprometidos con el desarrollo sustentable y la preservación ecológica en todas nuestras operaciones:</p>
+                    <ul>
+                        <li>Prevenir la contaminación y mitigar el impacto ambiental mediante tecnologías de bajo impacto y procesos limpios.</li>
+                        <li>Uso eficiente y racional de recursos naturales, energía y materiales en campo.</li>
                         <li>Cumplimiento estricto de las normativas ambientales venezolanas e internacionales en cada frente de trabajo.</li>
                     </ul>
                 </div>
 
-                <!-- Política de Calidad (Diapositiva 6) -->
-                <div class="value-card reveal" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 14px; padding: 2rem; color: var(--color-text-main); box-shadow: 0 4px 15px rgba(15, 44, 89, 0.04);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
-                        <div style="background: rgba(15, 44, 89, 0.1); color: #0F2C59; width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <h3 style="color: #0F172A; font-size: 1.25rem; margin: 0; font-family: var(--font-display);">Política de Calidad</h3>
+                <!-- Política de Calidad -->
+                <div class="policy-editorial-col reveal">
+                    <div class="policy-icon-badge quality">
+                        <i class="fas fa-medal"></i>
                     </div>
-                    <p style="font-size: 0.95rem; line-height: 1.6; color: #334155; margin-bottom: 1rem;">
-                        Gestión orientada a la satisfacción de clientes, proveedores y colaboradores mediante la mejora continua:
-                    </p>
-                    <ul style="font-size: 0.9rem; line-height: 1.6; color: #64748B; padding-left: 1.2rem; margin: 0;">
-                        <li style="margin-bottom: 0.5rem;">Asegurar la conformidad de cada servicio respecto a las especificaciones técnicas contratadas.</li>
-                        <li style="margin-bottom: 0.5rem;">Capacitación y desarrollo continuo del personal para fortalecer sus competencias operativas.</li>
+                    <h3>Política de Calidad</h3>
+                    <p>Gestión orientada a la satisfacción de clientes, proveedores y colaboradores mediante la mejora continua:</p>
+                    <ul>
+                        <li>Asegurar la conformidad de cada servicio respecto a las especificaciones técnicas contratadas.</li>
+                        <li>Capacitación y desarrollo continuo del personal para fortalecer sus competencias operativas.</li>
                         <li>Equipos de medición, calibración y registro certificados por laboratorios autorizados.</li>
                     </ul>
                 </div>
@@ -369,68 +358,85 @@
         </div>
     </section>
 
-    <!-- Sección Vitrina Principal Destacada: Expanding Content Cards al estilo Hafran -->
-    <section id="servicios-destacados" class="hafran-expanding-section reveal">
-        <div class="container">
-            <div class="hafran-section-head text-center">
+    <!-- Sección Vitrina Principal: Filas Editoriales con Fondo Dinámico Atmosférico (Sin Tarjetas) -->
+    <section id="servicios-destacados" class="services-editorial-section reveal">
+        <!-- Canvas de Fondo Dinámico Atmosférico -->
+        <div class="services-backdrop-canvas" id="services-backdrop" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/metor_soldadura_1.webp') }}');"></div>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="services-editorial-head text-center">
                 <div class="hafran-eyebrow">
                     <span class="hafran-bullet">■</span>
-                    <span>SERVICIOS PRINCIPALES</span>
+                    <span>CAPACIDADES TÉCNICAS</span>
                 </div>
-                <h2 class="hafran-headline">Nuestras Áreas de Operación y Capacidad Técnica</h2>
-                <p class="hafran-subhead">Ofrecemos soluciones integrales de ingeniería pesada y mantenimiento especializado. Combinamos activos tecnológicos de última generación con un riguroso cumplimiento de los estándares internacionales para garantizar la solvencia técnica en cada maniobra.</p>
+                <h2 class="hafran-headline">Nuestras Áreas de Operación y Solvencia Técnica</h2>
+                <p class="hafran-subhead">Ofrecemos soluciones integrales de ingeniería pesada y mantenimiento especializado. Combinamos activos tecnológicos de última generación con personal homologado para garantizar solvencia técnica en cada maniobra.</p>
             </div>
 
-            <!-- Expanding Content Cards Container -->
-            <div class="rf-expanding-cards" id="rf-expanding-cards">
-                <!-- Card 1 -->
-                <div class="rf-card-item active" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/metor_soldadura_1.jpg') }}');">
-                    <div class="rf-card-overlay"></div>
-                    <div class="rf-card-content">
-                        <span class="rf-card-num">01</span>
-                        <h3 class="rf-card-title">Soldadura Calificada & Spools</h3>
-                        <p class="rf-card-desc">Fabricación y montaje de tuberías bajo normas ASME B31.3/B31.4, API 1104 y AWS D1.1 con soldadores homologados 6G.</p>
-                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Ver especificaciones técnicas</a>
+            <!-- Lista Editorial Interactiva -->
+            <div class="services-editorial-list" id="services-editorial-list">
+                <!-- Fila 1 -->
+                <div class="editorial-service-row active" data-bg="{{ url_for('static', filename='images/rf/proyectos/metor_soldadura_1.webp') }}">
+                    <span class="service-num">01</span>
+                    <div class="service-main-col">
+                        <span class="service-norm-tag">ASME B31.3 / API 1104 / AWS D1.1</span>
+                        <h3 class="service-title">Soldadura Calificada & Fabricación de Spools</h3>
+                    </div>
+                    <p class="service-desc-col">Fabricación y montaje de tuberías bajo normas internacionales con soldadores certificados 6G e inspección END de riesgo cero.</p>
+                    <div class="service-action-col">
+                        <a href="#servicios" class="service-arrow-btn" aria-label="Ver detalles de Soldadura"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="rf-card-item" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/deteccion_metales_1.jpg') }}');">
-                    <div class="rf-card-overlay"></div>
-                    <div class="rf-card-content">
-                        <span class="rf-card-num">02</span>
-                        <h3 class="rf-card-title">Detección de Utilidades Subterráneas</h3>
-                        <p class="rf-card-desc">Georadar de penetración terrestre (GPR) y localizadores electromagnéticos para mapeo subterráneo 3D y excavación segura de riesgo cero.</p>
-                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Ver metodología de mapeo</a>
+
+                <!-- Fila 2 -->
+                <div class="editorial-service-row" data-bg="{{ url_for('static', filename='images/rf/servicios/deteccion_metales_1.webp') }}">
+                    <span class="service-num">02</span>
+                    <div class="service-main-col">
+                        <span class="service-norm-tag">GEORADAR GPR 400 MHz & RD8100</span>
+                        <h3 class="service-title">Detección de Utilidades Subterráneas</h3>
+                    </div>
+                    <p class="service-desc-col">Georadar de penetración terrestre y localizadores electromagnéticos para mapeo subterráneo 3D y excavación segura sin interferencias.</p>
+                    <div class="service-action-col">
+                        <a href="#servicios" class="service-arrow-btn" aria-label="Ver detalles de Detección Subterránea"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <!-- Card 3 -->
-                <div class="rf-card-item" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/santa_barbara_andamios_1.jpg') }}');">
-                    <div class="rf-card-overlay"></div>
-                    <div class="rf-card-content">
-                        <span class="rf-card-num">03</span>
-                        <h3 class="rf-card-title">Andamios Certificados Cup-Lock</h3>
-                        <p class="rf-card-desc">Suministro, ingeniería, armado y certificación de más de 1.500 m³ de andamios modulares tipo Cup-Lock para trabajos en altura.</p>
-                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Ver capacidad de andamiaje</a>
+
+                <!-- Fila 3 -->
+                <div class="editorial-service-row" data-bg="{{ url_for('static', filename='images/rf/proyectos/santa_barbara_andamios_1.webp') }}">
+                    <span class="service-num">03</span>
+                    <div class="service-main-col">
+                        <span class="service-norm-tag">1.500 m³ DISPONIBLES • CUP-LOCK</span>
+                        <h3 class="service-title">Andamios Modulares Certificados</h3>
+                    </div>
+                    <p class="service-desc-col">Suministro, ingeniería de montaje y certificación de más de 1.500 m³ de andamios modulares tipo Cup-Lock para trabajos en altura.</p>
+                    <div class="service-action-col">
+                        <a href="#servicios" class="service-arrow-btn" aria-label="Ver detalles de Andamios"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <!-- Card 4 -->
-                <div class="rf-card-item" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/prueba_hidrostatica_1.jpg') }}');">
-                    <div class="rf-card-overlay"></div>
-                    <div class="rf-card-content">
-                        <span class="rf-card-num">04</span>
-                        <h3 class="rf-card-title">Pruebas Hidrostáticas hasta 15.000 PSI</h3>
-                        <p class="rf-card-desc">Pruebas de presión de alta capacidad, llenado, presurización controlada y registro gráfico certificado para gasoductos y recipientes.</p>
-                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Conocer equipos y bombas</a>
+
+                <!-- Fila 4 -->
+                <div class="editorial-service-row" data-bg="{{ url_for('static', filename='images/rf/servicios/prueba_hidrostatica_1.webp') }}">
+                    <span class="service-num">04</span>
+                    <div class="service-main-col">
+                        <span class="service-norm-tag">HASTA 15.000 PSI • REGISTRO BARTON</span>
+                        <h3 class="service-title">Pruebas Hidrostáticas de Alta Presión</h3>
+                    </div>
+                    <p class="service-desc-col">Pruebas de presión de alta capacidad, presurización controlada y registro gráfico certificado para gasoductos y recipientes.</p>
+                    <div class="service-action-col">
+                        <a href="#servicios" class="service-arrow-btn" aria-label="Ver detalles de Pruebas Hidrostáticas"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <!-- Card 5 -->
-                <div class="rf-card-item" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/mantenimiento_civil_1.jpg') }}');">
-                    <div class="rf-card-overlay"></div>
-                    <div class="rf-card-content">
-                        <span class="rf-card-num">05</span>
-                        <h3 class="rf-card-title">Paradas de Planta & Mantenimiento</h3>
-                        <p class="rf-card-desc">Intervención integral de plantas petroquímicas e industriales con cuadrillas especializadas, equipos pesados y estricto control SHA.</p>
-                        <a href="#servicios" class="rf-card-link"><i class="fas fa-arrow-circle-right"></i> Ver contratos y experiencia</a>
+
+                <!-- Fila 5 -->
+                <div class="editorial-service-row" data-bg="{{ url_for('static', filename='images/rf/servicios/mantenimiento_civil_1.webp') }}">
+                    <span class="service-num">05</span>
+                    <div class="service-main-col">
+                        <span class="service-norm-tag">COMPLEJOS PETROQUÍMICOS & REFINERÍAS</span>
+                        <h3 class="service-title">Paradas de Planta & Mantenimiento Integral</h3>
+                    </div>
+                    <p class="service-desc-col">Intervención integral de plantas y unidades críticas con cuadrillas multidisciplinarias, equipos pesados y estricto control SHA.</p>
+                    <div class="service-action-col">
+                        <a href="#servicios" class="service-arrow-btn" aria-label="Ver detalles de Paradas de Planta"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -454,7 +460,7 @@
                 <!-- Servicio 1: Fabricación y Soldadura -->
                 <div class="service-card-full reveal" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid var(--color-border); display: flex; flex-direction: column;">
                     <div style="height: 220px; overflow: hidden; position: relative;">
-                        <img src="{{ url_for('static', filename='images/rf/servicios/trabajos_mecanicos_1.jpg') }}" alt="Fabricación y Soldadura de Tuberías" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="{{ url_for('static', filename='images/rf/servicios/trabajos_mecanicos_1.webp') }}" alt="Fabricación y Soldadura de Tuberías" style="width: 100%; height: 100%; object-fit: cover;">
                         <span style="position: absolute; top: 1rem; left: 1rem; background: var(--color-primary); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 20px;">SERVICIO 01</span>
                     </div>
                     <div style="padding: 1.75rem; flex-grow: 1; display: flex; flex-direction: column;">
@@ -471,7 +477,7 @@
                 <!-- Servicio 2: Detección de Tuberías, Cables Enterrados y Metales -->
                 <div class="service-card-full reveal" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid var(--color-border); display: flex; flex-direction: column;">
                     <div style="height: 220px; overflow: hidden; position: relative;">
-                        <img src="{{ url_for('static', filename='images/rf/servicios/deteccion_metales_1.jpg') }}" alt="Detección de Tuberías y Cables Enterrados" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="{{ url_for('static', filename='images/rf/servicios/deteccion_metales_1.webp') }}" alt="Detección de Tuberías y Cables Enterrados" style="width: 100%; height: 100%; object-fit: cover;">
                         <span style="position: absolute; top: 1rem; left: 1rem; background: var(--color-primary); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 20px;">SERVICIO 02</span>
                     </div>
                     <div style="padding: 1.75rem; flex-grow: 1; display: flex; flex-direction: column;">
@@ -488,7 +494,7 @@
                 <!-- Servicio 3: Alquiler de Andamios Cup-Lock (1.500 m3) -->
                 <div class="service-card-full reveal" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid var(--color-border); display: flex; flex-direction: column;">
                     <div style="height: 220px; overflow: hidden; position: relative;">
-                        <img src="{{ url_for('static', filename='images/rf/proyectos/santa_barbara_andamios_1.jpg') }}" alt="Alquiler y Montaje de Andamios Tipo Cup-Lock" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="{{ url_for('static', filename='images/rf/proyectos/santa_barbara_andamios_1.webp') }}" alt="Alquiler y Montaje de Andamios Tipo Cup-Lock" style="width: 100%; height: 100%; object-fit: cover;">
                         <span style="position: absolute; top: 1rem; left: 1rem; background: var(--color-primary); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 20px;">SERVICIO 03</span>
                     </div>
                     <div style="padding: 1.75rem; flex-grow: 1; display: flex; flex-direction: column;">
@@ -505,7 +511,7 @@
                 <!-- Servicio 4: Inspección de Revestimiento / Holliday Detector -->
                 <div class="service-card-full reveal" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid var(--color-border); display: flex; flex-direction: column;">
                     <div style="height: 220px; overflow: hidden; position: relative;">
-                        <img src="{{ url_for('static', filename='images/rf/servicios/holliday_detector_1.jpg') }}" alt="Inspección de Revestimiento Holliday Detector" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="{{ url_for('static', filename='images/rf/servicios/holliday_detector_1.webp') }}" alt="Inspección de Revestimiento Holliday Detector" style="width: 100%; height: 100%; object-fit: cover;">
                         <span style="position: absolute; top: 1rem; left: 1rem; background: var(--color-primary); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 20px;">SERVICIO 04</span>
                     </div>
                     <div style="padding: 1.75rem; flex-grow: 1; display: flex; flex-direction: column;">
@@ -522,7 +528,7 @@
                 <!-- Servicio 5: Pruebas Hidrostáticas hasta 15.000 PSI -->
                 <div class="service-card-full reveal" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid var(--color-border); display: flex; flex-direction: column;">
                     <div style="height: 220px; overflow: hidden; position: relative;">
-                        <img src="{{ url_for('static', filename='images/rf/servicios/prueba_hidrostatica_1.jpg') }}" alt="Pruebas Hidrostáticas hasta 15000 PSI" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="{{ url_for('static', filename='images/rf/servicios/prueba_hidrostatica_1.webp') }}" alt="Pruebas Hidrostáticas hasta 15000 PSI" style="width: 100%; height: 100%; object-fit: cover;">
                         <span style="position: absolute; top: 1rem; left: 1rem; background: var(--color-primary); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 20px;">SERVICIO 05</span>
                     </div>
                     <div style="padding: 1.75rem; flex-grow: 1; display: flex; flex-direction: column;">
@@ -539,7 +545,7 @@
                 <!-- Servicio 6: Asesorías en Gerencia, Control y Costos -->
                 <div class="service-card-full reveal" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid var(--color-border); display: flex; flex-direction: column;">
                     <div style="height: 220px; overflow: hidden; position: relative;">
-                        <img src="{{ url_for('static', filename='images/rf/mision_vision.jpg') }}" alt="Asesorías en Gerencia de Proyectos y Costos" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="{{ url_for('static', filename='images/rf/mision_vision.webp') }}" alt="Asesorías en Gerencia de Proyectos y Costos" style="width: 100%; height: 100%; object-fit: cover;">
                         <span style="position: absolute; top: 1rem; left: 1rem; background: var(--color-primary); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 20px;">SERVICIO 06</span>
                     </div>
                     <div style="padding: 1.75rem; flex-grow: 1; display: flex; flex-direction: column;">
@@ -557,7 +563,7 @@
                 <div class="service-card-full reveal" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid var(--color-border); display: flex; flex-direction: column; grid-column: 1 / -1;">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
                         <div style="height: 240px; overflow: hidden;">
-                            <img src="{{ url_for('static', filename='images/rf/proyectos/metor_mantenimiento_1.jpg') }}" alt="Mantenimiento Mecánico en Paradas de Planta" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ url_for('static', filename='images/rf/proyectos/metor_mantenimiento_1.webp') }}" alt="Mantenimiento Mecánico en Paradas de Planta" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                             <span style="display: inline-block; background: var(--color-primary); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 20px; width: fit-content; margin-bottom: 0.75rem;">SERVICIO 07</span>
@@ -572,111 +578,6 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Demostración Interactiva de Localización Subterránea (Servicio 2) -->
-    <section class="scanner-section" style="background: #F8FAFC; padding: 5rem 0; border-bottom: 1px solid var(--color-border);">
-        <div class="container">
-            <div class="section-header reveal text-center">
-                <div class="hafran-eyebrow">
-                    <span class="hafran-bullet">■</span>
-                    <span>TECNOLOGÍA EN CAMPO (SERVICIO 02)</span>
-                </div>
-                <h2 style="font-family: var(--font-display); color: #0F172A;">Simulador de Detección Electromagnética Subterránea</h2>
-                <p style="color: #475569;">Desliza el localizador sobre el terreno para simular la detección no destructiva de tuberías de gas, cables eléctricos y líneas de proceso.</p>
-            </div>
-
-            <div class="scanner-container reveal">
-                <div class="scanner-hud">
-                    <div class="hud-status">
-                        <span class="hud-indicator active"></span>
-                        <span class="hud-label">ESTADO DEL EQUIPO:</span>
-                        <span class="hud-value" id="hud-status-text">EMITIENDO FRECUENCIA ACTIVA</span>
-                    </div>
-                    <div class="hud-readout">
-                        <span class="hud-label">CONDUCTO DETECTADO:</span>
-                        <span class="hud-value hud-target" id="hud-detected-text">Rastreando estrato...</span>
-                    </div>
-                    <div class="hud-depth">
-                        <span class="hud-label">PROFUNDIDAD DE ENTERRAMIENTO:</span>
-                        <span class="hud-value" id="hud-depth-text">--</span>
-                    </div>
-                </div>
-
-                <div class="scanner-stage" id="scanner-stage">
-                    <div class="ground-surface">
-                        <span class="asphalt-label"><i class="fas fa-road"></i> Cota de Terreno / Nivel 0.00 m</span>
-                        <div class="scanner-cart" id="scanner-cart" title="Arrastra el sensor">
-                            <div class="cart-antenna"><i class="fas fa-wifi"></i></div>
-                            <div class="cart-body">LOCALIZADOR R&F</div>
-                            <div class="cart-wheels"><span></span><span></span></div>
-                        </div>
-                    </div>
-
-                    <div class="subsurface-ground">
-                        <div class="radar-beam" id="radar-beam"></div>
-
-                        <div class="depth-grid">
-                            <div class="depth-line" style="top: 25%;"><span class="depth-tag">0.80 m</span></div>
-                            <div class="depth-line" style="top: 50%;"><span class="depth-tag">1.50 m</span></div>
-                            <div class="depth-line" style="top: 75%;"><span class="depth-tag">2.20 m</span></div>
-                        </div>
-
-                        <div class="utility-layer">
-                            <!-- Conduit Fibra Óptica -->
-                            <div class="underground-utility util-fiber" data-name="Tubería Conduit Rígido / Fibra Óptica" data-color="Naranja" data-depth="0.90 m" style="left: 20%; top: 30%;">
-                                <div class="utility-pulse"></div>
-                                <div class="utility-pipe fiber-pipe"></div>
-                                <div class="utility-tooltip">
-                                    <span class="util-badge orange">Telecom / Fibra</span>
-                                    <span class="util-spec">Prof: 0.90 m • Señal Óptima</span>
-                                </div>
-                            </div>
-
-                            <!-- Cable Eléctrico 13.8 kV -->
-                            <div class="underground-utility util-electric" data-name="Línea Eléctrica Subterránea 13.8 kV" data-color="Rojo" data-depth="1.45 m" style="left: 45%; top: 48%;">
-                                <div class="utility-pulse"></div>
-                                <div class="utility-pipe electric-pipe"></div>
-                                <div class="utility-tooltip">
-                                    <span class="util-badge red">Electricidad Industrial</span>
-                                    <span class="util-spec">Prof: 1.45 m • Alta Tensión</span>
-                                </div>
-                            </div>
-
-                            <!-- Gasoducto Combustible -->
-                            <div class="underground-utility util-gas" data-name="Línea Gas Combustible (FG-900#)" data-color="Amarillo" data-depth="1.80 m" style="left: 70%; top: 64%;">
-                                <div class="utility-pulse"></div>
-                                <div class="utility-pipe gas-pipe"></div>
-                                <div class="utility-tooltip">
-                                    <span class="util-badge yellow">Gasoducto Industrial</span>
-                                    <span class="util-spec">Prof: 1.80 m • 1200 PSI</span>
-                                </div>
-                            </div>
-
-                            <!-- Sistema Contra Incendio (SCI) -->
-                            <div class="underground-utility util-water" data-name="Línea Sistema Contra Incendio (SCI) Tanques" data-color="Azul" data-depth="2.10 m" style="left: 88%; top: 78%;">
-                                <div class="utility-pulse"></div>
-                                <div class="utility-pipe water-pipe"></div>
-                                <div class="utility-tooltip">
-                                    <span class="util-badge blue">Red Contra Incendio</span>
-                                    <span class="util-spec">Prof: 2.10 m • Tubería Acero</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="scanner-legend">
-                    <span class="legend-title">Código de Identificación de Redes Industriales:</span>
-                    <div class="legend-items">
-                        <span class="legend-chip chip-red" role="button" tabindex="0"><i class="fas fa-bolt"></i> Rojo: Electricidad / 13.8 kV</span>
-                        <span class="legend-chip chip-yellow" role="button" tabindex="0"><i class="fas fa-fire"></i> Amarillo: Gas Combustible</span>
-                        <span class="legend-chip chip-orange" role="button" tabindex="0"><i class="fas fa-tower-broadcast"></i> Naranja: Conduit Fibra Óptica</span>
-                        <span class="legend-chip chip-blue" role="button" tabindex="0"><i class="fas fa-droplet"></i> Azul: Red Contra Incendio</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -809,7 +710,7 @@
                 
                 <!-- Foto 1: Santa Bárbara Flare -->
                 <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="{{ url_for('static', filename='images/rf/proyectos/santa_barbara_flare.jpg') }}" alt="Reemplazo de Tip del Flare en Planta Santa Bárbara" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ url_for('static', filename='images/rf/proyectos/santa_barbara_flare.webp') }}" alt="Reemplazo de Tip del Flare en Planta Santa Bárbara" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
                         <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Izamiento de Tip del Flare</span>
                         <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Parada Tren A - Planta Santa Bárbara (PDVSA Gas)</p>
@@ -818,7 +719,7 @@
 
                 <!-- Foto 2: Santa Bárbara Andamios -->
                 <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="{{ url_for('static', filename='images/rf/proyectos/santa_barbara_andamios_1.jpg') }}" alt="Montaje de Andamios Cup-Lock a gran altura" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ url_for('static', filename='images/rf/proyectos/santa_barbara_andamios_1.webp') }}" alt="Montaje de Andamios Cup-Lock a gran altura" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
                         <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Andamios Cup-Lock a Gran Altura</span>
                         <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Montaje de 1.500 m³ en Torre Recuperadora</p>
@@ -827,7 +728,7 @@
 
                 <!-- Foto 3: METOR Mantenimiento Mecánico -->
                 <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="{{ url_for('static', filename='images/rf/proyectos/metor_mantenimiento_1.jpg') }}" alt="Mantenimiento en Parada de Planta METOR" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ url_for('static', filename='images/rf/proyectos/metor_mantenimiento_1.webp') }}" alt="Mantenimiento en Parada de Planta METOR" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
                         <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Mantenimiento Mecánico - METOR S.A.</span>
                         <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Intercambiadores y Haz Tubular en Planta II</p>
@@ -836,7 +737,7 @@
 
                 <!-- Foto 4: METOR Soldadura Spool -->
                 <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="{{ url_for('static', filename='images/rf/proyectos/metor_soldadura_1.jpg') }}" alt="Soldadura de Tuberías y Spool en METOR" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ url_for('static', filename='images/rf/proyectos/metor_soldadura_1.webp') }}" alt="Soldadura de Tuberías y Spool en METOR" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
                         <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Soldadura de Precisión en Tuberías</span>
                         <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Fabricación y reemplazo de spools en parada</p>
@@ -845,7 +746,7 @@
 
                 <!-- Foto 5: METOR Izamiento con Pitman -->
                 <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="{{ url_for('static', filename='images/rf/proyectos/metor_izamiento_1.jpg') }}" alt="Izamiento con Camión Pitman" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ url_for('static', filename='images/rf/proyectos/metor_izamiento_1.webp') }}" alt="Izamiento con Camión Pitman" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
                         <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Maniobras de Izamiento Industrial</span>
                         <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Operación con Camión Pitman 4.5T en planta</p>
@@ -854,7 +755,7 @@
 
                 <!-- Foto 6: Servicio Holliday Detector -->
                 <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="{{ url_for('static', filename='images/rf/servicios/holliday_detector_1.jpg') }}" alt="Inspección de Revestimiento con Holliday Detector" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ url_for('static', filename='images/rf/servicios/holliday_detector_1.webp') }}" alt="Inspección de Revestimiento con Holliday Detector" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
                         <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Servicio de Holliday Detector</span>
                         <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Inspección dieléctrica de revestimiento en tuberías</p>
@@ -863,7 +764,7 @@
 
                 <!-- Foto 7: Pruebas Hidrostáticas -->
                 <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="{{ url_for('static', filename='images/rf/servicios/prueba_hidrostatica_1.jpg') }}" alt="Pruebas Hidrostáticas y Manifold de Presión" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ url_for('static', filename='images/rf/servicios/prueba_hidrostatica_1.webp') }}" alt="Pruebas Hidrostáticas y Manifold de Presión" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
                         <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Pruebas Hidrostáticas Certificadas</span>
                         <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Banco de prueba con manómetros y registradores</p>
@@ -872,7 +773,7 @@
 
                 <!-- Foto 8: Detección Subterránea -->
                 <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="{{ url_for('static', filename='images/rf/servicios/deteccion_metales_1.jpg') }}" alt="Detección de Metales y Tuberías Enterradas" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ url_for('static', filename='images/rf/servicios/deteccion_metales_1.webp') }}" alt="Detección de Metales y Tuberías Enterradas" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
                         <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Detección Subterránea en Campo</span>
                         <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Localización electromagnética antes de excavación</p>
@@ -881,7 +782,7 @@
 
                 <!-- Foto 9: Mantenimiento Civil y Pintura -->
                 <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="{{ url_for('static', filename='images/rf/servicios/mantenimiento_civil_1.jpg') }}" alt="Mantenimiento Civil y Pintura Industrial" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ url_for('static', filename='images/rf/servicios/mantenimiento_civil_1.webp') }}" alt="Mantenimiento Civil y Pintura Industrial" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
                         <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Mantenimiento Civil y Pintura Industrial</span>
                         <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Reparación de caminerías, bases y tanques</p>
@@ -905,28 +806,28 @@
             </div>
 
             <div class="hafran-sectors-grid">
-                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/metor_izamiento_1.jpg') }}');">
+                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/metor_izamiento_1.webp') }}');">
                     <div class="sector-overlay"></div>
                     <div class="sector-content">
                         <span class="sector-tag">INDUSTRIA</span>
                         <h3 class="sector-title">Sector Petrolero & Refinación</h3>
                     </div>
                 </div>
-                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/metor_mantenimiento_1.jpg') }}');">
+                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/proyectos/metor_mantenimiento_1.webp') }}');">
                     <div class="sector-overlay"></div>
                     <div class="sector-content">
                         <span class="sector-tag">PROCESOS</span>
                         <h3 class="sector-title">Sector Petroquímico & Gas</h3>
                     </div>
                 </div>
-                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/trabajos_mecanicos_1.jpg') }}');">
+                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/trabajos_mecanicos_1.webp') }}');">
                     <div class="sector-overlay"></div>
                     <div class="sector-content">
                         <span class="sector-tag">ESPECIALIDAD</span>
                         <h3 class="sector-title">Metalmecánica & Piping Especializado</h3>
                     </div>
                 </div>
-                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/mantenimiento_civil_3.jpg') }}');">
+                <div class="sector-card" style="background-image: url('{{ url_for('static', filename='images/rf/servicios/mantenimiento_civil_3.webp') }}');">
                     <div class="sector-overlay"></div>
                     <div class="sector-content">
                         <span class="sector-tag">OBRAS</span>
@@ -1884,152 +1785,153 @@
         </div>
     </section>
 
-    <!-- Sección Clientes Corporativos (Diapositiva 15) -->
-    <section id="clientes" class="clients-section" style="padding: 5rem 0; background: var(--color-bg);">
+    <!-- Sección Clientes Corporativos: Visualización Fluida sin Tarjetas -->
+    <section id="clientes" class="clients-seamless-section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i class="fas fa-handshake"></i> Alianzas de Primer Nivel</span>
-                <h2>Nuestros Clientes</h2>
-                <p>Empresas petroleras, petroquímicas e industriales que han confiado sus proyectos y paradas de planta a PROYECTOS R&F, C.A.</p>
+            <div class="section-header reveal text-center">
+                <div class="hafran-eyebrow">
+                    <span class="hafran-bullet">■</span>
+                    <span>ALIANZAS DE PRIMER NIVEL</span>
+                </div>
+                <h2 class="hafran-headline">Nuestros Clientes</h2>
+                <p class="hafran-subhead">Empresas petroleras, petroquímicas e industriales que han confiado sus proyectos, piping y paradas de planta a PROYECTOS R&F, C.A.</p>
             </div>
 
-            <!-- Listado y Vitrina de los 21 Clientes Oficiales (Slide 15) -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem;">
-                
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-oil-well" style="color: #dc2626; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">PDVSA</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Gas & Exploración</span>
+            <!-- Listado y Vitrina Fluida de los 21 Clientes Oficiales (Sin Tarjetas) -->
+            <div class="clients-seamless-grid">
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-oil-well client-seamless-icon" style="color: #0F2C59;"></i>
+                    <span class="client-seamless-name">PDVSA</span>
+                    <span class="client-seamless-sub">Gas & Exploración</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-flask-vial" style="color: #2563eb; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">METOR, S.A.</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Metanol de Oriente</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-flask-vial client-seamless-icon" style="color: #047857;"></i>
+                    <span class="client-seamless-name">METOR, S.A.</span>
+                    <span class="client-seamless-sub">Metanol de Oriente</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-microchip" style="color: #059669; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">TECNOCONTROLES ORIENTE</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Automatización & Control</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-microchip client-seamless-icon" style="color: #1E3E62;"></i>
+                    <span class="client-seamless-name">TECNOCONTROLES ORIENTE</span>
+                    <span class="client-seamless-sub">Automatización & Control</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-bolt" style="color: #2563eb; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">PROENERGY SERVICES</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Generación Eléctrica</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-bolt client-seamless-icon" style="color: #047857;"></i>
+                    <span class="client-seamless-name">PROENERGY SERVICES</span>
+                    <span class="client-seamless-sub">Generación Eléctrica</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-solar-panel" style="color: #7c3aed; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">DERWICK ASSOCIATES</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Turbogeneración</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-solar-panel client-seamless-icon" style="color: #0F2C59;"></i>
+                    <span class="client-seamless-name">DERWICK ASSOCIATES</span>
+                    <span class="client-seamless-sub">Turbogeneración</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-industry" style="color: #0284c7; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">ELECVEN</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Montajes Eléctricos</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-industry client-seamless-icon" style="color: #1E3E62;"></i>
+                    <span class="client-seamless-name">ELECVEN</span>
+                    <span class="client-seamless-sub">Montajes Eléctricos</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-gears" style="color: #475569; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">GERENPRO</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Gerencia de Proyectos</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-gears client-seamless-icon" style="color: #475569;"></i>
+                    <span class="client-seamless-name">GERENPRO</span>
+                    <span class="client-seamless-sub">Gerencia de Proyectos</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-hard-hat" style="color: #ea580c; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">LAMILARA</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Construcción Industrial</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-hard-hat client-seamless-icon" style="color: #047857;"></i>
+                    <span class="client-seamless-name">LAMILARA</span>
+                    <span class="client-seamless-sub">Construcción Industrial</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-trowel-bricks" style="color: #16a34a; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">CONSTRUCCIONES ALOVA</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Obras Civiles</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-trowel-bricks client-seamless-icon" style="color: #0F2C59;"></i>
+                    <span class="client-seamless-name">CONSTRUCCIONES ALOVA</span>
+                    <span class="client-seamless-sub">Obras Civiles</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-plug-circle-bolt" style="color: #6366f1; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">ELECIMECA</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Electromecánica</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-plug-circle-bolt client-seamless-icon" style="color: #1E3E62;"></i>
+                    <span class="client-seamless-name">ELECIMECA</span>
+                    <span class="client-seamless-sub">Electromecánica</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-helmet-safety" style="color: #0d9488; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">PROY. Y CONST. 2021</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Ingeniería y Obras</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-helmet-safety client-seamless-icon" style="color: #047857;"></i>
+                    <span class="client-seamless-name">PROY. Y CONST. 2021</span>
+                    <span class="client-seamless-sub">Ingeniería y Obras</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-city" style="color: #b45309; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">CONSTRUCTORA D'AMICO</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Infraestructura</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-city client-seamless-icon" style="color: #0F2C59;"></i>
+                    <span class="client-seamless-name">CONSTRUCTORA D'AMICO</span>
+                    <span class="client-seamless-sub">Infraestructura</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-tower-cell" style="color: #e11d48; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">AISCA</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Sistemas de Alimentación</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-tower-cell client-seamless-icon" style="color: #1E3E62;"></i>
+                    <span class="client-seamless-name">AISCA</span>
+                    <span class="client-seamless-sub">Sistemas de Alimentación</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-screwdriver-wrench" style="color: #4338ca; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">OPSERMAN</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Operaciones y Mant.</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-screwdriver-wrench client-seamless-icon" style="color: #475569;"></i>
+                    <span class="client-seamless-name">OPSERMAN</span>
+                    <span class="client-seamless-sub">Operaciones y Mant.</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-wrench" style="color: #0369a1; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">IVIACA</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Construcción Petrolera</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-wrench client-seamless-icon" style="color: #047857;"></i>
+                    <span class="client-seamless-name">IVIACA</span>
+                    <span class="client-seamless-sub">Construcción Petrolera</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-soap" style="color: #0891b2; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">SERVILIM</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Servicios Industriales</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-soap client-seamless-icon" style="color: #0F2C59;"></i>
+                    <span class="client-seamless-name">SERVILIM</span>
+                    <span class="client-seamless-sub">Servicios Industriales</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-shield" style="color: #475569; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">HBN</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Obras Petroleras</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-shield client-seamless-icon" style="color: #475569;"></i>
+                    <span class="client-seamless-name">HBN</span>
+                    <span class="client-seamless-sub">Obras Petroleras</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-pipe-valve" style="color: #be123c; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">TSC</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Servicios Técnicos</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-pipe-valve client-seamless-icon" style="color: #047857;"></i>
+                    <span class="client-seamless-name">TSC</span>
+                    <span class="client-seamless-sub">Servicios Técnicos</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-hammer" style="color: #65a30d; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">PROY. Y CONST. JC</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Ingeniería Civil</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-hammer client-seamless-icon" style="color: #1E3E62;"></i>
+                    <span class="client-seamless-name">PROY. Y CONST. JC</span>
+                    <span class="client-seamless-sub">Ingeniería Civil</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-gem" style="color: #0f766e; font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">ONIX</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Soluciones Industriales</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-gem client-seamless-icon" style="color: #047857;"></i>
+                    <span class="client-seamless-name">ONIX</span>
+                    <span class="client-seamless-sub">Soluciones Industriales</span>
                 </div>
 
-                <div class="client-box-corp reveal" style="background: #ffffff; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--color-border); text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-                    <i class="fas fa-building-circle-check" style="color: var(--color-primary); font-size: 1.75rem; margin-bottom: 0.5rem; display: block;"></i>
-                    <strong style="font-size: 0.95rem; color: var(--color-dark); display: block;">GUADALUPE INDUSTRIAL</strong>
-                    <span style="font-size: 0.75rem; color: var(--color-text-muted);">Venezuela C.A.</span>
+                <div class="client-seamless-item reveal">
+                    <i class="fas fa-building-circle-check client-seamless-icon" style="color: #0F2C59;"></i>
+                    <span class="client-seamless-name">GUADALUPE INDUSTRIAL</span>
+                    <span class="client-seamless-sub">Venezuela C.A.</span>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Banner de Contacto Corporativo al estilo Hafran -->
-    <div class="hafran-cta-banner reveal">
+    <!-- Banner de Contacto Corporativo: Franja Fluida con Malla de Luz (Sin Cajas) -->
+    <div class="cta-fluid-banner reveal">
         <div class="container">
-            <div class="hafran-cta-inner">
+            <div class="cta-fluid-inner">
                 <div class="hafran-cta-text">
                     <div class="hafran-eyebrow">
                         <span class="hafran-bullet">■</span>
@@ -2056,7 +1958,7 @@
         <div class="container">
             <div class="footer-col">
                 <div class="logo" style="margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem;">
-                    <img src="{{ url_for('static', filename='images/rf/logo_rf.png') }}" alt="PROYECTOS R&F Logo" style="height: 48px; filter: brightness(0) invert(1);">
+                    <img src="{{ url_for('static', filename='images/rf/logo_rf.webp') }}" alt="PROYECTOS R&F Logo" style="height: 48px; filter: brightness(0) invert(1);">
                     <div>
                         <strong style="color: #ffffff; font-size: 1.15rem; font-family: var(--font-heading); display: block;">PROYECTOS R&F, C.A.</strong>
                         <span style="color: #94a3b8; font-size: 0.75rem;">RIF: J-29843884-3</span>
