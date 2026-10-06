@@ -81,3 +81,7 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 desktop.ini
+
+# Node / Vite
+node_modules/
+.vite/
