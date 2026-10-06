@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import fs from 'fs';
 
 export default defineConfig({
-  publicDir: 'public',
+  publicDir: false,
   server: {
     port: 5173,
     open: false,
@@ -19,6 +20,16 @@ export default defineConfig({
       },
     },
   },
+  plugins: [
+    {
+      name: 'copy-static-assets',
+      closeBundle() {
+        if (fs.existsSync('static')) {
+          fs.cpSync('static', 'dist/static', { recursive: true });
+        }
+      },
+    },
+  ],
 });
 
 
