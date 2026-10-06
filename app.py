@@ -56,6 +56,7 @@ def areas():
     return render_template('areas-de-servicio.html')
 
 @app.route('/faq')
+@app.route('/faq.html')
 def faq():
     """Página de FAQ pública"""
     return render_template('faq.html')

@@ -5171,3 +5171,337 @@ footer .container {
     padding-top: 1rem !important;
     margin-top: 1rem !important;
 }
+
+
+/* ==========================================================================
+   EXPANSIÓN BROCHURE 2026: SECCIÓN FILIAL EE.UU., 4 PILARES Y CORPORATIVO
+   ========================================================================== */
+
+/* Sección Filial USA: PROJECTS R&F USA, INC. */
+.usa-filial-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #09192f 0%, #0d284a 50%, #081a33 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.usa-filial-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.usa-filial-badge-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #93c5fd;
+    margin-bottom: 1.25rem;
+}
+
+.usa-filial-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3.5rem;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.usa-filial-info h3 {
+    font-family: var(--font-display, var(--font-heading));
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.usa-filial-lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+}
+
+.usa-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.usa-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.usa-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.usa-card-icon {
+    font-size: 1.6rem;
+    color: #60a5fa;
+    margin-bottom: 0.8rem;
+}
+
+.usa-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.usa-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.usa-locations-box {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.usa-locations-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+}
+
+.usa-cities-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.usa-city-tag {
+    background: rgba(37, 99, 235, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    color: #bfdbfe;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.usa-contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.usa-visual-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.usa-logo-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.usa-logo-card img {
+    max-height: 90px;
+    width: auto;
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+.usa-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+.usa-meta-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.usa-meta-item i {
+    color: #60a5fa;
+    margin-top: 0.2rem;
+}
+
+/* 4 Pilares de Capacidades (Slide 5) */
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.pillar-col {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 2.2rem 1.8rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.pillar-col:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.pillar-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.pillar-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.pillar-icon.civiles { background: #eff6ff; color: #2563eb; }
+.pillar-icon.mecanicas { background: #fff7ed; color: #ea580c; }
+.pillar-icon.electricas { background: #fefce8; color: #ca8a04; }
+.pillar-icon.especializadas { background: #ecfdf5; color: #059669; }
+
+.pillar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0;
+}
+
+.pillar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pillar-list li {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.pillar-list li i {
+    color: var(--color-safety-green);
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+}
+
+/* Misión & Visión Oficial Cards */
+.mv-official-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.mv-official-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 2.2rem;
+    border-left: 4px solid var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.mv-official-card.vision {
+    border-left-color: var(--color-accent);
+}
+
+.mv-official-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.mv-official-card.mision h3 { color: var(--color-primary); }
+.mv-official-card.vision h3 { color: var(--color-accent); }
+
+.mv-official-card p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin: 0;
+}
+
+/* Categorías de Maquinaria */
+.equipment-cat-block {
+    margin-bottom: 2.5rem;
+}
+
+.equipment-cat-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-border);
+}
+
+@media (max-width: 900px) {
+    .usa-filial-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
