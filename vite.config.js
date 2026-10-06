@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import fs from 'fs';
 
 export default defineConfig({
-  publicDir: false,
+  publicDir: 'public',
   server: {
     port: 5173,
     open: false,
