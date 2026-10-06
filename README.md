@@ -51,13 +51,16 @@ npm run preview
     *   `areas-de-servicio.html`: Cobertura operativa y mapa interactivo de sedes/complejos petroleros.
     *   `faq.html`: Preguntas frecuentes técnicas y normativas de seguridad (PDVSA, ASME, ASTM).
     *   `solicitar-presupuesto.html`: Formulario técnico interactivo con validación y confirmación inmediata vía WhatsApp e ingeniería.
-*   **Assets y Código Fuente (`static/`)**:
+*   **Recursos Estáticos (`static/`)**:
     *   `static/css/style.css`: Sistema de diseño global (paleta Deep Slate Navy, Esmeralda y Titanio).
     *   `static/js/script.js`: Motor de interactividad, menú off-canvas, animaciones fluidas y tickers.
-*   **Recursos Estáticos (`public/`)**:
-    *   `public/static/images/`: Logotipos, fotografías técnicas de campo y proyectos.
-    *   `public/static/videos/`: Video institucional del logo corporativo.
-*   **Configuración**:
-    *   `vite.config.js`: Configuración multi-página (`main`, `areas`, `faq`, `presupuesto`) y carpeta de salida `dist/`.
+    *   `static/images/rf/`: Logotipos e imágenes operativas oficiales de PROYECTOS R&F (proyectos, servicios, certificaciones).
+    *   `static/images/legacy/`: Archivo de recursos y mockups de la plantilla base original.
+    *   `static/videos/`: Video institucional corporativo (`logo-animado.mp4`).
+*   **Backend y Servidor**:
+    *   `app.py`: Aplicación Flask con registro de solicitudes de presupuesto en SQLite y manejo de rutas.
+    *   `passenger_wsgi.py`: Punto de entrada WSGI para despliegue en entornos cPanel/Phusion Passenger.
+*   **Configuración y Empaquetado**:
+    *   `vite.config.js`: Configuración multi-página (`main`, `areas`, `faq`, `presupuesto`) con sincronización automática de assets hacia `dist/`.
     *   `package.json`: Scripts de desarrollo y dependencias de Vite.
 

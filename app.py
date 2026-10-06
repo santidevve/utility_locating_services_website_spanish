@@ -7,7 +7,7 @@ import os
 # Cargar variables de entorno
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.', static_folder='static')
 
 # Configuración desde variables de entorno
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'fallback-dev-key')
