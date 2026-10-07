@@ -732,7 +732,7 @@ header .container {
 .drawer-brand img {
     height: 40px;
     width: auto;
-    filter: brightness(0) invert(1);
+    object-fit: contain;
 }
 
 .drawer-brand-title {
@@ -4264,7 +4264,9 @@ footer .container {
 .metrics-ribbon-section,
 .hafran-stats-section {
     padding: 5.5rem 0;
-    background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F8FAFC 100%);
+        background-image: 
+        linear-gradient(180deg, rgba(248, 250, 252, 0.88) 0%, rgba(255, 255, 255, 0.93) 100%),
+        url('/static/images/rf/texturas/textura_tierra.jpg'); /* o textura_pavimento.jpg */
     border-top: 1px solid #E2E8F0;
     border-bottom: 1px solid #E2E8F0;
     position: relative;
@@ -6281,3 +6283,56 @@ footer .container {
     padding-top: 1rem !important;
     margin-top: 1rem !important;
 }
+
+/* Fondo con imagen para la sección de Misión, Visión y Políticas */
+#politicas {
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.92)), 
+        url('/static/images/rf/servicios/trabajos_mecanicos_2.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax al hacer scroll */
+}
+
+
+/* Fondo para "Nuestras Capacidades Operativas" */
+#servicios {
+    position: relative;
+    background-image: 
+        /* Capa clara para mantener legibles las pestañas y textos */
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.93)), 
+        url('/static/images/rf/texturas/textura_pavimento.jpg'); /* 👈 Cambia aquí la imagen */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax */
+}
+
+
+/* Fondo con imagen para "Inventario de Maquinaria y Equipos" */
+#maquinaria {
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.93)), 
+        url('/static/images/rf/maquinaria/maquinaria_equipos_bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax al hacer scroll */
+}
+
+/* Fondo con imagen para "Historial de Contratos Ejecutados" */
+#contratos {
+    position: relative;
+    background-image: 
+        /* Capa clara para garantizar la legibilidad de la tabla y tarjetas */
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.94)), 
+        url('/static/images/rf/servicios/holliday_detector_3.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax al hacer scroll */
+}
+
