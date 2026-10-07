@@ -436,4 +436,28 @@ document.addEventListener('DOMContentLoaded', () => {
             card.addEventListener('click', activateCard);
         });
     }
+
+    // Controlador de Pestañas de Capacidades Operativas
+    const tabButtons = document.querySelectorAll('.cap-tab-btn');
+    const tabPanes = document.querySelectorAll('.cap-tab-pane');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.dataset.tab;
+
+            // Actualizar botón activo
+            tabButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Mostrar panel correspondiente
+            tabPanes.forEach(pane => {
+                if (pane.id === targetTab) {
+                    pane.classList.add('active');
+                } else {
+                    pane.classList.remove('active');
+                }
+            });
+        });
+    });
+
 });

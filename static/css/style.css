@@ -38,7 +38,7 @@
     --color-surface-muted: #F1F5F9;
 
     --color-text-main: #0F172A;
-    --color-text-muted: #475569;
+    --color-text-muted: #334155;
     --color-text-light: #64748B;
     --color-text-inverse: #FFFFFF;
 
@@ -49,8 +49,7 @@
     /* Tipografía Corporativa Arquitectónica (Estilo Hafran) */
     --font-heading: 'Syne', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
+    --font-body: 'Inter', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     /* Paleta Ejecutiva R&F: Azul Corporativo + Verde Oscuro + Blanco Mate */
     --color-corp-blue: #0F2C59;
     --color-corp-blue-hover: #071939;
@@ -67,7 +66,7 @@
     /* Escala Tipográfica Fluida */
     --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 0.95rem);
-    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+    --text-base: clamp(1.05rem, 1rem + 0.3vw, 1.15rem); /* ~17px a 18.5px */
     --text-lg: clamp(1.125rem, 1.05rem + 0.5vw, 1.25rem);
     --text-xl: clamp(1.25rem, 1.15rem + 0.75vw, 1.5rem);
     --text-2xl: clamp(1.5rem, 1.35rem + 1vw, 2rem);
@@ -141,12 +140,10 @@ body {
     font-size: var(--text-base);
     color: var(--color-text-main);
     background-color: var(--color-bg);
-    line-height: 1.65;
+    line-height: 1.75; /* 👈 Espaciado entre líneas ideal para lectura descansada */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: clip;
-    width: 100%;
-    position: relative;
+    text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -163,9 +160,13 @@ h3 { font-size: var(--text-xl); font-weight: 600; }
 h4 { font-size: var(--text-lg); font-weight: 600; }
 
 p {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
     color: var(--color-text-muted);
+    line-height: 1.75;
     margin-bottom: var(--space-md);
 }
+
 
 p:last-child {
     margin-bottom: 0;
@@ -1334,8 +1335,8 @@ header .container {
 
 .mission-grid {
     display: grid;
-    grid-template-columns: 1.5fr 0.8fr; /* 👈 Da más espacio al texto (1.4) que a la imagen (0.8) */
-    gap: 3rem;
+    grid-template-columns: 1.1fr 1fr; /* 👈 Aumenta el ancho de la columna de la imagen */
+    gap: 3.5rem;
     align-items: center;
 }
 
@@ -4161,19 +4162,25 @@ footer .container {
 }
 
 /* Atmospheric Dynamic Backdrop */
+/* Atmospheric Dynamic Backdrop */
 .services-backdrop-canvas {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    width: 65%; /* 👈 Abarca más de la mitad (60% a 65%) */
+    height: 100%;
     pointer-events: none;
     z-index: 1;
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-image 0.6s ease-in-out;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.28; /* Se nota con claridad la maquinaria/obra */
-    mask-image: radial-gradient(circle at 70% 50%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.1) 95%);
-    -webkit-mask-image: radial-gradient(circle at 70% 50%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.1) 95%);
+    opacity: 0.85;
+    /* Difuminado suave desde transparente hasta 100% visible */
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 1) 70%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 1) 50%);
+    transition: background-image 0.5s ease-in-out;
 }
+
 
 .services-editorial-head {
     margin-bottom: 3.5rem;
@@ -4246,6 +4253,8 @@ footer .container {
     gap: 0.35rem;
 }
 
+
+
 .service-title {
     font-family: var(--font-display);
     font-size: clamp(1.25rem, 1.15rem + 0.3vw, 1.55rem);
@@ -4317,6 +4326,197 @@ footer .container {
         grid-column: 2 / -1;
     }
 }
+
+/* ==========================================================================
+   Capacidades Operativas — Sistema de Pestañas & Galería Visual
+   ========================================================================== */
+.tabs-nav-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.capabilities-tabs-nav {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: var(--radius-full);
+}
+
+.cap-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.8rem 1.4rem;
+    border: none;
+    background: transparent;
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.cap-tab-btn:hover {
+    color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.cap-tab-btn.active {
+    background: var(--color-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(15, 44, 89, 0.25);
+}
+
+.cap-tab-btn i {
+    font-size: 1rem;
+}
+
+/* Paneles de Contenido */
+.capabilities-tab-content {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.cap-tab-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.cap-tab-pane.active {
+    display: block;
+    opacity: 1;
+}
+
+.cap-pane-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.cap-category-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+}
+
+.cap-pane-title {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
+
+.cap-pane-lead {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.cap-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.cap-features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: var(--color-dark);
+}
+
+.cap-features-list li i {
+    color: var(--color-safety-green);
+    margin-top: 4px;
+    font-size: 1.05rem;
+}
+
+.cap-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.cap-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Galería Lateral */
+.cap-gallery-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cap-photo-main img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.cap-photos-sub {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.cap-photos-sub img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.cap-gallery-side img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+    .cap-pane-grid {
+        grid-template-columns: 1fr;
+    }
+    .capabilities-tab-content {
+        padding: 2rem 1.5rem;
+    }
+}
+
 
 /* --- Políticas de Gestión Integral: Arquitectura Editorial Abierta (SIN TARJETAS) --- */
 .policies-editorial-section {
