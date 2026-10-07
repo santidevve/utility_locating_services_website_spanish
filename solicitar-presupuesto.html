@@ -9,8 +9,7 @@
         content="Solicitud de cotización para servicios de soldadura, pruebas hidrostáticas hasta 15.000 PSI, alquiler de andamios Cup-Lock, detección subterránea y mantenimiento industrial de PROYECTOS R&F, C.A.">
     <link rel="stylesheet" href="./static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -46,15 +45,16 @@
                 </a>
             </div>
 
-            <!-- Navegación Principal Horizontal (Visibilidad en Escritorio) -->
-            <nav class="nav-desktop">
+            <nav class="nav-desktop" aria-label="Navegación principal">
                 <ul class="nav-desktop-list">
-                    <li><a href="/index.html" class="nav-desktop-link">Inicio</a></li>
-                    <li><a href="/index.html#nosotros" class="nav-desktop-link">Quiénes Somos</a></li>
+                    <li><a href="/index.html#inicio" class="nav-desktop-link">Inicio</a></li>
+                    <li><a href="/index.html#nosotros" class="nav-desktop-link">Nosotros</a></li>
                     <li><a href="/index.html#servicios" class="nav-desktop-link">Servicios</a></li>
-                    <li><a href="/index.html#maquinaria" class="nav-desktop-link">Equipos</a></li>
+                    <li><a href="/index.html#maquinaria" class="nav-desktop-link">Maquinaria</a></li>
+                    <li><a href="/index.html#contratos" class="nav-desktop-link">Contratos</a></li>
+                    <li><a href="/index.html#galeria" class="nav-desktop-link">Galería</a></li>
                     <li><a href="/areas-de-servicio.html" class="nav-desktop-link">Cobertura</a></li>
-                    <li><a href="/faq.html" class="nav-desktop-link">Preguntas Frecuentes</a></li>
+                    <li><a href="/faq.html" class="nav-desktop-link">FAQ</a></li>
                 </ul>
             </nav>
 
@@ -346,12 +346,62 @@
                     }
 
                     const formData = new FormData(form);
-                    const name = formData.get('name') || 'Cliente';
-                    const purpose = formData.get('purpose') || '';
-                    const date = formData.get('date') || '';
-                    const phone = formData.get('phone') || '';
-                    const email = formData.get('email') || '';
-                    const address = formData.get('address') || '';
+                    const name = formData.get('name') || 'No especificado';
+                    const clientType = formData.get('client_type') || 'No especificado';
+                    const email = formData.get('email') || 'No especificado';
+                    const phone = formData.get('phone') || 'No especificado';
+                    const purpose = formData.get('purpose') || 'No especificado';
+                    const date = formData.get('date') || 'No especificada';
+                    const dimensions = formData.get('dimensions') || 'No especificadas';
+                    const explain = formData.get('explain') || 'Sin descripción adicional';
+                    const address = formData.get('address') || 'No especificada';
+                    const city = formData.get('city') || '';
+                    const state = formData.get('state') || '';
+                    const zip = formData.get('zip') || '';
+                    const staffTalk = formData.get('staff_talk') || 'No';
+                    const hasProposal = formData.get('has_proposal') || 'No';
+
+                    const locationFull = [address, city, state, zip].filter(Boolean).join(', ');
+
+                    // 1. Construcción del Correo para Gmail & Mailto
+                    const recipient = 'proyectos.ryf@gmail.com';
+                    const subject = `[COTIZACIÓN] Solicitud Técnica - ${name} (${clientType})`;
+
+                    const emailBody = 
+`SOLICITUD DE COTIZACIÓN Y DOSSIER TÉCNICO
+Empresa: PROYECTOS R&F, C.A. (RIF: J-29843884-3)
+------------------------------------------------------------
+
+DATOS DEL CLIENTE / REPRESENTANTE:
+• Nombre y Apellido: ${name}
+• Tipo de Empresa: ${clientType}
+• Teléfono de Contacto: ${phone}
+• Correo Electrónico: ${email}
+
+LÍNEAS DE SERVICIO REQUERIDAS:
+${checkedServices.map(s => '• ' + s).join('\n')}
+
+DETALLES OPERATIVOS DEL PROYECTO:
+• Naturaleza de la Intervención: ${purpose}
+• Fecha Estimada de Inicio: ${date}
+• Especificaciones Técnicas / Volumetría: ${dimensions}
+
+UBICACIÓN DE LA INSTALACIÓN O FRENTE DE TRABAJO:
+• Ubicación: ${locationFull}
+
+ALCANCE Y DESCRIPCIÓN GENERAL DEL TRABAJO:
+${explain}
+
+INFORMACIÓN ADICIONAL:
+• ¿Comunicación previa con personal de PROYECTOS R&F?: ${staffTalk}
+• ¿Dispone de pliego de licitación o especificaciones?: ${hasProposal}
+
+------------------------------------------------------------
+Generado desde el portal web oficial de PROYECTOS R&F, C.A.`;
+
+                    // Enlaces de acción
+                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+                    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
                     // Mensaje para WhatsApp
                     const waText = encodeURIComponent(
@@ -360,25 +410,46 @@
                         `• *Servicios:* ${checkedServices.join(', ')}\n` +
                         `• *Intervención:* ${purpose}\n` +
                         `• *Fecha requerida:* ${date}\n` +
-                        `• *Ubicación:* ${address}\n` +
+                        `• *Ubicación:* ${locationFull}\n` +
                         `• *Teléfono:* ${phone}\n` +
                         `• *Correo:* ${email}`
                     );
 
+                    // 2. Intentar abrir directamente la pestaña de redacción de Gmail
+                    const win = window.open(gmailUrl, '_blank');
+
+                    // 3. Renderizar Panel de Confirmación con Accesos Directos
                     alertContainer.innerHTML = `
-                        <div class="alert alert-success" style="background: #f0fdf4; border: 1px solid #4ade80; color: #166534; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 10px 25px -5px rgba(22, 101, 52, 0.1);">
-                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
-                                <i class="fas fa-circle-check" style="font-size: 1.75rem; color: #16a34a; margin-top: 0.2rem;"></i>
+                        <div class="alert alert-success" style="background: #ffffff; border: 2px solid #22c55e; color: #1e293b; padding: 1.75rem; border-radius: 16px; margin-bottom: 2rem; box-shadow: 0 16px 32px -4px rgba(22, 101, 52, 0.12);">
+                            <div style="display: flex; align-items: flex-start; gap: 1.25rem;">
+                                <div style="background: #ecfdf5; width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid #a7f3d0;">
+                                    <i class="fas fa-paper-plane" style="font-size: 1.6rem; color: #16a34a;"></i>
+                                </div>
                                 <div style="flex: 1;">
-                                    <h3 style="margin: 0 0 0.5rem 0; font-family: var(--font-heading); color: #14532d; font-size: 1.25rem;">¡Solicitud de Cotización Registrada con Éxito!</h3>
-                                    <p style="margin: 0 0 1rem 0; font-size: 0.95rem; line-height: 1.6;">
-                                        Estimado(a) <strong>${name}</strong>, hemos recibido sus requerimientos técnicos para <strong>${checkedServices.join(', ')}</strong>. Nuestro departamento de ingeniería revisará las especificaciones y se comunicará prontamente a través de <strong>${email}</strong> o su teléfono <strong>${phone}</strong>.
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                        <span style="background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 20px; text-transform: uppercase;">Borrador Generado</span>
+                                        <span style="font-size: 0.85rem; color: #64748b;">• Destinatario: <strong>${recipient}</strong></span>
+                                    </div>
+                                    <h3 style="margin: 0 0 0.5rem 0; font-family: var(--font-heading); color: #0f172a; font-size: 1.35rem;">¡Borrador de Solicitud Preparado!</h3>
+                                    <p style="margin: 0 0 1rem 0; font-size: 1rem; line-height: 1.6; color: #334155;">
+                                        Estimado(a) <strong>${name}</strong>, se ha redactado el borrador en <strong>Gmail</strong> con todos los detalles técnicos para <strong>${checkedServices.join(', ')}</strong>.
+                                        Por favor revise la ventana abierta de su correo, adjunte cualquier pliego o archivo complementario si lo requiere, y haga clic en <strong>Enviar</strong>.
                                     </p>
-                                    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem;">
-                                        <a href="https://wa.me/584248149651?text=${waText}" target="_blank" rel="noopener noreferrer" class="btn" style="background: #25D366; color: white; border: none; padding: 0.65rem 1.25rem; font-size: 0.9rem; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
-                                            <i class="fab fa-whatsapp" style="font-size: 1.1rem;"></i> Enviar Copia por WhatsApp a Ingeniería
+
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem;">
+                                        <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" class="btn" style="background: #ea4335; color: white; border: none; padding: 0.75rem 1.4rem; font-size: 0.95rem; border-radius: 10px; font-weight: 700; display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none; box-shadow: 0 4px 12px rgba(234, 67, 53, 0.25);">
+                                            <i class="fab fa-google" style="font-size: 1.1rem;"></i> Abrir Borrador en Gmail
                                         </a>
-                                        <button type="button" onclick="this.closest('.alert').remove()" class="btn" style="background: transparent; border: 1px solid #86efac; color: #166534; padding: 0.65rem 1rem; font-size: 0.9rem; border-radius: 8px;">
+
+                                        <a href="${mailtoUrl}" class="btn" style="background: #0f2c59; color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.95rem; border-radius: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none;">
+                                            <i class="fas fa-envelope-open-text" style="font-size: 1rem;"></i> Abrir con Outlook / Mail
+                                        </a>
+
+                                        <a href="https://wa.me/584248149651?text=${waText}" target="_blank" rel="noopener noreferrer" class="btn" style="background: #25D366; color: white; border: none; padding: 0.75rem 1.25rem; font-size: 0.95rem; border-radius: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none;">
+                                            <i class="fab fa-whatsapp" style="font-size: 1.1rem;"></i> Copia por WhatsApp
+                                        </a>
+
+                                        <button type="button" onclick="this.closest('.alert').remove()" class="btn" style="background: transparent; border: 1px solid #cbd5e1; color: #64748b; padding: 0.75rem 1rem; font-size: 0.9rem; border-radius: 10px;">
                                             Cerrar aviso
                                         </button>
                                     </div>

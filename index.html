@@ -9,8 +9,7 @@
         content="PROYECTOS R&F, C.A. (RIF: J-29843884-3). Empresa venezolana especializada en soldadura, detección de utilidades subterráneas, andamios Cup-Lock, pruebas hidrostáticas hasta 15.000 PSI, Holliday detector y mantenimiento en paradas de planta.">
     <link rel="stylesheet" href="./static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -39,6 +38,20 @@
                     </div>
                 </a>
             </div>            
+
+            <!-- Navegación Principal Horizontal en Escritorio -->
+            <nav class="nav-desktop" aria-label="Navegación principal">
+                <ul class="nav-desktop-list">
+                    <li><a href="#inicio" class="nav-desktop-link active">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-desktop-link">Nosotros</a></li>
+                    <li><a href="#servicios" class="nav-desktop-link">Servicios</a></li>
+                    <li><a href="#maquinaria" class="nav-desktop-link">Maquinaria</a></li>
+                    <li><a href="#contratos" class="nav-desktop-link">Contratos</a></li>
+                    <li><a href="#galeria" class="nav-desktop-link">Galería</a></li>
+                    <li><a href="/areas-de-servicio.html" class="nav-desktop-link">Cobertura</a></li>
+                    <li><a href="/faq.html" class="nav-desktop-link">FAQ</a></li>
+                </ul>
+            </nav>
 
             <!-- Acciones del Header: Cotizar directo + Botón Hamburguesa -->
             <div class="header-actions">
@@ -135,7 +148,7 @@
     <!-- Sección 1: Nosotros (Historia y Trayectoria Empresarial) -->
     <section id="nosotros" class="mission-section" style="padding: clamp(5rem, 7vw, 7rem) 0; background: #FFFFFF; border-bottom: 1px solid var(--color-border);">
         <div class="container reveal">
-            <div class="mission-grid" style="align-items: center;">
+            <div class="mission-grid" style="align-items: stretch;">
                 <div class="mission-content">
                     <div class="hafran-eyebrow">
                         <span class="hafran-bullet">■</span>
@@ -164,8 +177,8 @@
                     </div>
                 </div>
                 
-                <div class="mission-image">
-                    <img src="/static/images/rf/ubicacion_galpon.jpg" alt="Ubicación y Galpón Principal PROYECTOS R&F" style="width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: var(--shadow-xl); border: 1px solid var(--color-border); object-fit: cover;">
+                <div class="mission-image" style="height: 100%; display: flex; flex-direction: column;">
+                    <img src="/static/images/rf/ubicacion_galpon.jpg" alt="Ubicación y Galpón Principal PROYECTOS R&F" style="width: 100%; height: 100%; min-height: 580px; object-fit: cover; object-position: center 25%; display: block; border-radius: 16px; box-shadow: var(--shadow-xl); border: 1px solid var(--color-border);">
                 </div>
             </div>
         </div>
@@ -482,7 +495,7 @@
                             </div>
                             <div class="cap-photos-sub">
                                 <img src="/static/images/rf/servicios/mantenimiento_civil_2.webp" alt="Mantenimiento Civil 2">
-                                <img src="/static/images/rf/servicios/mantenimiento_civil_3.webp" alt="Mantenimiento Civil 3">
+                                <img src="/static/images/rf/servicios/mantenimiento_civil_3_hd.jpg" alt="Mantenimiento Civil e Infraestructura Industrial de Alta Presión">
                             </div>
                         </div>
                     </div>
@@ -606,7 +619,7 @@
                 
                 <!-- Categoría 1: Soldadura y Equipos de Fabricación -->
                 <div class="equipment-card equipment-card--soldadura reveal">
-                    <div class="equipment-card-bg" style="background-image: url('/static/images/rf/maquinaria/soldadura_bg.jpg');"></div>
+                    <div class="equipment-card-bg" style="background-image: url('/static/images/rf/maquinaria/soldadura_equipos_lincoln.jpg');"></div>
                     <div class="equipment-card-header">
                         <div class="standard-icon-box quality">
                             <i class="fas fa-fire-burner"></i>
@@ -646,7 +659,7 @@
 
                 <!-- Categoría 2: Pruebas, Instrumentación y Equipos Auxiliares -->
                 <div class="equipment-card equipment-card--pruebas reveal">
-                    <div class="equipment-card-bg" style="background-image: url('/static/images/rf/maquinaria/pruebas_bg.jpg');"></div>
+                    <div class="equipment-card-bg" style="background-image: url('/static/images/rf/maquinaria/compresor_aire_pruebas_hidrostaticas.jpg');"></div>
                     <div class="equipment-card-header">
                         <div class="standard-icon-box safety">
                             <i class="fas fa-gauge-high"></i>
@@ -686,7 +699,7 @@
 
                 <!-- Categoría 3: Apoyo de Campo y Recursos Especializados -->
                 <div class="equipment-card equipment-card--logistica reveal">
-                    <div class="equipment-card-bg" style="background-image: url('/static/images/rf/maquinaria/logistica_bg.jpg');"></div>
+                    <div class="equipment-card-bg" style="background-image: url('/static/images/rf/maquinaria/andamios_cuplock_logistica_campo.jpg');"></div>
                     <div class="equipment-card-header">
                         <div class="standard-icon-box env">
                             <i class="fas fa-cubes-stacked"></i>
@@ -740,172 +753,194 @@
                 <p>Fotografías auténticas de intervenciones ejecutadas por el personal y maquinaria de PROYECTOS R&F, C.A. en refinerías, plantas compresoras y complejos petroquímicos.</p>
             </div>
 
-            <div class="gallery-bento-grid">
+            <div class="gallery-dossier-grid">
                 
-                <!-- Hito 1: Santa Bárbara Flare (Hero Panorámico Amplio) -->
-                <div class="gallery-bento-item gallery-bento-item--hero-wide gallery-bento-item--sb reveal">
-                    <img src="/static/images/rf/proyectos/santa_barbara_flare.webp" alt="Reemplazo de Tip del Flare en Planta Santa Bárbara" class="gallery-bento-img" loading="lazy">
-                    <div class="gallery-bento-overlay">
-                        <div class="gallery-bento-top">
-                            <span class="gallery-bento-tag gallery-bento-tag--green">
-                                <i class="fas fa-fire-flame-simple"></i> Hito Operacional 2016
-                            </span>
-                            <span class="gallery-bento-meta">PDVSA Gas • Planta Santa Bárbara</span>
-                        </div>
-                        <div class="gallery-bento-bottom">
-                            <h3 class="gallery-bento-title">Izamiento y Reemplazo de Tip del Flare</h3>
-                            <p class="gallery-bento-lead">Maniobra crítica de alta precisión para el desmontaje e izamiento del nuevo mechurrio en Tren A, adecuación estructural de soportes y soldaduras especiales en líneas de proceso.</p>
-                            <div class="gallery-bento-chips">
-                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Izamiento en Altura</span>
-                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Soldaduras Especiales</span>
-                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Tuberías Acero Inox</span>
-                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Soportes Torre</span>
+                <!-- Ficha 01: Santa Bárbara Flare -->
+                <div class="gallery-dossier-card reveal">
+                    <div class="gallery-dossier-media">
+                        <img src="/static/images/rf/proyectos/santa_barbara_flare.webp" alt="Reemplazo de Tip del Flare en Planta Santa Bárbara" class="gallery-dossier-img" loading="lazy">
+                    </div>
+                    <div class="gallery-dossier-body">
+                        <div>
+                            <div class="gallery-dossier-meta-row">
+                                <span class="gallery-dossier-num">01 // HITO OPERACIONAL</span>
+                                <span class="gallery-dossier-client">PDVSA Gas • Santa Bárbara</span>
                             </div>
+                            <h3 class="gallery-dossier-title">Izamiento y Reemplazo de Tip del Flare</h3>
+                            <p class="gallery-dossier-text">Maniobra crítica de alta precisión para el desmontaje e izamiento del nuevo mechurrio en Tren A, adecuación estructural de soportes y soldaduras especiales en líneas de proceso.</p>
+                        </div>
+                        <div class="gallery-dossier-chips">
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Izamiento en Altura</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Soldaduras Especiales</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Tuberías Inox</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hito 1 Auxiliar: Santa Bárbara Andamios -->
-                <div class="gallery-bento-item gallery-bento-item--sb reveal">
-                    <img src="/static/images/rf/proyectos/santa_barbara_andamios_1.webp" alt="Montaje de Andamios Cup-Lock a gran altura" class="gallery-bento-img" loading="lazy">
-                    <div class="gallery-bento-overlay">
-                        <div class="gallery-bento-top">
-                            <span class="gallery-bento-tag gallery-bento-tag--green">
-                                <i class="fas fa-cubes-stacked"></i> 1.500 m³ Cuplock
-                            </span>
-                            <span class="gallery-bento-meta">Torre Recuperadora</span>
-                        </div>
-                        <div class="gallery-bento-bottom">
-                            <h3 class="gallery-bento-title">Andamios Modulares a Gran Altura</h3>
-                            <p class="gallery-bento-lead">Montaje, cálculo de carga y armado estructural de 1.500 m³ de andamios multidireccionales para acceso seguro de cuadrillas en altura.</p>
-                            <div class="gallery-bento-chips">
-                                <span class="gallery-bento-chip"><i class="fas fa-shield"></i> Acceso Seguro en Altura</span>
+                <!-- Ficha 02: Santa Bárbara Andamios -->
+                <div class="gallery-dossier-card reveal">
+                    <div class="gallery-dossier-media">
+                        <img src="/static/images/rf/proyectos/santa_barbara_andamios_1.webp" alt="Montaje de Andamios Cup-Lock a gran altura" class="gallery-dossier-img" loading="lazy">
+                    </div>
+                    <div class="gallery-dossier-body">
+                        <div>
+                            <div class="gallery-dossier-meta-row">
+                                <span class="gallery-dossier-num">02 // LOGÍSTICA VERTICAL</span>
+                                <span class="gallery-dossier-client">Torre Recuperadora</span>
                             </div>
+                            <h3 class="gallery-dossier-title">Andamios Modulares a Gran Altura</h3>
+                            <p class="gallery-dossier-text">Montaje, cálculo de carga y armado estructural de 1.500 m³ de andamios multidireccionales para acceso seguro de cuadrillas mecánicas en altura.</p>
+                        </div>
+                        <div class="gallery-dossier-chips">
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> 1.500 m³ Cuplock</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Acceso Seguro</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hito 2 Auxiliar: METOR Mantenimiento Mecánico -->
-                <div class="gallery-bento-item gallery-bento-item--metor reveal">
-                    <img src="/static/images/rf/proyectos/metor_mantenimiento_1.webp" alt="Mantenimiento en Parada de Planta METOR" class="gallery-bento-img" loading="lazy">
-                    <div class="gallery-bento-overlay">
-                        <div class="gallery-bento-top">
-                            <span class="gallery-bento-tag gallery-bento-tag--blue">
-                                <i class="fas fa-wrench"></i> Mecánica Industrial
-                            </span>
-                            <span class="gallery-bento-meta">METOR S.A. • Planta II</span>
-                        </div>
-                        <div class="gallery-bento-bottom">
-                            <h3 class="gallery-bento-title">Intercambiadores y Haz Tubular</h3>
-                            <p class="gallery-bento-lead">Mantenimiento integral de equipos estáticos con herramientas neumáticas y manuales bajo estrictas normas petroquímicas.</p>
-                            <div class="gallery-bento-chips">
-                                <span class="gallery-bento-chip"><i class="fas fa-bolt"></i> Ajuste y Torque Controlado</span>
+                <!-- Ficha 03: METOR Mantenimiento Mecánico -->
+                <div class="gallery-dossier-card reveal">
+                    <div class="gallery-dossier-media">
+                        <img src="/static/images/rf/proyectos/metor_mantenimiento_1.webp" alt="Mantenimiento en Parada de Planta METOR" class="gallery-dossier-img" loading="lazy">
+                    </div>
+                    <div class="gallery-dossier-body">
+                        <div>
+                            <div class="gallery-dossier-meta-row">
+                                <span class="gallery-dossier-num">03 // MECÁNICA INDUSTRIAL</span>
+                                <span class="gallery-dossier-client">METOR S.A. • Planta II</span>
                             </div>
+                            <h3 class="gallery-dossier-title">Intercambiadores y Haz Tubular</h3>
+                            <p class="gallery-dossier-text">Mantenimiento integral de equipos estáticos con herramientas neumáticas y manuales bajo estrictas normas y tolerancias petroquímicas.</p>
+                        </div>
+                        <div class="gallery-dossier-chips">
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Parada de Planta</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Torque Controlado</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hito 2: METOR Izamiento con Pitman (Hero Panorámico Amplio) -->
-                <div class="gallery-bento-item gallery-bento-item--hero-wide gallery-bento-item--metor reveal">
-                    <img src="/static/images/rf/proyectos/metor_izamiento_1.webp" alt="Izamiento con Camión Pitman en METOR" class="gallery-bento-img" loading="lazy">
-                    <div class="gallery-bento-overlay">
-                        <div class="gallery-bento-top">
-                            <span class="gallery-bento-tag gallery-bento-tag--blue">
-                                <i class="fas fa-industry"></i> Hito Operacional 2014
-                            </span>
-                            <span class="gallery-bento-meta">Metanol de Oriente (METOR S.A.)</span>
-                        </div>
-                        <div class="gallery-bento-bottom">
-                            <h3 class="gallery-bento-title">Parada de Planta METOR — Maniobras con Camión Pitman</h3>
-                            <p class="gallery-bento-lead">Soporte técnico y logístico continuo con unidad grúa Pitman 4.5T para izamiento de válvulas pesadas, haz de tubos y asistencia técnica a cuadrillas mecánicas en planta.</p>
-                            <div class="gallery-bento-chips">
-                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Camión Pitman 4.5T</span>
-                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Parada de Planta</span>
-                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Maniobras Pesadas</span>
-                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Herramientas Neumáticas</span>
+                <!-- Ficha 04: METOR Izamiento con Pitman -->
+                <div class="gallery-dossier-card reveal">
+                    <div class="gallery-dossier-media">
+                        <img src="/static/images/rf/proyectos/metor_izamiento_1.webp" alt="Izamiento con Camión Pitman en METOR" class="gallery-dossier-img" loading="lazy">
+                    </div>
+                    <div class="gallery-dossier-body">
+                        <div>
+                            <div class="gallery-dossier-meta-row">
+                                <span class="gallery-dossier-num">04 // MANIOBRAS PESADAS</span>
+                                <span class="gallery-dossier-client">Metanol de Oriente (METOR)</span>
                             </div>
+                            <h3 class="gallery-dossier-title">Parada de Planta — Maniobras con Camión Pitman</h3>
+                            <p class="gallery-dossier-text">Soporte técnico y logístico continuo con unidad grúa Pitman 4.5T para izamiento de válvulas pesadas, haz de tubos y asistencia técnica en planta.</p>
+                        </div>
+                        <div class="gallery-dossier-chips">
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Camión Pitman 4.5T</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Izamiento Seguro</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Servicio: Soldadura de Spools -->
-                <div class="gallery-bento-item reveal">
-                    <img src="/static/images/rf/proyectos/metor_soldadura_1.webp" alt="Soldadura de Tuberías y Spool en METOR" class="gallery-bento-img" loading="lazy">
-                    <div class="gallery-bento-overlay">
-                        <div class="gallery-bento-top">
-                            <span class="gallery-bento-tag gallery-bento-tag--blue">
-                                <i class="fas fa-fire-burner"></i> Calificación ASME
-                            </span>
+                <!-- Ficha 05: Soldadura de Spools -->
+                <div class="gallery-dossier-card reveal">
+                    <div class="gallery-dossier-media">
+                        <img src="/static/images/rf/proyectos/metor_soldadura_1.webp" alt="Soldadura de Tuberías y Spool en METOR" class="gallery-dossier-img" loading="lazy">
+                    </div>
+                    <div class="gallery-dossier-body">
+                        <div>
+                            <div class="gallery-dossier-meta-row">
+                                <span class="gallery-dossier-num">05 // FABRICACIÓN ASME</span>
+                                <span class="gallery-dossier-client">Líneas de Proceso</span>
+                            </div>
+                            <h3 class="gallery-dossier-title">Soldadura de Precisión en Spools</h3>
+                            <p class="gallery-dossier-text">Fabricación, biselado y unión de tuberías de proceso según código ASME Sección IX con soldadores y procedimientos calificados.</p>
                         </div>
-                        <div class="gallery-bento-bottom">
-                            <h3 class="gallery-bento-title">Soldadura de Precisión en Spools</h3>
-                            <p class="gallery-bento-lead">Fabricación, biselado y unión de tuberías de proceso según código ASME Sección IX.</p>
+                        <div class="gallery-dossier-chips">
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> ASME Sección IX</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Piping Industrial</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Servicio: Pruebas Hidrostáticas -->
-                <div class="gallery-bento-item reveal">
-                    <img src="/static/images/rf/servicios/prueba_hidrostatica_1.webp" alt="Pruebas Hidrostáticas y Manifold de Presión" class="gallery-bento-img" loading="lazy">
-                    <div class="gallery-bento-overlay">
-                        <div class="gallery-bento-top">
-                            <span class="gallery-bento-tag gallery-bento-tag--amber">
-                                <i class="fas fa-gauge-high"></i> Hasta 15.000 PSI
-                            </span>
+                <!-- Ficha 06: Pruebas Hidrostáticas -->
+                <div class="gallery-dossier-card reveal">
+                    <div class="gallery-dossier-media">
+                        <img src="/static/images/rf/servicios/prueba_hidrostatica_1.webp" alt="Pruebas Hidrostáticas y Manifold de Presión" class="gallery-dossier-img" loading="lazy">
+                    </div>
+                    <div class="gallery-dossier-body">
+                        <div>
+                            <div class="gallery-dossier-meta-row">
+                                <span class="gallery-dossier-num">06 // CERTIFICACIÓN DE PRESIÓN</span>
+                                <span class="gallery-dossier-client">Hasta 15.000 PSI</span>
+                            </div>
+                            <h3 class="gallery-dossier-title">Pruebas Hidrostáticas Certificadas</h3>
+                            <p class="gallery-dossier-text">Banco de prueba hidráulico con registradores gráficos Barton calibrados, bombas reciprocantes y manifolds de prueba de alta seguridad.</p>
                         </div>
-                        <div class="gallery-bento-bottom">
-                            <h3 class="gallery-bento-title">Pruebas Hidrostáticas Certificadas</h3>
-                            <p class="gallery-bento-lead">Banco de prueba hidráulico con registradores gráficos Barton y manifolds de alta presión.</p>
+                        <div class="gallery-dossier-chips">
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Gráficos Barton</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Alta Presión</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Servicio: Holliday Detector -->
-                <div class="gallery-bento-item reveal">
-                    <img src="/static/images/rf/servicios/holliday_detector_1.webp" alt="Inspección de Revestimiento con Holliday Detector" class="gallery-bento-img" loading="lazy">
-                    <div class="gallery-bento-overlay">
-                        <div class="gallery-bento-top">
-                            <span class="gallery-bento-tag gallery-bento-tag--amber">
-                                <i class="fas fa-bolt"></i> Ensayos NDT
-                            </span>
+                <!-- Ficha 07: Holliday Detector -->
+                <div class="gallery-dossier-card reveal">
+                    <div class="gallery-dossier-media">
+                        <img src="/static/images/rf/servicios/holliday_detector_1.webp" alt="Inspección de Revestimiento con Holliday Detector" class="gallery-dossier-img" loading="lazy">
+                    </div>
+                    <div class="gallery-dossier-body">
+                        <div>
+                            <div class="gallery-dossier-meta-row">
+                                <span class="gallery-dossier-num">07 // ENSAYOS NO DESTRUCTIVOS</span>
+                                <span class="gallery-dossier-client">Detección Dieléctrica</span>
+                            </div>
+                            <h3 class="gallery-dossier-title">Servicio de Holliday Detector</h3>
+                            <p class="gallery-dossier-text">Evaluación de continuidad dieléctrica con alta tensión para detección y reporte de microporosidades en revestimientos de tuberías enterradas.</p>
                         </div>
-                        <div class="gallery-bento-bottom">
-                            <h3 class="gallery-bento-title">Servicio de Holliday Detector</h3>
-                            <p class="gallery-bento-lead">Evaluación de continuidad dieléctrica para detección de microporosidades en tuberías enterradas.</p>
+                        <div class="gallery-dossier-chips">
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Ensayos NDT</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Detección Microporos</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Servicio: Detección Subterránea -->
-                <div class="gallery-bento-item gallery-bento-item--half reveal">
-                    <img src="/static/images/rf/servicios/deteccion_metales_1.webp" alt="Detección de Metales y Tuberías Enterradas" class="gallery-bento-img" loading="lazy">
-                    <div class="gallery-bento-overlay">
-                        <div class="gallery-bento-top">
-                            <span class="gallery-bento-tag gallery-bento-tag--blue">
-                                <i class="fas fa-satellite-dish"></i> Radiodetección
-                            </span>
-                            <span class="gallery-bento-meta">RD-7200</span>
+                <!-- Ficha 08: Detección Subterránea -->
+                <div class="gallery-dossier-card reveal">
+                    <div class="gallery-dossier-media">
+                        <img src="/static/images/rf/servicios/Trabajadores en la pradera bajo nubes brillantes.png" alt="Detección de Metales y Tuberías Enterradas" class="gallery-dossier-img" loading="lazy">
+                    </div>
+                    <div class="gallery-dossier-body">
+                        <div>
+                            <div class="gallery-dossier-meta-row">
+                                <span class="gallery-dossier-num">08 // RADIODETECCIÓN RD-7200</span>
+                                <span class="gallery-dossier-client">Mapeo Subterráneo</span>
+                            </div>
+                            <h3 class="gallery-dossier-title">Localización de Interferencias Subterráneas</h3>
+                            <p class="gallery-dossier-text">Diagnóstico no destructivo y mapeo electromagnético de conductos metálicos, tuberías y cables energizados antes de labores de excavación.</p>
                         </div>
-                        <div class="gallery-bento-bottom">
-                            <h3 class="gallery-bento-title">Localización de Interferencias Subterráneas</h3>
-                            <p class="gallery-bento-lead">Diagnóstico no destructivo y mapeo electromagnético de conductos metálicos y cables con tensión antes de cualquier excavación.</p>
+                        <div class="gallery-dossier-chips">
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> RD-7200 Calibrado</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Cero Daños</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Servicio: Mantenimiento Civil y Pintura -->
-                <div class="gallery-bento-item gallery-bento-item--half reveal">
-                    <img src="/static/images/rf/servicios/mantenimiento_civil_1.webp" alt="Mantenimiento Civil y Pintura Industrial" class="gallery-bento-img" loading="lazy">
-                    <div class="gallery-bento-overlay">
-                        <div class="gallery-bento-top">
-                            <span class="gallery-bento-tag gallery-bento-tag--green">
-                                <i class="fas fa-paint-roller"></i> Obras Civiles
-                            </span>
-                            <span class="gallery-bento-meta">Protección Industrial</span>
+                <!-- Ficha 09: Mantenimiento Civil y Pintura -->
+                <div class="gallery-dossier-card reveal">
+                    <div class="gallery-dossier-media">
+                        <img src="/static/images/rf/servicios/mantenimiento_civil_1.webp" alt="Mantenimiento Civil y Pintura Industrial" class="gallery-dossier-img" loading="lazy">
+                    </div>
+                    <div class="gallery-dossier-body">
+                        <div>
+                            <div class="gallery-dossier-meta-row">
+                                <span class="gallery-dossier-num">09 // INFRAESTRUCTURA & PROTECCIÓN</span>
+                                <span class="gallery-dossier-client">Obras Civiles</span>
+                            </div>
+                            <h3 class="gallery-dossier-title">Mantenimiento Civil y Recubrimientos</h3>
+                            <p class="gallery-dossier-text">Rehabilitación de bases de concreto, diques de contención, caminerías peatonales y protección anticorrosiva epóxica en tanques y estructuras.</p>
                         </div>
-                        <div class="gallery-bento-bottom">
-                            <h3 class="gallery-bento-title">Mantenimiento Civil y Recubrimientos</h3>
-                            <p class="gallery-bento-lead">Rehabilitación de bases de concreto, diques de contención, caminerías peatonales y protección anticorrosiva epóxica en tanques.</p>
+                        <div class="gallery-dossier-chips">
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Diques & Concreto</span>
+                            <span class="gallery-dossier-chip"><i class="fas fa-check"></i> Pintura Epóxica</span>
                         </div>
                     </div>
                 </div>
@@ -914,51 +949,7 @@
         </div>
     </section>
 
-    <!-- Sección Sectores Estratégicos al estilo Hafran: Casos de Éxito y Solvencia Operativa -->
-    <section id="sectores" class="hafran-sectors-section reveal">
-        <div class="container">
-            <div class="hafran-sectors-header">
-                <div class="hafran-eyebrow">
-                    <span class="hafran-bullet">■</span>
-                    <span>SECTORES ESTRATÉGICOS</span>
-                </div>
-                <h2 class="hafran-headline">Casos de Éxito y Solvencia Operativa</h2>
-                <p class="hafran-subhead">Intervenciones técnicas en los sectores más exigentes de la industria energética y manufacturera.</p>
-            </div>
-
-            <div class="hafran-sectors-grid">
-                <div class="sector-card" style="background-image: url('/static/images/rf/proyectos/metor_izamiento_1.webp');">
-                    <div class="sector-overlay"></div>
-                    <div class="sector-content">
-                        <span class="sector-tag">INDUSTRIA</span>
-                        <h3 class="sector-title">Sector Petrolero & Refinación</h3>
-                    </div>
-                </div>
-                <div class="sector-card" style="background-image: url('/static/images/rf/proyectos/metor_mantenimiento_1.webp');">
-                    <div class="sector-overlay"></div>
-                    <div class="sector-content">
-                        <span class="sector-tag">PROCESOS</span>
-                        <h3 class="sector-title">Sector Petroquímico & Gas</h3>
-                    </div>
-                </div>
-                <div class="sector-card" style="background-image: url('/static/images/rf/servicios/trabajos_mecanicos_1.webp');">
-                    <div class="sector-overlay"></div>
-                    <div class="sector-content">
-                        <span class="sector-tag">ESPECIALIDAD</span>
-                        <h3 class="sector-title">Metalmecánica & Piping Especializado</h3>
-                    </div>
-                </div>
-                <div class="sector-card" style="background-image: url('/static/images/rf/servicios/mantenimiento_civil_3.webp');">
-                    <div class="sector-overlay"></div>
-                    <div class="sector-content">
-                        <span class="sector-tag">OBRAS</span>
-                        <h3 class="sector-title">Infraestructura Civil & Mantenimiento</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Historial Oficial de 23 Contratos Ejecutados (Diapositivas 7 y 8) -->
     <section id="contratos" class="contracts-section">
         <div class="container">
@@ -2349,8 +2340,8 @@
         
         <div class="copyright">
             <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-                <p>&copy; 2026 PROYECTOS R&F, C.A. • RIF: J-29843884-3. Todos los derechos reservados.</p>
-                <p style="font-size: 0.8rem; color: #64748b;">Barcelona, Estado Anzoátegui, Venezuela.</p>
+                <p style="color: #000000;">&copy; 2026 PROYECTOS R&F, C.A. • RIF: J-29843884-3. Todos los derechos reservados.</p>
+                <p style="font-size: 0.8rem; color: #000000;">Barcelona, Estado Anzoátegui, Venezuela.</p>
             </div>
         </div>
     </footer>
