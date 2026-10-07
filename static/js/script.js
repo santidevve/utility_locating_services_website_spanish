@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal');
 
     // Auto-calculate stagger delays for child elements in containers
-    const containersWithStagger = document.querySelectorAll('.grid-3, .gallery-grid, .clients-grid, .contracts-grid, .faq-preview-list, .faq-full-list');
+    const containersWithStagger = document.querySelectorAll('.grid-3, .gallery-grid, .gallery-bento-grid, .clients-grid, .contracts-grid, .faq-preview-list, .faq-full-list');
     containersWithStagger.forEach(container => {
         const items = container.querySelectorAll('.reveal');
         items.forEach((item, index) => {

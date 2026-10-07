@@ -1424,68 +1424,305 @@ header .container {
 }
 
 /* ==========================================================================
-   Galería de Proyectos
+   Galería de Proyectos y Maniobras Reales (Arquitectura Espaciosa & Degradados)
    ========================================================================== */
 .gallery-section {
-    padding: clamp(4rem, 7vw, 6rem) 0;
-    background-color: var(--color-surface);
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.gallery-item {
+    padding: clamp(6rem, 10vw, 9.5rem) 0;
+    background: #F8FAFC;
     position: relative;
-    border-radius: var(--radius-lg);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
-    background-color: var(--color-dark);
-    aspect-ratio: 4 / 3;
-    cursor: pointer;
 }
 
-.gallery-item img {
+.gallery-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    background: radial-gradient(ellipse at 50% 15%, rgba(37, 99, 235, 0.05) 0%, rgba(16, 185, 129, 0.03) 45%, transparent 75%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.gallery-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(1.25rem, 2vw, 1.85rem);
+    position: relative;
+    z-index: 1;
+}
+
+/* Base de cada item fotográfico espacioso */
+.gallery-bento-item {
+    position: relative;
+    grid-column: span 4;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #0A1120;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    box-shadow: 0 10px 30px -8px rgba(15, 44, 89, 0.08);
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease;
+}
+
+/* Modificadores de distribución espaciosa */
+.gallery-bento-item--hero-wide {
+    grid-column: span 8;
+    height: 440px;
+}
+
+.gallery-bento-item--half {
+    grid-column: span 6;
+    height: 390px;
+}
+
+/* Imagen con zoom y revelación cinematográfica */
+.gallery-bento-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-smooth), opacity var(--transition-normal);
+    display: block;
+    filter: brightness(0.92) contrast(1.05);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.5s ease;
 }
 
-.gallery-overlay {
+.gallery-bento-item:hover .gallery-bento-img {
+    transform: scale(1.06);
+    filter: brightness(0.98) contrast(1.08);
+}
+
+/* Capa de Degradado Cinemático Profundo (Gradiente Suave 5-Stops) */
+.gallery-bento-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(12, 26, 39, 0.88) 0%, rgba(12, 26, 39, 0.15) 60%, transparent 100%);
     display: flex;
-    align-items: flex-end;
-    padding: 1.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(1.4rem, 2.2vw, 2.2rem);
+    background: linear-gradient(
+        180deg,
+        rgba(10, 17, 32, 0.15) 0%,
+        rgba(10, 17, 32, 0.05) 25%,
+        rgba(10, 17, 32, 0.55) 60%,
+        rgba(10, 17, 32, 0.88) 85%,
+        rgba(10, 17, 32, 0.97) 100%
+    );
+    transition: background 0.45s ease;
+    z-index: 2;
+}
+
+.gallery-bento-item:hover .gallery-bento-overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(10, 17, 32, 0.25) 0%,
+        rgba(10, 17, 32, 0.10) 22%,
+        rgba(10, 17, 32, 0.60) 55%,
+        rgba(10, 17, 32, 0.92) 80%,
+        rgba(10, 17, 32, 0.99) 100%
+    );
+}
+
+/* Resplandor sutil perimetral al hover */
+.gallery-bento-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
     opacity: 0;
-    transition: opacity var(--transition-normal);
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 3;
 }
 
-.gallery-overlay span {
-    color: #ffffff;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 1rem;
-    transform: translateY(10px);
-    transition: transform var(--transition-normal);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-
-.gallery-item:hover .gallery-overlay {
+.gallery-bento-item--metor:hover::after {
+    box-shadow: inset 0 0 0 2px rgba(56, 189, 248, 0.6), 0 0 30px rgba(37, 99, 235, 0.2);
     opacity: 1;
 }
 
-.gallery-item:hover .gallery-overlay span {
-    transform: translateY(0);
+.gallery-bento-item--sb:hover::after {
+    box-shadow: inset 0 0 0 2px rgba(52, 211, 153, 0.6), 0 0 30px rgba(16, 185, 129, 0.2);
+    opacity: 1;
+}
+
+.gallery-bento-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px -12px rgba(15, 44, 89, 0.22);
+}
+
+/* Cabecera flotante con pastilla de vidrio esmerilado */
+.gallery-bento-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 4;
+}
+
+.gallery-bento-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.gallery-bento-tag--green {
+    border-color: rgba(52, 211, 153, 0.4);
+    color: #A7F3D0;
+}
+
+.gallery-bento-tag--blue {
+    border-color: rgba(96, 165, 250, 0.4);
+    color: #BAE6FD;
+}
+
+.gallery-bento-tag--amber {
+    border-color: rgba(251, 191, 36, 0.4);
+    color: #FDE68A;
+}
+
+.gallery-bento-meta {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Pie de información integrado en el degradado */
+.gallery-bento-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    position: relative;
+    z-index: 4;
+}
+
+.gallery-bento-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+.gallery-bento-item:hover .gallery-bento-title {
+    color: #38BDF8;
+}
+
+.gallery-bento-item--sb:hover .gallery-bento-title {
+    color: #34D399;
+}
+
+.gallery-bento-lead {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: rgba(226, 232, 240, 0.9);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.gallery-bento-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.4rem;
+}
+
+.gallery-bento-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #F1F5F9;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.gallery-bento-chip i {
+    font-size: 0.65rem;
+    color: #38BDF8;
+}
+
+.gallery-bento-item--sb .gallery-bento-chip i {
+    color: #34D399;
+}
+
+/* Responsividad Espaciosa */
+@media (max-width: 1080px) {
+    .gallery-bento-item {
+        grid-column: span 6;
+        height: 390px;
+    }
+
+    .gallery-bento-item--hero-wide {
+        grid-column: span 12;
+        height: 420px;
+    }
+
+    .gallery-bento-item--half {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 680px) {
+    .gallery-bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .gallery-bento-item,
+    .gallery-bento-item--hero-wide,
+    .gallery-bento-item--half {
+        grid-column: span 1;
+        height: 350px;
+        border-radius: 16px;
+    }
+
+    .gallery-bento-overlay {
+        padding: 1.25rem;
+    }
+
+    .gallery-bento-title {
+        font-size: 1.15rem;
+    }
 }
 
 /* ==========================================================================
@@ -4162,24 +4399,24 @@ footer .container {
 }
 
 /* Atmospheric Dynamic Backdrop */
-/* Atmospheric Dynamic Backdrop */
 .services-backdrop-canvas {
     position: absolute;
     top: 0;
     right: 0;
-    width: 65%; /* 👈 Abarca más de la mitad (60% a 65%) */
+    width: 100%;
     height: 100%;
     pointer-events: none;
     z-index: 1;
     background-size: cover;
-    background-position: center;
+    background-position: calc(100% + 220px) center;
     background-repeat: no-repeat;
-    opacity: 0.85;
-    /* Difuminado suave desde transparente hasta 100% visible */
-    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 1) 70%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 1) 50%);
+    opacity: 0.9;
+    /* Protege todo el bloque de texto izquierdo y revela gradualmente la imagen hacia la derecha */
+    mask-image: linear-gradient(to right, transparent 0%, transparent 55%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 1) 90%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 55%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 1) 90%);
     transition: background-image 0.5s ease-in-out;
 }
+
 
 
 .services-editorial-head {
@@ -4381,8 +4618,12 @@ footer .container {
 .capabilities-tab-content {
     background: #FFFFFF;
     border: 1px solid var(--color-border);
-    border-radius: 20px;
-    padding: 3rem;
+    border-radius: 24px;
+    padding: 4.5rem 4rem; /* 👈 Aumentado de 3rem a 4.5rem vertical */
+    min-height: 680px; /* 👈 Altura mínima generosa */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     box-shadow: var(--shadow-lg);
 }
 
@@ -4399,10 +4640,11 @@ footer .container {
 
 .cap-pane-grid {
     display: grid;
-    grid-template-columns: 1.15fr 1fr;
+    grid-template-columns: 0.9fr 1.3fr; /* 👈 Más ancho dedicado a las fotos */
     gap: 3.5rem;
     align-items: center;
 }
+
 
 .cap-category-tag {
     display: inline-flex;
@@ -4482,11 +4724,13 @@ footer .container {
 
 .cap-photo-main img {
     width: 100%;
-    height: 310px;
+    height: 480px;
     object-fit: cover;
-    border-radius: 14px;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease;
+    border-radius: 18px;
+    border: 1px solid rgba(226, 232, 240, 0.9); /* Borde sutil que enmarca la foto */
+    box-shadow: 0 16px 36px -8px rgba(15, 44, 89, 0.16); /* Sombra profunda que la despega del fondo */
+    filter: contrast(1.04) brightness(1.02); /* Colores más vivos y nítidos */
+    transition: all 0.35s ease;
 }
 
 .cap-photos-sub {
@@ -4497,15 +4741,18 @@ footer .container {
 
 .cap-photos-sub img {
     width: 100%;
-    height: 145px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease;
+    border-radius: 14px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 8px 24px -4px rgba(15, 44, 89, 0.1);
+    filter: contrast(1.04) brightness(1.02);
+    transition: all 0.35s ease;
 }
 
 .cap-gallery-side img:hover {
-    transform: scale(1.02);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px -6px rgba(15, 44, 89, 0.22);
 }
 
 @media (max-width: 992px) {
@@ -5511,7 +5758,7 @@ footer .container {
 .contracts-section,
 .clients-seamless-section,
 .faq-section {
-    padding: var(--space-section) 0 !important;
+    padding: clamp(6rem, 10vw, 9.5rem) 0; /* 👈 Aumenta el alto total de la sección */
 }
 
 .section-header {
@@ -5737,69 +5984,284 @@ footer .container {
     gap: 0.4rem;
 }
 
-/* 5. Pastillas Técnicas de Maquinaria (Minimalistas) */
-.equipment-minimal-grid {
+/* 5. Inventario de Maquinaria y Equipos (Arquitectura Técnica de Alta Precisión) */
+.equipment-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    align-items: stretch;
 }
 
-.equipment-minimal-card {
+.equipment-card {
     background: #FFFFFF;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1.5rem 1.75rem;
+    border-radius: 16px;
+    padding: 1.75rem clamp(1.2rem, 1.8vw, 1.65rem);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 20px -2px rgba(15, 44, 89, 0.05), 0 2px 6px -1px rgba(15, 44, 89, 0.03);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s ease;
+    overflow: hidden;
+}
+
+/* Capa de imagen de fondo técnica y atmosférica */
+.equipment-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0.08) 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0.08) 85%, transparent 100%);
+    transition: opacity 0.45s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.equipment-card:hover .equipment-card-bg {
+    opacity: 0.28;
+    transform: scale(1.06);
+    filter: saturate(1.2);
+}
+
+/* Barra superior distintiva por categoría */
+.equipment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0.9;
+    z-index: 3;
+    transition: height 0.25s ease, opacity 0.25s ease;
+}
+
+.equipment-card--soldadura::before {
+    background: linear-gradient(90deg, #2563EB, #38BDF8);
+}
+
+.equipment-card--pruebas::before {
+    background: linear-gradient(90deg, #DC2626, #F97316);
+}
+
+.equipment-card--logistica::before {
+    background: linear-gradient(90deg, #059669, #10B981);
+}
+
+.equipment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px -6px rgba(15, 44, 89, 0.1), 0 6px 12px -2px rgba(15, 44, 89, 0.04);
+    border-color: #CBD5E1;
+}
+
+.equipment-card:hover::before {
+    height: 5px;
+    opacity: 1;
+}
+
+/* Encabezado de la tarjeta con alineación consistente */
+.equipment-card-header {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-fast);
+    gap: 0.9rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.15rem;
+    border-bottom: 1px solid #EDF2F7;
+    min-height: 72px; /* Mantiene la misma línea base para los encabezados */
+    position: relative;
+    z-index: 2;
 }
 
-.equipment-minimal-card:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.equipment-minimal-icon {
+.equipment-card-header .standard-icon-box {
+    margin-bottom: 0;
+    flex-shrink: 0;
     width: 48px;
     height: 48px;
-    border-radius: 10px;
-    background: var(--color-primary-light);
-    color: var(--color-primary);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
+    font-size: 1.25rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.equipment-minimal-info h4 {
-    font-size: 1.05rem;
+.equipment-card:hover .standard-icon-box {
+    transform: scale(1.08);
+}
+
+.equipment-card-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
+
+.equipment-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
     font-weight: 700;
-    color: var(--color-dark);
-    margin: 0 0 0.25rem;
+    color: var(--color-primary);
+    margin: 0;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
 }
 
-.equipment-minimal-tag {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--color-accent);
+.equipment-card-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    display: block;
+    color: var(--color-text-light);
+    line-height: 1.2;
 }
 
-@media (max-width: 1024px) {
-    .equipment-minimal-grid {
-        grid-template-columns: repeat(2, 1fr);
+/* Lista de equipos */
+.equipment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.equipment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-bottom: 1px solid rgba(241, 245, 249, 0.9);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.equipment-item:last-child {
+    border-bottom: none;
+}
+
+.equipment-item:hover {
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 8px rgba(15, 44, 89, 0.05);
+}
+
+.equipment-item-name {
+    font-size: 0.915rem;
+    color: var(--color-dark);
+    font-weight: 500;
+    line-height: 1.35;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    padding-left: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.equipment-item-name::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #94A3B8;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.equipment-item:hover .equipment-item-name {
+    color: var(--color-primary);
+}
+
+.equipment-item:hover .equipment-item-name::before {
+    background-color: var(--color-accent);
+    transform: scale(1.35);
+}
+
+/* Pastillas numéricas: Impide quiebres de línea no deseados */
+.equipment-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    font-size: 0.785rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-body);
+    transition: all 0.2s ease;
+}
+
+.equipment-badge--blue {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    border: 1px solid rgba(37, 99, 235, 0.16);
+}
+
+.equipment-badge--red {
+    background: #FEF2F2;
+    color: #DC2626;
+    border: 1px solid rgba(220, 38, 38, 0.16);
+}
+
+.equipment-badge--green {
+    background: #ECFDF5;
+    color: #047857;
+    border: 1px solid rgba(4, 120, 87, 0.16);
+}
+
+.equipment-item:hover .equipment-badge--blue {
+    background: #DBEAFE;
+}
+
+.equipment-item:hover .equipment-badge--red {
+    background: #FEE2E2;
+}
+
+.equipment-item:hover .equipment-badge--green {
+    background: #D1FAE5;
+}
+
+/* Breakpoints responsivos */
+@media (max-width: 1040px) {
+    .equipment-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
     }
 }
 
-@media (max-width: 640px) {
-    .equipment-minimal-grid {
+@media (max-width: 680px) {
+    .equipment-grid {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .equipment-card {
+        padding: 1.35rem 1.15rem;
+    }
+
+    .equipment-card-header {
+        min-height: auto;
+    }
+
+    .equipment-item {
+        padding: 0.6rem 0.4rem;
     }
 }
 

@@ -602,121 +602,124 @@
                 <p>Activos propios para soldadura calificada, pruebas de alta presión, ensayos no destructivos y logística autónoma en campo.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 2rem;">
+            <div class="equipment-grid">
                 
                 <!-- Categoría 1: Soldadura y Equipos de Fabricación -->
-                <div class="reveal" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-surface-muted); padding-bottom: 1rem;">
-                        <div class="standard-icon-box quality" style="margin-bottom: 0; width: 48px; height: 48px; font-size: 1.25rem;">
+                <div class="equipment-card equipment-card--soldadura reveal">
+                    <div class="equipment-card-bg" style="background-image: url('/static/images/rf/maquinaria/soldadura_bg.jpg');"></div>
+                    <div class="equipment-card-header">
+                        <div class="standard-icon-box quality">
                             <i class="fas fa-fire-burner"></i>
                         </div>
-                        <div>
-                            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin: 0;">Soldadura y Fabricación</h3>
-                            <span style="font-size: 0.8rem; color: var(--color-text-muted); font-weight: 600;">ALTA PRODUCTIVIDAD ASME / API</span>
+                        <div class="equipment-card-header-info">
+                            <h3 class="equipment-card-title">Soldadura y Fabricación</h3>
+                            <span class="equipment-card-eyebrow">ALTA PRODUCTIVIDAD ASME / API</span>
                         </div>
                     </div>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem; flex: 1;">
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Soldadora Lincoln SAE-450</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                    <ul class="equipment-list">
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Soldadora Lincoln SAE-450</span>
+                            <span class="equipment-badge equipment-badge--blue">1 Unid.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Soldadora Lincoln SAE-400</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Soldadora Lincoln SAE-400</span>
+                            <span class="equipment-badge equipment-badge--blue">1 Unid.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Soldadora Lincoln SAE-250</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Soldadora Lincoln SAE-250</span>
+                            <span class="equipment-badge equipment-badge--blue">1 Unid.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Cajas de Soldador Equipadas</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">4 Unids.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Cajas de Soldador Equipadas</span>
+                            <span class="equipment-badge equipment-badge--blue">4 Unids.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Cajas de Fabricador Equipadas</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">3 Unids.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Cajas de Fabricador Equipadas</span>
+                            <span class="equipment-badge equipment-badge--blue">3 Unids.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem;">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Equipos de Soldadura con Argón</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">2 Unids.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Equipos de Soldadura con Argón</span>
+                            <span class="equipment-badge equipment-badge--blue">2 Unids.</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Categoría 2: Pruebas, Instrumentación y Equipos Auxiliares -->
-                <div class="reveal" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-surface-muted); padding-bottom: 1rem;">
-                        <div class="standard-icon-box safety" style="margin-bottom: 0; width: 48px; height: 48px; font-size: 1.25rem;">
+                <div class="equipment-card equipment-card--pruebas reveal">
+                    <div class="equipment-card-bg" style="background-image: url('/static/images/rf/maquinaria/pruebas_bg.jpg');"></div>
+                    <div class="equipment-card-header">
+                        <div class="standard-icon-box safety">
                             <i class="fas fa-gauge-high"></i>
                         </div>
-                        <div>
-                            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin: 0;">Pruebas e Instrumentación</h3>
-                            <span style="font-size: 0.8rem; color: var(--color-text-muted); font-weight: 600;">CERTIFICACIÓN HASTA 15.000 PSI</span>
+                        <div class="equipment-card-header-info">
+                            <h3 class="equipment-card-title">Pruebas e Instrumentación</h3>
+                            <span class="equipment-card-eyebrow">CERTIFICACIÓN HASTA 15.000 PSI</span>
                         </div>
                     </div>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem; flex: 1;">
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Compresor de Aire 185 CFM</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                    <ul class="equipment-list">
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Compresor de Aire 185 CFM</span>
+                            <span class="equipment-badge equipment-badge--red">1 Unid.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Registrador de Presión Calibrado</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Registrador de Presión Calibrado</span>
+                            <span class="equipment-badge equipment-badge--red">1 Unid.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Registrador de Temperatura Calibrado</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Registrador de Temperatura Calibrado</span>
+                            <span class="equipment-badge equipment-badge--red">1 Unid.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Bomba Prueba Hidrostática 15.000 PSI</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Bomba Prueba Hidrostática 15.000 PSI</span>
+                            <span class="equipment-badge equipment-badge--red">1 Unid.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Bomba Prueba Hidrostática 3.500 PSI</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Bomba Prueba Hidrostática 3.500 PSI</span>
+                            <span class="equipment-badge equipment-badge--red">1 Unid.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem;">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Bomba Prueba Hidrostática 850 PSI</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Bomba Prueba Hidrostática 850 PSI</span>
+                            <span class="equipment-badge equipment-badge--red">1 Unid.</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Categoría 3: Apoyo de Campo y Recursos Especializados -->
-                <div class="reveal" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;">
-                    <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-surface-muted); padding-bottom: 1rem;">
-                        <div class="standard-icon-box env" style="margin-bottom: 0; width: 48px; height: 48px; font-size: 1.25rem;">
+                <div class="equipment-card equipment-card--logistica reveal">
+                    <div class="equipment-card-bg" style="background-image: url('/static/images/rf/maquinaria/logistica_bg.jpg');"></div>
+                    <div class="equipment-card-header">
+                        <div class="standard-icon-box env">
                             <i class="fas fa-cubes-stacked"></i>
                         </div>
-                        <div>
-                            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin: 0;">Apoyo de Campo & Logística</h3>
-                            <span style="font-size: 0.8rem; color: var(--color-text-muted); font-weight: 600;">LOGÍSTICA AUTÓNOMA Y EN ALTURA</span>
+                        <div class="equipment-card-header-info">
+                            <h3 class="equipment-card-title">Apoyo de Campo & Logística</h3>
+                            <span class="equipment-card-eyebrow">LOGÍSTICA AUTÓNOMA Y EN ALTURA</span>
                         </div>
                     </div>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.85rem; flex: 1;">
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Trailers de Oficina Climatizados</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">2 Unids.</span>
+                    <ul class="equipment-list">
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Trailers de Oficina Climatizados</span>
+                            <span class="equipment-badge equipment-badge--green">2 Unids.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Contenedores de Herramientas (Pañol)</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">2 Unids.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Contenedores de Herramientas (Pañol)</span>
+                            <span class="equipment-badge equipment-badge--green">2 Unids.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Módulos de Comedor / Vestuarios</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">2 Unids.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Módulos de Comedor / Vestuarios</span>
+                            <span class="equipment-badge equipment-badge--green">2 Unids.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Andamios Modulares Cuplock</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1.500 m³</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Andamios Modulares Cuplock</span>
+                            <span class="equipment-badge equipment-badge--green">1.500 m³</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--color-border);">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Localizador Subterráneo RD-7200</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Localizador Subterráneo RD-7200</span>
+                            <span class="equipment-badge equipment-badge--green">1 Unid.</span>
                         </li>
-                        <li style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem;">
-                            <span style="font-size: 0.95rem; color: var(--color-dark); font-weight: 500;">Polipasto Manual Cadena Cap. 5 Ton</span>
-                            <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px;">1 Unid.</span>
+                        <li class="equipment-item">
+                            <span class="equipment-item-name">Polipasto Manual Cadena Cap. 5 Ton</span>
+                            <span class="equipment-badge equipment-badge--green">1 Unid.</span>
                         </li>
                     </ul>
                 </div>
@@ -726,126 +729,184 @@
     </section>
 
     <!-- Galería Real de Proyectos en Campo (Diapositivas 18 a 26) -->
-    <section id="galeria" class="gallery-section" style="padding: 5rem 0; background: var(--color-bg);">
+    <section id="galeria" class="gallery-section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag"><i class="fas fa-camera"></i> Evidencia Técnica en Campo</span>
+            <div class="section-header reveal text-center">
+                <div class="hafran-eyebrow">
+                    <span class="hafran-bullet">■</span>
+                    <span>EVIDENCIA TÉCNICA EN CAMPO</span>
+                </div>
                 <h2>Proyectos y Maniobras Reales</h2>
                 <p>Fotografías auténticas de intervenciones ejecutadas por el personal y maquinaria de PROYECTOS R&F, C.A. en refinerías, plantas compresoras y complejos petroquímicos.</p>
             </div>
 
-            <!-- Hitos Principales de Paradas de Planta (Diapositivas 6 y 9) -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
-                <!-- Hito 1: Parada Metanol Oriente 2014 -->
-                <div class="reveal" style="background: var(--color-surface); border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.05em;"><i class="fas fa-industry"></i> Hito Operacional</span>
-                        <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.8rem; padding: 0.2rem 0.5rem; border-radius: 4px;">Año 2014</span>
-                    </div>
-                    <h3 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.5rem;">Parada de Planta Metanol Oriente (METOR)</h3>
-                    <p style="font-size: 0.92rem; line-height: 1.6; color: var(--color-text-main); margin: 0;">
-                        Participación en actividades de mantenimiento durante parada de planta, ejecutando trabajos mecánicos y reparaciones mediante herramientas manuales y neumáticas, bajo las condiciones operacionales y de seguridad propias de una instalación industrial.
-                    </p>
-                </div>
-
-                <!-- Hito 2: Parada Santa Bárbara 2016 -->
-                <div class="reveal" style="background: var(--color-surface); border: 1px solid var(--color-border); border-left: 4px solid var(--color-safety-green); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow-sm);">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-safety-green); text-transform: uppercase; letter-spacing: 0.05em;"><i class="fas fa-fire-flame-simple"></i> Hito Operacional</span>
-                        <span style="background: var(--color-primary-subtle); color: var(--color-primary); font-weight: 700; font-size: 0.8rem; padding: 0.2rem 0.5rem; border-radius: 4px;">Año 2016</span>
-                    </div>
-                    <h3 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.5rem;">Parada de Planta Santa Bárbara (PDVSA Gas)</h3>
-                    <p style="font-size: 0.92rem; line-height: 1.6; color: var(--color-text-main); margin-bottom: 0.5rem;">
-                        Participación en actividades especializadas durante la Parada de Planta Santa Bárbara, ejecutando trabajos de soldadura y soporte industrial, incluyendo:
-                    </p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-                        <span style="font-size: 0.8rem; background: var(--color-surface-muted); color: var(--color-dark); padding: 0.2rem 0.5rem; border-radius: 4px;"><i class="fas fa-check" style="color: var(--color-safety-green); margin-right: 4px;"></i> Soldaduras especiales</span>
-                        <span style="font-size: 0.8rem; background: var(--color-surface-muted); color: var(--color-dark); padding: 0.2rem 0.5rem; border-radius: 4px;"><i class="fas fa-check" style="color: var(--color-safety-green); margin-right: 4px;"></i> Reparación soportes torre</span>
-                        <span style="font-size: 0.8rem; background: var(--color-surface-muted); color: var(--color-dark); padding: 0.2rem 0.5rem; border-radius: 4px;"><i class="fas fa-check" style="color: var(--color-safety-green); margin-right: 4px;"></i> Reparación Flare (mechurrio)</span>
-                        <span style="font-size: 0.8rem; background: var(--color-surface-muted); color: var(--color-dark); padding: 0.2rem 0.5rem; border-radius: 4px;"><i class="fas fa-check" style="color: var(--color-safety-green); margin-right: 4px;"></i> Tuberías acero inoxidable</span>
-                        <span style="font-size: 0.8rem; background: var(--color-surface-muted); color: var(--color-dark); padding: 0.2rem 0.5rem; border-radius: 4px;"><i class="fas fa-check" style="color: var(--color-safety-green); margin-right: 4px;"></i> Suministro de andamios</span>
-                    </div>
-                </div>
-            </div>
+            <div class="gallery-bento-grid">
                 
-                <!-- Foto 1: Santa Bárbara Flare -->
-                <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="/static/images/rf/proyectos/santa_barbara_flare.webp" alt="Reemplazo de Tip del Flare en Planta Santa Bárbara" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
-                        <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Izamiento de Tip del Flare</span>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Parada Tren A - Planta Santa Bárbara (PDVSA Gas)</p>
+                <!-- Hito 1: Santa Bárbara Flare (Hero Panorámico Amplio) -->
+                <div class="gallery-bento-item gallery-bento-item--hero-wide gallery-bento-item--sb reveal">
+                    <img src="/static/images/rf/proyectos/santa_barbara_flare.webp" alt="Reemplazo de Tip del Flare en Planta Santa Bárbara" class="gallery-bento-img" loading="lazy">
+                    <div class="gallery-bento-overlay">
+                        <div class="gallery-bento-top">
+                            <span class="gallery-bento-tag gallery-bento-tag--green">
+                                <i class="fas fa-fire-flame-simple"></i> Hito Operacional 2016
+                            </span>
+                            <span class="gallery-bento-meta">PDVSA Gas • Planta Santa Bárbara</span>
+                        </div>
+                        <div class="gallery-bento-bottom">
+                            <h3 class="gallery-bento-title">Izamiento y Reemplazo de Tip del Flare</h3>
+                            <p class="gallery-bento-lead">Maniobra crítica de alta precisión para el desmontaje e izamiento del nuevo mechurrio en Tren A, adecuación estructural de soportes y soldaduras especiales en líneas de proceso.</p>
+                            <div class="gallery-bento-chips">
+                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Izamiento en Altura</span>
+                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Soldaduras Especiales</span>
+                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Tuberías Acero Inox</span>
+                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Soportes Torre</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Foto 2: Santa Bárbara Andamios -->
-                <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="/static/images/rf/proyectos/santa_barbara_andamios_1.webp" alt="Montaje de Andamios Cup-Lock a gran altura" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
-                        <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Andamios Cup-Lock a Gran Altura</span>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Montaje de 1.500 m³ en Torre Recuperadora</p>
+                <!-- Hito 1 Auxiliar: Santa Bárbara Andamios -->
+                <div class="gallery-bento-item gallery-bento-item--sb reveal">
+                    <img src="/static/images/rf/proyectos/santa_barbara_andamios_1.webp" alt="Montaje de Andamios Cup-Lock a gran altura" class="gallery-bento-img" loading="lazy">
+                    <div class="gallery-bento-overlay">
+                        <div class="gallery-bento-top">
+                            <span class="gallery-bento-tag gallery-bento-tag--green">
+                                <i class="fas fa-cubes-stacked"></i> 1.500 m³ Cuplock
+                            </span>
+                            <span class="gallery-bento-meta">Torre Recuperadora</span>
+                        </div>
+                        <div class="gallery-bento-bottom">
+                            <h3 class="gallery-bento-title">Andamios Modulares a Gran Altura</h3>
+                            <p class="gallery-bento-lead">Montaje, cálculo de carga y armado estructural de 1.500 m³ de andamios multidireccionales para acceso seguro de cuadrillas en altura.</p>
+                            <div class="gallery-bento-chips">
+                                <span class="gallery-bento-chip"><i class="fas fa-shield"></i> Acceso Seguro en Altura</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Foto 3: METOR Mantenimiento Mecánico -->
-                <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="/static/images/rf/proyectos/metor_mantenimiento_1.webp" alt="Mantenimiento en Parada de Planta METOR" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
-                        <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Mantenimiento Mecánico - METOR S.A.</span>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Intercambiadores y Haz Tubular en Planta II</p>
+                <!-- Hito 2 Auxiliar: METOR Mantenimiento Mecánico -->
+                <div class="gallery-bento-item gallery-bento-item--metor reveal">
+                    <img src="/static/images/rf/proyectos/metor_mantenimiento_1.webp" alt="Mantenimiento en Parada de Planta METOR" class="gallery-bento-img" loading="lazy">
+                    <div class="gallery-bento-overlay">
+                        <div class="gallery-bento-top">
+                            <span class="gallery-bento-tag gallery-bento-tag--blue">
+                                <i class="fas fa-wrench"></i> Mecánica Industrial
+                            </span>
+                            <span class="gallery-bento-meta">METOR S.A. • Planta II</span>
+                        </div>
+                        <div class="gallery-bento-bottom">
+                            <h3 class="gallery-bento-title">Intercambiadores y Haz Tubular</h3>
+                            <p class="gallery-bento-lead">Mantenimiento integral de equipos estáticos con herramientas neumáticas y manuales bajo estrictas normas petroquímicas.</p>
+                            <div class="gallery-bento-chips">
+                                <span class="gallery-bento-chip"><i class="fas fa-bolt"></i> Ajuste y Torque Controlado</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Foto 4: METOR Soldadura Spool -->
-                <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="/static/images/rf/proyectos/metor_soldadura_1.webp" alt="Soldadura de Tuberías y Spool en METOR" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
-                        <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Soldadura de Precisión en Tuberías</span>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Fabricación y reemplazo de spools en parada</p>
+                <!-- Hito 2: METOR Izamiento con Pitman (Hero Panorámico Amplio) -->
+                <div class="gallery-bento-item gallery-bento-item--hero-wide gallery-bento-item--metor reveal">
+                    <img src="/static/images/rf/proyectos/metor_izamiento_1.webp" alt="Izamiento con Camión Pitman en METOR" class="gallery-bento-img" loading="lazy">
+                    <div class="gallery-bento-overlay">
+                        <div class="gallery-bento-top">
+                            <span class="gallery-bento-tag gallery-bento-tag--blue">
+                                <i class="fas fa-industry"></i> Hito Operacional 2014
+                            </span>
+                            <span class="gallery-bento-meta">Metanol de Oriente (METOR S.A.)</span>
+                        </div>
+                        <div class="gallery-bento-bottom">
+                            <h3 class="gallery-bento-title">Parada de Planta METOR — Maniobras con Camión Pitman</h3>
+                            <p class="gallery-bento-lead">Soporte técnico y logístico continuo con unidad grúa Pitman 4.5T para izamiento de válvulas pesadas, haz de tubos y asistencia técnica a cuadrillas mecánicas en planta.</p>
+                            <div class="gallery-bento-chips">
+                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Camión Pitman 4.5T</span>
+                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Parada de Planta</span>
+                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Maniobras Pesadas</span>
+                                <span class="gallery-bento-chip"><i class="fas fa-check"></i> Herramientas Neumáticas</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Foto 5: METOR Izamiento con Pitman -->
-                <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="/static/images/rf/proyectos/metor_izamiento_1.webp" alt="Izamiento con Camión Pitman" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
-                        <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Maniobras de Izamiento Industrial</span>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Operación con Camión Pitman 4.5T en planta</p>
+                <!-- Servicio: Soldadura de Spools -->
+                <div class="gallery-bento-item reveal">
+                    <img src="/static/images/rf/proyectos/metor_soldadura_1.webp" alt="Soldadura de Tuberías y Spool en METOR" class="gallery-bento-img" loading="lazy">
+                    <div class="gallery-bento-overlay">
+                        <div class="gallery-bento-top">
+                            <span class="gallery-bento-tag gallery-bento-tag--blue">
+                                <i class="fas fa-fire-burner"></i> Calificación ASME
+                            </span>
+                        </div>
+                        <div class="gallery-bento-bottom">
+                            <h3 class="gallery-bento-title">Soldadura de Precisión en Spools</h3>
+                            <p class="gallery-bento-lead">Fabricación, biselado y unión de tuberías de proceso según código ASME Sección IX.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Foto 6: Servicio Holliday Detector -->
-                <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="/static/images/rf/servicios/holliday_detector_1.webp" alt="Inspección de Revestimiento con Holliday Detector" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
-                        <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Servicio de Holliday Detector</span>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Inspección dieléctrica de revestimiento en tuberías</p>
+                <!-- Servicio: Pruebas Hidrostáticas -->
+                <div class="gallery-bento-item reveal">
+                    <img src="/static/images/rf/servicios/prueba_hidrostatica_1.webp" alt="Pruebas Hidrostáticas y Manifold de Presión" class="gallery-bento-img" loading="lazy">
+                    <div class="gallery-bento-overlay">
+                        <div class="gallery-bento-top">
+                            <span class="gallery-bento-tag gallery-bento-tag--amber">
+                                <i class="fas fa-gauge-high"></i> Hasta 15.000 PSI
+                            </span>
+                        </div>
+                        <div class="gallery-bento-bottom">
+                            <h3 class="gallery-bento-title">Pruebas Hidrostáticas Certificadas</h3>
+                            <p class="gallery-bento-lead">Banco de prueba hidráulico con registradores gráficos Barton y manifolds de alta presión.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Foto 7: Pruebas Hidrostáticas -->
-                <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="/static/images/rf/servicios/prueba_hidrostatica_1.webp" alt="Pruebas Hidrostáticas y Manifold de Presión" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
-                        <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Pruebas Hidrostáticas Certificadas</span>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Banco de prueba con manómetros y registradores</p>
+                <!-- Servicio: Holliday Detector -->
+                <div class="gallery-bento-item reveal">
+                    <img src="/static/images/rf/servicios/holliday_detector_1.webp" alt="Inspección de Revestimiento con Holliday Detector" class="gallery-bento-img" loading="lazy">
+                    <div class="gallery-bento-overlay">
+                        <div class="gallery-bento-top">
+                            <span class="gallery-bento-tag gallery-bento-tag--amber">
+                                <i class="fas fa-bolt"></i> Ensayos NDT
+                            </span>
+                        </div>
+                        <div class="gallery-bento-bottom">
+                            <h3 class="gallery-bento-title">Servicio de Holliday Detector</h3>
+                            <p class="gallery-bento-lead">Evaluación de continuidad dieléctrica para detección de microporosidades en tuberías enterradas.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Foto 8: Detección Subterránea -->
-                <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="/static/images/rf/servicios/deteccion_metales_1.webp" alt="Detección de Metales y Tuberías Enterradas" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
-                        <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Detección Subterránea en Campo</span>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Localización electromagnética antes de excavación</p>
+                <!-- Servicio: Detección Subterránea -->
+                <div class="gallery-bento-item gallery-bento-item--half reveal">
+                    <img src="/static/images/rf/servicios/deteccion_metales_1.webp" alt="Detección de Metales y Tuberías Enterradas" class="gallery-bento-img" loading="lazy">
+                    <div class="gallery-bento-overlay">
+                        <div class="gallery-bento-top">
+                            <span class="gallery-bento-tag gallery-bento-tag--blue">
+                                <i class="fas fa-satellite-dish"></i> Radiodetección
+                            </span>
+                            <span class="gallery-bento-meta">RD-7200</span>
+                        </div>
+                        <div class="gallery-bento-bottom">
+                            <h3 class="gallery-bento-title">Localización de Interferencias Subterráneas</h3>
+                            <p class="gallery-bento-lead">Diagnóstico no destructivo y mapeo electromagnético de conductos metálicos y cables con tensión antes de cualquier excavación.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Foto 9: Mantenimiento Civil y Pintura -->
-                <div class="gallery-item reveal" style="position: relative; border-radius: 12px; overflow: hidden; height: 260px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);">
-                    <img src="/static/images/rf/servicios/mantenimiento_civil_1.webp" alt="Mantenimiento Civil y Pintura Industrial" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="gallery-overlay" style="background: linear-gradient(to top, rgba(12,26,39,0.92) 20%, transparent); padding: 1.25rem;">
-                        <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Mantenimiento Civil y Pintura Industrial</span>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; margin: 0.25rem 0 0;">Reparación de caminerías, bases y tanques</p>
+                <!-- Servicio: Mantenimiento Civil y Pintura -->
+                <div class="gallery-bento-item gallery-bento-item--half reveal">
+                    <img src="/static/images/rf/servicios/mantenimiento_civil_1.webp" alt="Mantenimiento Civil y Pintura Industrial" class="gallery-bento-img" loading="lazy">
+                    <div class="gallery-bento-overlay">
+                        <div class="gallery-bento-top">
+                            <span class="gallery-bento-tag gallery-bento-tag--green">
+                                <i class="fas fa-paint-roller"></i> Obras Civiles
+                            </span>
+                            <span class="gallery-bento-meta">Protección Industrial</span>
+                        </div>
+                        <div class="gallery-bento-bottom">
+                            <h3 class="gallery-bento-title">Mantenimiento Civil y Recubrimientos</h3>
+                            <p class="gallery-bento-lead">Rehabilitación de bases de concreto, diques de contención, caminerías peatonales y protección anticorrosiva epóxica en tanques.</p>
+                        </div>
                     </div>
                 </div>
 
