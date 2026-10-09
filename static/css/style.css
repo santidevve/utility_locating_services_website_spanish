@@ -186,7 +186,7 @@ p, span, li, dt, dd, label,
 th, td, figcaption, blockquote,
 h1, h2, h3, h4, h5, h6,
 .section-title, .section-desc, .lead,
-.hafran-headline, .hafran-subhead,
+.ryf-headline, .ryf-subhead,
 .metric-ribbon-val, .metric-ribbon-label,
 .editorial-desc, .editorial-quote,
 .service-tab-btn, .feature-check span,
@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6,
 .btn-primary, .btn-primary *,
 .btn-accent, .btn-accent *,
 .btn-header-quote, .btn-header-quote *,
-.btn-hafran-primary, .btn-hafran-primary *,
+.btn-ryf-primary, .btn-ryf-primary *,
 .nav-desktop-link.active,
 .drawer-header, .drawer-header *,
 .badge-dark, .badge-dark *,
@@ -3378,7 +3378,8 @@ footer .container {
     border-color: #99f6e4;
 }
 
-.client-logo-avatar.insignia-hafran {
+.client-logo-avatar.insignia-client-ryf,
+.client-logo-avatar.insignia-client-hafran {
     background: #f5f3ff;
     color: #7c3aed;
     border-color: #ddd6fe;
@@ -4033,8 +4034,8 @@ footer .container {
    - Mosaico panorámico de sectores sin bordes de caja
    ========================================================================== */
 
-/* --- Micro-identidad de Sección (Estilo Hafran en Verde Oscuro) --- */
-.hafran-eyebrow {
+/* --- Micro-identidad de Sección (Estilo RYF Corporativo en Verde Oscuro) --- */
+.ryf-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -4047,7 +4048,7 @@ footer .container {
     margin-bottom: 0.85rem;
 }
 
-.hafran-bullet {
+.ryf-bullet {
     display: inline-block;
     font-size: 0.65rem;
     color: var(--color-green-dark);
@@ -4055,7 +4056,7 @@ footer .container {
     transform: translateY(-1px);
 }
 
-.hafran-headline {
+.ryf-headline {
     font-family: var(--font-display);
     font-size: clamp(2rem, 1.6rem + 1.8vw, 3rem);
     font-weight: 800;
@@ -4065,11 +4066,11 @@ footer .container {
     margin-bottom: 1.25rem;
 }
 
-.hafran-headline.dark-text {
+.ryf-headline.dark-text {
     color: #0F172A;
 }
 
-.hafran-subhead {
+.ryf-subhead {
     font-family: var(--font-body);
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
     color: #475569;
@@ -4079,7 +4080,7 @@ footer .container {
 }
 
 /* --- Botones Ejecutivos (Azul Marino Corporativo + Blanco Mate) --- */
-.btn-hafran-primary {
+.btn-ryf-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.65rem;
@@ -4096,23 +4097,23 @@ footer .container {
     transition: all var(--transition-normal);
 }
 
-.btn-hafran-primary:hover {
+.btn-ryf-primary:hover {
     background: #047857;
     border-color: #047857;
     transform: translateY(-2px);
     box-shadow: 0 14px 30px -5px rgba(4, 120, 87, 0.4);
 }
 
-.btn-hafran-primary i {
+.btn-ryf-primary i {
     font-size: 1.05rem;
     transition: transform var(--transition-fast);
 }
 
-.btn-hafran-primary:hover i {
+.btn-ryf-primary:hover i {
     transform: translateX(3px);
 }
 
-.btn-hafran-secondary {
+.btn-ryf-secondary {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -4129,7 +4130,7 @@ footer .container {
     transition: all var(--transition-normal);
 }
 
-.btn-hafran-secondary:hover {
+.btn-ryf-secondary:hover {
     background: #F8FAFC;
     border-color: #047857;
     color: #047857 !important;
@@ -4139,7 +4140,7 @@ footer .container {
 
 /* --- Hero Principal: Malla Degradada Luminous + Fusión Fotográfica --- */
 .hero.hero-mesh-gradient,
-.hero.hero-hafran {
+.hero.hero-corporate-ryf {
     position: relative;
     min-height: 86vh;
     display: flex;
@@ -4172,14 +4173,14 @@ footer .container {
 }
 
 .hero-mesh-gradient .hero-content,
-.hero-hafran .hero-content {
+.hero-corporate-ryf .hero-content {
     position: relative;
     z-index: 2;
     max-width: 1040px;
     margin-inline: auto;
 }
 
-.hero-hafran h1,
+.hero-corporate-ryf h1,
 .hero-mesh-gradient h1 {
     font-family: var(--font-display);
     font-size: clamp(2.3rem, 1.8rem + 2.5vw, 3.85rem);
@@ -4196,7 +4197,7 @@ footer .container {
     -webkit-text-fill-color: transparent;
 }
 
-.hero-hafran .hero-lead,
+.hero-corporate-ryf .hero-lead,
 .hero-mesh-gradient .hero-lead {
     font-family: var(--font-body);
     font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
@@ -4268,7 +4269,7 @@ footer .container {
 
 /* --- Banda Métrica Continua: Solidez que se traduce en resultados (SIN TARJETAS) --- */
 .metrics-ribbon-section,
-.hafran-stats-section {
+.ryf-stats-section {
     padding: 5.5rem 0;
     background-image: 
         linear-gradient(180deg, rgba(248, 250, 252, 0.68) 0%, rgba(255, 255, 255, 0.74) 100%),
@@ -4281,7 +4282,7 @@ footer .container {
 }
 
 .metrics-ribbon-header,
-.hafran-stats-header {
+.ryf-stats-header {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 3.5rem;
@@ -4289,8 +4290,8 @@ footer .container {
     margin-bottom: 3.5rem;
 }
 
-.metrics-ribbon-header .hafran-headline,
-.hafran-stats-header .hafran-headline {
+.metrics-ribbon-header .ryf-headline,
+.ryf-stats-header .ryf-headline {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
     font-weight: 700;
@@ -4300,7 +4301,7 @@ footer .container {
 }
 
 .metrics-ribbon-header p,
-.hafran-stats-header p {
+.ryf-stats-header p {
     font-family: var(--font-body);
     font-size: 1.1rem;
     line-height: 1.8;
@@ -4309,7 +4310,7 @@ footer .container {
 }
 
 .metrics-ribbon-row,
-.hafran-metrics-grid {
+.ryf-metrics-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0;
@@ -4318,7 +4319,7 @@ footer .container {
 }
 
 .metric-ribbon-item,
-.hafran-metric-box {
+.ryf-metric-box {
     padding: 2.25rem 1.5rem;
     text-align: left;
     position: relative;
@@ -4330,12 +4331,12 @@ footer .container {
 }
 
 .metric-ribbon-item:not(:last-child),
-.hafran-metric-box:not(:last-child) {
+.ryf-metric-box:not(:last-child) {
     border-right: 1px solid #CBD5E1;
 }
 
 .metric-ribbon-item:hover,
-.hafran-metric-box:hover {
+.ryf-metric-box:hover {
     background: rgba(0, 0, 0, 0.03);
     border-color: #CBD5E1;
     transform: none;
@@ -4343,7 +4344,7 @@ footer .container {
 }
 
 .metric-ribbon-val,
-.hafran-metric-box .metric-val {
+.ryf-metric-box .metric-val {
     font-family: var(--font-heading);
     font-size: clamp(2.4rem, 2rem + 1.2vw, 3.4rem);
     font-weight: 800;
@@ -4355,7 +4356,7 @@ footer .container {
 }
 
 .metric-ribbon-caption,
-.hafran-metric-box .metric-caption {
+.ryf-metric-box .metric-caption {
     font-family: var(--font-body);
     font-size: 1.02rem;
     color: #000000;
@@ -4378,34 +4379,34 @@ footer .container {
 
 @media (max-width: 1024px) {
     .metrics-ribbon-header,
-    .hafran-stats-header {
+    .ryf-stats-header {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     .metrics-ribbon-row,
-    .hafran-metrics-grid {
+    .ryf-metrics-grid {
         grid-template-columns: repeat(3, 1fr);
     }
     .metric-ribbon-item:nth-child(3),
-    .hafran-metric-box:nth-child(3) {
+    .ryf-metric-box:nth-child(3) {
         border-right: none;
     }
 }
 
 @media (max-width: 640px) {
     .metrics-ribbon-row,
-    .hafran-metrics-grid {
+    .ryf-metrics-grid {
         grid-template-columns: 1fr 1fr;
     }
     .metric-ribbon-item:nth-child(even),
-    .hafran-metric-box:nth-child(even) {
+    .ryf-metric-box:nth-child(even) {
         border-right: none;
     }
 }
 
 /* --- Capacidades Técnicas: Filas Editoriales Interactivas + Atmospheric Backdrop --- */
 .services-editorial-section,
-.hafran-expanding-section {
+.ryf-expanding-section {
     padding: 6.5rem 0;
     position: relative;
     background: #FFFFFF;
@@ -4440,20 +4441,20 @@ footer .container {
     z-index: 2;
 }
 
-.services-editorial-section .hafran-headline {
+.services-editorial-section .ryf-headline {
     color: #000000;
 }
 
-.services-editorial-section .hafran-subhead {
+.services-editorial-section .ryf-subhead {
     color: #1a1a1a;
     font-weight: 500;
 }
 
-.services-editorial-section .hafran-eyebrow {
+.services-editorial-section .ryf-eyebrow {
     color: #000000;
 }
 
-.services-editorial-section .hafran-bullet {
+.services-editorial-section .ryf-bullet {
     color: #000000;
 }
 
@@ -4867,7 +4868,7 @@ footer .container {
 
 /* --- Sectores Estratégicos: Atmósfera Cinematográfica Minimalista --- */
 .sectors-panoramic-section,
-.hafran-sectors-section {
+.ryf-sectors-section {
     padding: 6.5rem 0;
     background: #0A1120;
     position: relative;
@@ -4875,13 +4876,13 @@ footer .container {
 }
 
 .sectors-panoramic-header,
-.hafran-sectors-header {
+.ryf-sectors-header {
     text-align: center;
     margin-bottom: 3.5rem;
 }
 
-.sectors-panoramic-header .hafran-headline,
-.hafran-sectors-header .hafran-headline {
+.sectors-panoramic-header .ryf-headline,
+.ryf-sectors-header .ryf-headline {
     color: #FFFFFF !important;
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
@@ -4889,7 +4890,7 @@ footer .container {
 }
 
 .sectors-panoramic-header p,
-.hafran-sectors-header p {
+.ryf-sectors-header p {
     color: #94A3B8 !important;
     font-family: var(--font-body);
     font-size: 1.1rem;
@@ -4898,7 +4899,7 @@ footer .container {
 }
 
 .sectors-panoramic-grid,
-.hafran-sectors-grid {
+.ryf-sectors-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.75rem;
@@ -4986,14 +4987,14 @@ footer .container {
 
 @media (max-width: 1024px) {
     .sectors-panoramic-grid,
-    .hafran-sectors-grid {
+    .ryf-sectors-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 580px) {
     .sectors-panoramic-grid,
-    .hafran-sectors-grid {
+    .ryf-sectors-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -5181,7 +5182,7 @@ footer .container {
 
 /* --- Banner CTA: Franja Fluida con Malla de Luz (SIN CAJA INTERIOR) --- */
 .cta-fluid-banner,
-.hafran-cta-banner {
+.ryf-cta-banner {
     padding: 6rem 0;
     background: 
         radial-gradient(ellipse at 85% 50%, rgba(4, 120, 87, 0.08) 0%, transparent 60%),
@@ -5191,7 +5192,7 @@ footer .container {
 }
 
 .cta-fluid-inner,
-.hafran-cta-inner {
+.ryf-cta-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -5203,24 +5204,24 @@ footer .container {
 }
 
 .cta-fluid-inner::before,
-.hafran-cta-inner::before {
+.ryf-cta-inner::before {
     display: none;
 }
 
 .cta-fluid-text,
-.hafran-cta-text {
+.ryf-cta-text {
     max-width: 680px;
 }
 
-.cta-fluid-text .hafran-headline,
-.hafran-cta-text .hafran-headline {
+.cta-fluid-text .ryf-headline,
+.ryf-cta-text .ryf-headline {
     color: #0F172A;
     font-size: clamp(2rem, 1.6rem + 1.5vw, 2.75rem);
     margin-bottom: 0.85rem;
 }
 
 .cta-fluid-text p,
-.hafran-cta-text p {
+.ryf-cta-text p {
     font-size: 1.05rem;
     color: #475569;
     line-height: 1.65;
@@ -5228,7 +5229,7 @@ footer .container {
 }
 
 .cta-fluid-action,
-.hafran-cta-action {
+.ryf-cta-action {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -5236,7 +5237,7 @@ footer .container {
     flex-shrink: 0;
 }
 
-.hafran-email-link {
+.ryf-email-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -5248,17 +5249,17 @@ footer .container {
     transition: color var(--transition-fast);
 }
 
-.hafran-email-link:hover {
+.ryf-email-link:hover {
     color: #047857;
 }
 
-.hafran-email-link i {
+.ryf-email-link i {
     color: #047857;
 }
 
 @media (max-width: 900px) {
     .cta-fluid-inner,
-    .hafran-cta-inner {
+    .ryf-cta-inner {
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
@@ -5340,7 +5341,7 @@ footer .container {
         height: 100vw !important;
         filter: blur(60px) !important;
     }
-    .hero-hafran h1,
+    .hero-corporate-ryf h1,
     .hero-mesh-gradient h1,
     .hero h1 {
         font-size: clamp(1.75rem, 1.4rem + 2.5vw, 2.6rem) !important;
@@ -5359,8 +5360,8 @@ footer .container {
 
 @media (max-width: 640px) {
     .btn,
-    .btn-hafran-primary,
-    .btn-hafran-secondary {
+    .btn-ryf-primary,
+    .btn-ryf-secondary {
         white-space: normal !important;
         text-align: center !important;
         min-height: 44px !important;
@@ -5373,8 +5374,8 @@ footer .container {
         max-width: 440px !important;
         margin-inline: auto !important;
     }
-    .hero-buttons .btn-hafran-primary,
-    .hero-buttons .btn-hafran-secondary,
+    .hero-buttons .btn-ryf-primary,
+    .hero-buttons .btn-ryf-secondary,
     .hero-buttons .btn {
         width: 100% !important;
         justify-content: center !important;
@@ -5384,22 +5385,22 @@ footer .container {
 /* 6. Banda Métrica Continua: Distribución Equilibrada en Móvil */
 @media (max-width: 640px) {
     .metrics-ribbon-row,
-    .hafran-metrics-grid {
+    .ryf-metrics-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
     .metric-ribbon-item,
-    .hafran-metric-box {
+    .ryf-metric-box {
         padding: 1.5rem 1rem !important;
         border-right: 1px solid #E2E8F0 !important;
     }
     .metric-ribbon-item:nth-child(2),
     .metric-ribbon-item:nth-child(4),
-    .hafran-metric-box:nth-child(2),
-    .hafran-metric-box:nth-child(4) {
+    .ryf-metric-box:nth-child(2),
+    .ryf-metric-box:nth-child(4) {
         border-right: none !important;
     }
     .metric-ribbon-item:nth-child(5),
-    .hafran-metric-box:nth-child(5) {
+    .ryf-metric-box:nth-child(5) {
         grid-column: 1 / -1 !important;
         border-right: none !important;
         border-top: 1px solid #E2E8F0 !important;
@@ -5407,11 +5408,11 @@ footer .container {
         padding: 1.75rem 1rem !important;
     }
     .metric-ribbon-item:nth-child(5) .metric-ribbon-caption,
-    .hafran-metric-box:nth-child(5) .metric-caption {
+    .ryf-metric-box:nth-child(5) .metric-caption {
         justify-content: center !important;
     }
     .metric-ribbon-val,
-    .hafran-metric-box .metric-val {
+    .ryf-metric-box .metric-val {
         font-size: clamp(1.75rem, 1.45rem + 1vw, 2.3rem) !important;
     }
 }
@@ -5676,7 +5677,7 @@ footer .container {
 
 /* 17. Optimización de Hero, Títulos y Badges en Móvil */
 @media (max-width: 640px) {
-    .hafran-eyebrow {
+    .ryf-eyebrow {
         flex-wrap: wrap !important;
         text-align: center !important;
         justify-content: center !important;
@@ -5685,12 +5686,12 @@ footer .container {
         line-height: 1.4 !important;
     }
     .hero-mesh-gradient h1 br,
-    .hero-hafran h1 br,
+    .hero-corporate-ryf h1 br,
     .hero h1 br {
         display: none !important;
     }
     .hero.hero-mesh-gradient,
-    .hero.hero-hafran {
+    .hero.hero-corporate-ryf {
         min-height: auto !important;
         padding: 4.5rem 1rem 3rem !important;
     }
@@ -5800,7 +5801,7 @@ footer .container {
 .services-portfolio-section,
 #maquinaria,
 .gallery-section,
-.hafran-sectors-section,
+.ryf-sectors-section,
 .contracts-section,
 .clients-seamless-section,
 .faq-section {
@@ -5812,7 +5813,7 @@ footer .container {
 }
 
 .section-header p,
-.hafran-subhead {
+.ryf-subhead {
     max-width: 65ch;
     margin-inline: auto;
     font-size: 1.05rem !important;
