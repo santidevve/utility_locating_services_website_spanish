@@ -1,8 +1,18 @@
-import { defineConfig } from 'vite';
+import { defineConfig, normalizePath } from 'vite';
 import { resolve } from 'path';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  publicDir: 'public',
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: normalizePath(resolve(__dirname, 'static/')),
+          dest: ''
+        }
+      ]
+    })
+  ],
   server: {
     port: 5173,
     open: false,
@@ -20,6 +30,3 @@ export default defineConfig({
     },
   },
 });
-
-
-

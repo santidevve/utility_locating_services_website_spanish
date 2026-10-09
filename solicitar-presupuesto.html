@@ -130,23 +130,30 @@
         </nav>
     </aside>
 
-    <!-- Page Hero (Minimalista) -->
-    <section class="page-hero">
-        <div class="container">
-            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #bbf7d0; border-color: rgba(86, 172, 21, 0.4); margin-bottom: 1rem;"><i class="fas fa-calculator"></i> Cotización Técnica</span>
+    <!-- Page Hero con Solo Fondo de Video del Logo -->
+    <section class="page-hero page-hero-quote">
+        <video class="page-hero-video" autoplay loop muted playsinline>
+            <source src="/static/videos/logo animado.mp4" type="video/mp4">
+        </video>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-grid-pattern"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <span class="section-tag" style="background: rgba(255,255,255,0.12); color: #86efac; border-color: rgba(134, 239, 172, 0.35); margin-bottom: 1rem;"><i class="fas fa-calculator"></i> Cotización Técnica</span>
             <h1>Solicitar Cotización</h1>
             <p>Indique las especificaciones de su proyecto para recibir una propuesta técnica formal.</p>
         </div>
     </section>
 
     <!-- Flash Messages -->
-    <div class="container" style="max-width: 860px; margin-top: 1.5rem;">
+    <div class="container" style="max-width: 860px; margin-top: 1.5rem; position: relative; z-index: 5;">
         <div id="form-alert-container"></div>
     </div>
 
-    <!-- Formulario de Presupuesto Adaptado a PROYECTOS R&F -->
-    <section class="form-section">
-        <div class="container">
+    <!-- Formulario de Presupuesto Adaptado a PROYECTOS R&F con Fondo Estilizado -->
+    <section class="form-section form-section-styled">
+        <div class="form-section-bg" style="background-image: url('/static/images/rf/servicios/Fachada%20PDVSA%20GAS%20con%20andamio.png');" aria-hidden="true"></div>
+        <div class="form-section-ambient-glow" aria-hidden="true"></div>
+        <div class="container" style="position: relative; z-index: 2;">
             <form action="/solicitar-presupuesto.html" method="POST" class="quote-form">
 
                 <!-- Services Checkbox Group -->
