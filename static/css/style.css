@@ -4422,12 +4422,11 @@ footer .container {
     position: absolute;
     inset: 0;
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity: 0.68;
-    mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.35) 100%);
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.35) 100%);
+    opacity: 0.82;
+    filter: contrast(1.08) brightness(0.92);
     pointer-events: none;
     z-index: 1;
 }
@@ -6064,7 +6063,8 @@ footer .container {
         padding: 4.5rem 1rem 3rem !important;
     }
     .hero-backdrop {
-        opacity: 0.16 !important;
+        opacity: 0.78 !important;
+        filter: contrast(1.1) brightness(0.9) !important;
     }
     .hero-radar-grid {
         display: none !important;
