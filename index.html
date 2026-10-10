@@ -20,9 +20,9 @@
     <div class="topbar-corporate">
         <div class="container topbar-container">
             <div class="topbar-right">
-                <a href="tel:02812719350" class="topbar-link"><i class="fas fa-phone"></i> (+58) 424-6837040</a>
+                <a href="tel:+584246837040" class="topbar-link"><i class="fas fa-phone"></i> (+58) 424-6837040</a>
                 <span class="topbar-divider">|</span>
-                <a href="mailto:proyectos.ryf@gmail.com" class="topbar-link"><i class="fas fa-envelope"></i> gerencia@proyectosrfve.com</a>
+                <a href="mailto:gerencia@proyectosrfve.com" class="topbar-link"><i class="fas fa-envelope"></i> [EMAIL_ADDRESS]</a>
             </div>
         </div>
     </div>
@@ -113,11 +113,11 @@
             <div class="drawer-footer-info">
                 <div class="drawer-contact-item">
                     <i class="fas fa-phone"></i>
-                    <a href="tel:02812719350">(0281) 271 93 50</a> / <a href="tel:04248149651">(0424) 814 96 51</a>
+                    <a href="tel:+584246837040">(+58) 424-6837040</a>
                 </div>
                 <div class="drawer-contact-item">
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:proyectos.ryf@gmail.com">proyectos.ryf@gmail.com</a>
+                    <a href="mailto:gerencia@proyectosrfve.com">gerencia@proyectosrfve.com</a>
                 </div>
                 <div class="drawer-contact-item">
                     <i class="fas fa-location-dot"></i>
@@ -141,6 +141,10 @@
                     <i class="fas fa-file-invoice"></i>
                     <span>Línea Directa de Obras</span>
                 </a>
+                <a href="/static/documents/Brochure-RYF-2026.pdf" target="_blank" rel="noopener" download="Brochure-RYF-2026.pdf" class="btn-ryf-secondary" id="btnBrochureHero">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Descargar Brochure</span>
+                </a>
             </div>
         </div>
     </section>
@@ -158,25 +162,28 @@
                         Nuestra Historia y Solvencia Operativa
                     </h2>
                     
-                    <p style="font-size: 1.5rem; line-height: 1.75; color: #000000; font-weight: 600; margin-bottom: 1.25rem; text-align: justify;">
+                    <p class="history-paragraph">
                         La empresa <strong>PROYECTOS R&F, C.A.</strong> fue creada el 16 de Octubre del año 2010 en Barcelona, Estado Anzoátegui, por el <strong>Ingeniero Civil Edilberto Rojas</strong>, quien con más de 25 años de experiencia en el campo de la Industria Petrolera, fundó su propia organización orientada a brindar un servicio confiable y de máxima calidad técnica.
                     </p>
                     
-                    <p style="font-size: 1.5rem; line-height: 1.75; color: #000000; font-weight: 600; margin-bottom: 1.25rem; text-align: justify;">
+                    <p class="history-paragraph">
                         Desde su inicio, el objetivo fundamental de la empresa fue facilitar y desarrollar trabajos especializados en el ámbito de soldadura. Su evolución ha sido constante, participando activamente en proyectos de Mantenimiento Civil, Mecánico y Eléctrico, así como en trabajos especializados de Detección de Servicios Enterrados, Pruebas Hidrostáticas y evaluación dieléctrica (Holliday), principalmente en el oriente del país.
                     </p>
 
-                    <p style="font-size: 1.5rem; line-height: 1.75; color: #000000; font-weight: 600; margin-bottom: 1.25rem; text-align: justify;">
+                    <p class="history-paragraph">
                         Año a año expandimos nuestros horizontes hacia una gestión integral de servicios de ingeniería y construcción, manteniendo el norte de ampliar nuestro campo de trabajo conforme a los requisitos más exigentes en calidad, tiempo y normas de seguridad industrial establecidas por nuestros clientes.
                     </p>
 
-                    <p style="font-size: 1.5rem; line-height: 1.75; color: #000000; font-weight: 600; margin-bottom: 1.25rem; text-align: justify;">
+                    <p class="history-paragraph">
                         Como parte de nuestra estrategia de crecimiento e internacionalización, en 2016 expandimos nuestras operaciones a los Estados Unidos mediante <a href="https://utilitylocatingservices-ryf.com/" style="color: blue;"><strong>PROYECTOS R&F USA, INC.</strong></a>, consolidando la experiencia desarrollada por nuestra organización y ampliando nuestras capacidades hacia nuevos mercados. Actualmente, nuestra operación en EE. UU. desarrolla servicios especializados de <strong>Utility Locating</strong> e <strong>Infrastructure Mapping</strong>, así como actividades vinculadas a proyectos de infraestructura, construcción y procura, fortaleciendo la integración y capacidad operativa del Grupo R&F.
                     </p>
 
-                    <div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
                         <a href="#quienes-somos" class="btn-ryf-secondary">
                             <i class="fas fa-chevron-down"></i> Conocer Quiénes Somos
+                        </a>
+                        <a href="/static/documents/Brochure-RYF-2026.pdf" target="_blank" rel="noopener" download="Brochure-RYF-2026.pdf" class="btn-ryf-secondary" id="btnBrochureMission">
+                            <i class="fas fa-file-pdf"></i> Descargar Brochure 2026
                         </a>
                     </div>
                 </div>
@@ -188,7 +195,7 @@
                         loop 
                         playsinline 
                         poster="/static/images/rf/proyectos/metor_izamiento_1.jpg"
-                        style="width: 100%; height: 100%; min-height: 580px; object-fit: cover; object-position: center; display: block; border-radius: 16px; box-shadow: var(--shadow-xl); border: 1px solid var(--color-border);">
+                        style="width: 100%; height: 100%; min-height: 580px; object-fit: cover; object-position: center; display: block; border-radius: 16px; box-shadow: var(--shadow-xl); border: none; outline: none;">
                         <source src="/static/videos/metor_izamiento_1.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de video HTML5.
                     </video>
@@ -379,7 +386,7 @@
     <!-- Sección Vitrina Principal: Filas Editoriales con Fondo Dinámico Atmosférico -->
     <section id="servicios-destacados" class="services-editorial-section reveal">
         <!-- Canvas de Fondo Dinámico Atmosférico (Inicializado con la versión HD de la Fila 01 activa) -->
-        <div class="services-backdrop-canvas" id="services-backdrop" style="background-image: url('/static/images/rf/servicios/Fachada%20PDVSA%20GAS%20con%20andamio.png');"></div>
+        <div class="services-backdrop-canvas" id="services-backdrop" style="background-image: url('/static/images/rf/servicios/fondo_obras_civiles.jpg');"></div>
 
         <div class="container" style="position: relative; z-index: 2;">
             <div class="services-editorial-head text-center">
@@ -394,7 +401,7 @@
             <!-- Lista Editorial Interactiva (4 Divisiones) -->
             <div class="services-editorial-list" id="services-editorial-list">
                 <!-- Fila 1: Obras Civiles -->
-                <div class="editorial-service-row active" data-bg="/static/images/rf/servicios/Fachada%20PDVSA%20GAS%20con%20andamio.png">
+                <div class="editorial-service-row active" data-bg="/static/images/rf/servicios/fondo_obras_civiles.jpg">
                     <span class="service-num">01</span>
                     <div class="service-main-col">
                         <span class="service-norm-tag">INFRAESTRUCTURA & EDIFICACIONES</span>
@@ -420,7 +427,7 @@
                 </div>
 
                 <!-- Fila 3: Obras Eléctricas e Instrumentación -->
-                <div class="editorial-service-row" data-bg="/static/images/rf/proyectos/santa_barbara_flare.webp">
+                <div class="editorial-service-row" data-bg="/static/images/rf/servicios/obras_electricas_ia.jpg">
                     <span class="service-num">03</span>
                     <div class="service-main-col">
                         <span class="service-norm-tag">POTENCIA, DISTRIBUCIÓN & CONTROL</span>
@@ -544,8 +551,8 @@
                                 <img src="/static/images/rf/proyectos/metor_soldadura_1.webp" alt="Soldadura METOR">
                             </div>
                             <div class="cap-photos-sub">
-                                <img src="/static/images/rf/servicios/trabajos_mecanicos_1.webp" alt="Trabajo Mecánico 1">
-                                <img src="/static/images/rf/servicios/trabajos_mecanicos_2.webp" alt="Trabajo Mecánico 2">
+                                <img src="/static/images/rf/servicios/trabajos_mecanicos_1_hd.jpg" alt="Trabajo Mecánico 1" loading="lazy">
+                                <img src="/static/images/rf/servicios/trabajos_mecanicos_2_hd.jpg" alt="Trabajo Mecánico 2" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -775,7 +782,7 @@
                 <!-- Ficha 01: Santa Bárbara Flare -->
                 <div class="gallery-dossier-card reveal">
                     <div class="gallery-dossier-media">
-                        <img src="/static/images/rf/proyectos/santa_barbara_flare.webp" alt="Reemplazo de Tip del Flare en Planta Santa Bárbara" class="gallery-dossier-img" loading="lazy">
+                        <img src="/static/images/rf/proyectos/santa_barbara_flare_8k.jpg" alt="Izamiento y Reemplazo de Tip del Flare en Planta Santa Bárbara" class="gallery-dossier-img" loading="lazy" style="object-position: center 20%;">
                     </div>
                     <div class="gallery-dossier-body">
                         <div>
@@ -859,8 +866,23 @@
 
                 <!-- Ficha 05: Soldadura de Spools -->
                 <div class="gallery-dossier-card reveal">
-                    <div class="gallery-dossier-media">
-                        <img src="/static/images/rf/proyectos/metor_soldadura_1.webp" alt="Soldadura de Tuberías y Spool en METOR" class="gallery-dossier-img" loading="lazy">
+                    <div class="gallery-dossier-media card-media-carousel" id="spoolWeldingCarousel" data-autoplay="3500">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <img src="/static/images/rf/proyectos/soldadura_spool_esmeril_8k.jpg" alt="Preparación y Biselado de Spool de Tubería en Hábitat de Soldadura" class="gallery-dossier-img" loading="lazy">
+                                <div class="carousel-slide-badge"><i class="fas fa-fire-burner"></i> Biselado & Preparación</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/static/images/rf/proyectos/metor_soldadura_1.webp" alt="Soldadura de Tuberías y Spool en METOR" class="gallery-dossier-img" loading="lazy">
+                                <div class="carousel-slide-badge"><i class="fas fa-certificate"></i> Soldadura Calificada ASME</div>
+                            </div>
+                        </div>
+                        <div class="carousel-dots">
+                            <button type="button" class="carousel-dot active" aria-label="Foto 1: Biselado y Preparación" data-slide="0"></button>
+                            <button type="button" class="carousel-dot" aria-label="Foto 2: Soldadura TIG ASME" data-slide="1"></button>
+                        </div>
+                        <button type="button" class="carousel-nav-btn prev" aria-label="Foto anterior"><i class="fas fa-chevron-left"></i></button>
+                        <button type="button" class="carousel-nav-btn next" aria-label="Foto siguiente"><i class="fas fa-chevron-right"></i></button>
                     </div>
                     <div class="gallery-dossier-body">
                         <div>
@@ -922,8 +944,28 @@
 
                 <!-- Ficha 08: Detección Subterránea -->
                 <div class="gallery-dossier-card reveal">
-                    <div class="gallery-dossier-media">
-                        <img src="/static/images/rf/servicios/Trabajadores en la pradera bajo nubes brillantes.png" alt="Detección de Metales y Tuberías Enterradas" class="gallery-dossier-img" loading="lazy">
+                    <div class="gallery-dossier-media card-media-carousel" id="undergroundDetectionCarousel" data-autoplay="3500">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <img src="/static/images/rf/servicios/Trabajadores en la pradera bajo nubes brillantes.png" alt="Reconocimiento de campo para detección de tuberías enterradas" class="gallery-dossier-img" loading="lazy">
+                                <div class="carousel-slide-badge"><i class="fas fa-satellite-dish"></i> Reconocimiento de Campo</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/static/images/rf/proyectos/deteccion_rd7200_1_8k.jpg" alt="Técnico barriendo el terreno con localizador electromagnético RD-7200" class="gallery-dossier-img" loading="lazy">
+                                <div class="carousel-slide-badge"><i class="fas fa-wave-square"></i> Barrido con RD-7200</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/static/images/rf/proyectos/deteccion_rd7200_2_8k.jpg" alt="Marcación del trazado de tubería detectada con estacas y pintura" class="gallery-dossier-img" loading="lazy">
+                                <div class="carousel-slide-badge"><i class="fas fa-location-dot"></i> Marcación de Trazado</div>
+                            </div>
+                        </div>
+                        <div class="carousel-dots">
+                            <button type="button" class="carousel-dot active" aria-label="Foto 1: Reconocimiento de campo" data-slide="0"></button>
+                            <button type="button" class="carousel-dot" aria-label="Foto 2: Barrido con RD-7200" data-slide="1"></button>
+                            <button type="button" class="carousel-dot" aria-label="Foto 3: Marcación de trazado" data-slide="2"></button>
+                        </div>
+                        <button type="button" class="carousel-nav-btn prev" aria-label="Foto anterior"><i class="fas fa-chevron-left"></i></button>
+                        <button type="button" class="carousel-nav-btn next" aria-label="Foto siguiente"><i class="fas fa-chevron-right"></i></button>
                     </div>
                     <div class="gallery-dossier-body">
                         <div>
@@ -944,7 +986,7 @@
                 <!-- Ficha 09: Mantenimiento Civil y Pintura -->
                 <div class="gallery-dossier-card reveal">
                     <div class="gallery-dossier-media">
-                        <img src="/static/images/rf/servicios/mantenimiento_civil_1.webp" alt="Mantenimiento Civil y Pintura Industrial" class="gallery-dossier-img" loading="lazy">
+                        <img src="/static/images/rf/servicios/mantenimiento_civil_ia.jpg" alt="Mantenimiento Civil y Pintura Industrial" class="gallery-dossier-img" loading="lazy">
                     </div>
                     <div class="gallery-dossier-body">
                         <div>
@@ -1728,8 +1770,8 @@
                         <i class="fas fa-arrow-circle-right"></i>
                         <span>Detalle su Requerimiento Aquí</span>
                     </a>
-                    <a href="mailto:proyectos.ryf@gmail.com" class="ryf-email-link">
-                        <i class="fas fa-envelope"></i> proyectos.ryf@gmail.com
+                    <a href="mailto:gerencia@proyectosrfve.com" class="ryf-email-link">
+                        <i class="fas fa-envelope"></i> gerencia@proyectosrfve.com
                     </a>
                 </div>
             </div>
@@ -1768,6 +1810,7 @@
                     <li><a href="#contratos"><i class="fas fa-chevron-right"></i> Contratos Ejecutados</a></li>
                     <li><a href="/areas-de-servicio.html"><i class="fas fa-chevron-right"></i> Cobertura Operativa</a></li>
                     <li><a href="/faq.html"><i class="fas fa-chevron-right"></i> Preguntas Frecuentes</a></li>
+                    <li><a href="/static/documents/Brochure-RYF-2026.pdf" target="_blank" rel="noopener" download="Brochure-RYF-2026.pdf"><i class="fas fa-file-pdf"></i> Brochure Corporativo 2026</a></li>
                 </ul>
             </div>
 
@@ -1784,7 +1827,7 @@
                     Vía Complejo de Jose, entre Calle El Milagro y Las Torres, detrás del depósito de Polar, Sector Los Potocos, Edo. Anzoátegui.
                 </p>
                 <p style="margin-bottom: 0.5rem;"><i class="fas fa-mobile-screen" style="color: #4ade80;"></i> Cel: (+58) 424-6837040</p>
-<p style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="color: #10b981;"></i> proyectos.ryf@gmail.com</p>
+<p style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="color: #10b981;"></i> gerencia@proyectosrfve.com</p>
                 <a href="/solicitar-presupuesto.html" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;"><i class="fas fa-headset"></i> Contactar un especialista</a>
             </div>
         </div>
@@ -1908,15 +1951,74 @@
                     }
                 });
             });
+
+            // Carrusel Automático de Tarjetas (Ficha Soldadura de Spools)
+            document.querySelectorAll('.card-media-carousel').forEach(carousel => {
+                const slides = carousel.querySelectorAll('.carousel-slide');
+                const dots = carousel.querySelectorAll('.carousel-dot');
+                const prevBtn = carousel.querySelector('.carousel-nav-btn.prev');
+                const nextBtn = carousel.querySelector('.carousel-nav-btn.next');
+                if (slides.length <= 1) return;
+
+                let currentIndex = 0;
+                let timer = null;
+                const intervalTime = parseInt(carousel.dataset.autoplay, 10) || 3500;
+
+                function goToSlide(index) {
+                    slides[currentIndex].classList.remove('active');
+                    if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+                    currentIndex = (index + slides.length) % slides.length;
+
+                    slides[currentIndex].classList.add('active');
+                    if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+                }
+
+                function startTimer() {
+                    stopTimer();
+                    timer = setInterval(() => {
+                        goToSlide(currentIndex + 1);
+                    }, intervalTime);
+                }
+
+                function stopTimer() {
+                    if (timer) clearInterval(timer);
+                }
+
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        goToSlide(currentIndex + 1);
+                        startTimer();
+                    });
+                }
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        goToSlide(currentIndex - 1);
+                        startTimer();
+                    });
+                }
+
+                dots.forEach((dot, idx) => {
+                    dot.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        goToSlide(idx);
+                        startTimer();
+                    });
+                });
+
+                carousel.addEventListener('mouseenter', stopTimer);
+                carousel.addEventListener('mouseleave', startTimer);
+
+                startTimer();
+            });
         });
     </script>
 
     <!-- Barra Flotante Inferior de Acción Rápida Móvil -->
     <nav class="mobile-bottom-bar" aria-label="Acciones Rápidas Móviles">
-        <a href="tel:02812719350" class="mobile-bar-btn">
-            <i class="fas fa-phone"></i>
-            <span>Llamar</span>
-        </a>
         <a href="https://wa.me/584248149651" target="_blank" rel="noopener noreferrer" class="mobile-bar-btn whatsapp" title="WhatsApp">
             <i class="fab fa-whatsapp"></i>
             <span>WhatsApp</span>

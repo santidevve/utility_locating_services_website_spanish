@@ -131,8 +131,9 @@
 html {
     scroll-behavior: smooth;
     font-size: 17px;
-    overflow-x: clip;
     width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden; /* 👈 Reemplazar overflow-x: clip por hidden */
 }
 
 @media (min-width: 1200px) {
@@ -146,12 +147,14 @@ body {
     font-size: var(--text-base);
     color: #000000;
     background-color: var(--color-bg);
-    line-height: 1.82; /* 👈 Espaciado entre líneas amplio y descansado */
-    letter-spacing: 0.012em; /* 👈 Espaciado moderno y abierto */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    line-height: 1.82;
+    letter-spacing: 0.012em;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden; /* 👈 Bloquea cualquier elemento hijo rebelde */
+    position: relative;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
@@ -1380,7 +1383,7 @@ header .container {
     grid-template-columns: 1.15fr 1.25fr; /* 👈 Espaciado y proporción ideal */
     gap: 3.5rem;
     align-items: stretch;
-    width: 125%;
+    width: 100%;
 }
 
 .mission-content {
@@ -1397,11 +1400,14 @@ header .container {
     margin-bottom: 1.25rem;
 }
 
-.mission-content p {
-    font-size: 1.05rem;
-    color: var(--color-text-muted);
+.mission-content p,
+.history-paragraph {
+    font-size: clamp(1.05rem, 1rem + 0.35vw, 1.22rem);
     line-height: 1.75;
-    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 1.25rem;
 }
 
 /* Lista de ventajas / checklist */
@@ -1446,20 +1452,8 @@ header .container {
     flex-direction: column;
 }
 
-.mission-image::after {
-    content: '';
-    position: absolute;
-    inset: -15px -15px auto auto;
-    width: 60%;
-    height: 60%;
-    border-radius: var(--radius-xl);
-    border: 3px solid var(--color-accent);
-    z-index: 0;
-    opacity: 0.35;
-    pointer-events: none;
-}
-
-.mission-image img {
+.mission-image img,
+.mission-image video {
     position: relative;
     z-index: 1;
     width: 100%;
@@ -1469,10 +1463,13 @@ header .container {
     object-position: center 25%;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
+    border: none;
+    outline: none;
     transition: transform var(--transition-smooth);
 }
 
-.mission-image:hover img {
+.mission-image:hover img,
+.mission-image:hover video {
     transform: scale(1.02);
 }
 
@@ -1481,8 +1478,15 @@ header .container {
    ========================================================================== */
 .gallery-section {
     padding: clamp(6rem, 10vw, 9.5rem) 0;
-    background: #F8FAFC;
     position: relative;
+    background-color: #F8FAFC;
+    background-image: 
+        linear-gradient(180deg, rgba(248, 250, 252, 0.88) 0%, rgba(241, 245, 249, 0.82) 40%, rgba(248, 250, 252, 0.90) 100%),
+        url('/static/images/rf/fondo_concreto_rustico.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
     overflow: hidden;
@@ -1491,13 +1495,8 @@ header .container {
 .gallery-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1400px;
-    height: 100%;
-    background: radial-gradient(ellipse at 50% 15%, rgba(37, 99, 235, 0.05) 0%, rgba(16, 185, 129, 0.03) 45%, transparent 75%);
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 20%, rgba(37, 99, 235, 0.04) 0%, rgba(15, 23, 42, 0.03) 60%, transparent 100%);
     pointer-events: none;
     z-index: 0;
 }
@@ -1564,6 +1563,154 @@ header .container {
 
 .gallery-dossier-card:hover .gallery-dossier-img {
     transform: scale(1.03);
+}
+
+/* Carrusel Automático de Tarjetas */
+.card-media-carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #0F172A;
+}
+
+.card-media-carousel .carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card-media-carousel .carousel-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.02);
+}
+
+.card-media-carousel .carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 1;
+}
+
+.card-media-carousel .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-dossier-card:hover .card-media-carousel .carousel-slide.active img {
+    transform: scale(1.04);
+}
+
+.carousel-slide-badge {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 0.3rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-slide-badge i {
+    color: #f97316;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    z-index: 3;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 0.3rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carousel-dot.active {
+    width: 20px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.card-media-carousel:hover .carousel-nav-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carousel-nav-btn:hover {
+    background: rgba(15, 44, 89, 0.95);
+    border-color: #38bdf8;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-btn.prev {
+    left: 0.65rem;
+}
+
+.carousel-nav-btn.next {
+    right: 0.65rem;
 }
 
 .gallery-dossier-body {
@@ -3683,6 +3830,54 @@ footer .container {
     table-layout: auto;
 }
 
+/* ==========================================================================
+   Ajustes Móviles para la Tabla de Contratos y Obras
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Asegurar scroll táctil fluido sin deformar el contenedor */
+    .contracts-table-responsive {
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        border-radius: 0 0 1rem 1rem;
+    }
+
+    /* 2. Establecer un ancho mínimo para que las columnas no se aplasten */
+    .contracts-table {
+        min-width: 750px !important; /* 👈 Garantiza espacio suficiente para todas las columnas */
+        width: 100%;
+    }
+
+    /* 3. Indicador de deslizamiento más llamativo y visible */
+    .table-scroll-hint {
+        display: flex !important;
+        justify-content: center;
+        background: #f0fdf4 !important; /* Verde sutil corporativo */
+        color: #166534 !important;
+        border-bottom: 1px solid #bbf7d0 !important;
+        font-size: 0.8rem !important;
+        padding: 0.75rem 1rem !important;
+    }
+
+    /* 4. Padding cómodo en celdas para lectura táctil */
+    .contracts-table th,
+    .contracts-table td {
+        padding: 0.9rem 0.85rem !important;
+        white-space: normal;
+    }
+
+    /* 5. Columna del Cliente: evitar que el nombre se corte */
+    .table-client-cell {
+        min-width: 170px;
+    }
+
+    /* 6. Columna de Descripción de la Obra: ancho suficiente para el párrafo */
+    .table-work-desc {
+        min-width: 240px;
+    }
+}
+
+
 .contracts-table thead {
     background: #0f2c59;
     color: #ffffff;
@@ -3981,7 +4176,7 @@ footer .container {
     }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 768px) {
     .menu-toggle {
         display: flex;
     }
@@ -4031,9 +4226,10 @@ footer .container {
     }
 
     .mission-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        align-items: flex-start;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 2rem !important;
     }
 
     .mission-image {
@@ -4335,10 +4531,32 @@ footer .container {
 .metrics-ribbon-section,
 .ryf-stats-section {
     padding: 5.5rem 0;
-    background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F1F5F9 100%);
+    position: relative;
+    background-color: #F8FAFC;
+    background-image: 
+        linear-gradient(180deg, rgba(248, 250, 252, 0.88) 0%, rgba(241, 245, 249, 0.82) 40%, rgba(248, 250, 252, 0.90) 100%),
+        url('/static/images/rf/fondo_concreto_rustico.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     border-top: 1px solid #E2E8F0;
     border-bottom: 1px solid #E2E8F0;
+    overflow: hidden;
+}
+
+.metrics-ribbon-section > .container {
     position: relative;
+    z-index: 2;
+}
+
+.metrics-ribbon-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 20%, rgba(37, 99, 235, 0.04) 0%, rgba(15, 23, 42, 0.03) 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .metrics-ribbon-header,
@@ -5128,6 +5346,66 @@ footer .container {
     font-weight: 500;
 }
 
+/* ==========================================================================
+   Responsividad de Nuestros Clientes (Showcase & Logos)
+   ========================================================================== */
+
+/* En tablets y móviles medianos: pasar de 3 a 2 columnas */
+@media (max-width: 768px) {
+    .clients-logos-showcase {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2.25rem 1.25rem !important;
+        margin-top: 2.5rem !important;
+        padding: 0 0.5rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .client-logo-wrapper {
+        height: 70px !important;
+        margin-bottom: 0.85rem !important;
+    }
+
+    .client-logo-img {
+        max-height: 58px !important;
+        max-width: 150px !important;
+    }
+
+    .client-logo-name {
+        font-size: 0.92rem !important;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .client-logo-sub {
+        font-size: 0.72rem !important;
+        text-align: center;
+        line-height: 1.3;
+    }
+}
+
+/* En teléfonos muy compactos (< 480px) */
+@media (max-width: 480px) {
+    .clients-logos-showcase {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem 0.85rem !important;
+    }
+
+    .client-logo-wrapper {
+        height: 60px !important;
+    }
+
+    .client-logo-img {
+        max-height: 50px !important;
+        max-width: 130px !important;
+    }
+
+    .client-logo-name {
+        font-size: 0.85rem !important;
+    }
+}
+
+
 /* Divisor y Roster Complementario */
 .clients-roster-divider {
     display: flex;
@@ -5333,6 +5611,43 @@ footer .container {
     select,
     textarea {
         font-size: 16px !important;
+    }
+
+     /* Contenedor padre: permite que el scroll fluya de lado a lado */
+    .tabs-nav-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 1.5rem !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 0.5rem 0.25rem 1rem !important;
+        justify-content: flex-start !important; /* Inicia a la izquierda */
+        scrollbar-width: none; /* Oculta barra fea en Firefox */
+    }
+    .tabs-nav-wrapper::-webkit-scrollbar {
+        display: none; /* Oculta barra en Chrome/Safari */
+    }
+    /* Barra de pestañas: pasa a una fila deslizante sin desbordar el viewport */
+    .capabilities-tabs-nav {
+        display: inline-flex !important;
+        flex-wrap: nowrap !important; /* Evita que caigan unas sobre otras deformando la píldora */
+        width: max-content !important;
+        border-radius: 50px !important;
+        padding: 0.35rem !important;
+        gap: 0.35rem !important;
+    }
+    /* Botones de pestaña: tamaño y padding optimizados para dedos */
+    .cap-tab-btn {
+        padding: 0.65rem 1rem !important;
+        font-size: 0.85rem !important;
+        white-space: nowrap !important; /* Mantiene el texto en una línea limpia */
+        border-radius: 50px !important;
+    }
+    /* El panel de contenido no debe quedar pegado al borde */
+    .capabilities-tab-content {
+        padding: 1.5rem 1.15rem !important;
+        border-radius: 16px !important;
+        min-height: auto !important;
     }
 }
 
@@ -6527,5 +6842,112 @@ footer .container {
     font-size: 1.05rem;
     line-height: 1.7;
     margin: 0 auto;
+}
+
+/* ==========================================================================
+   OPTIMIZACIONES MÓVILES AVANZADAS (Mobile-First, Touch & Performance)
+   ========================================================================== */
+
+/* Prevenir cualquier scroll horizontal no deseado */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* Mejoras de tipografía y legibilidad en historia y párrafos en pantallas móviles */
+@media (max-width: 768px) {
+    .mission-content p,
+    .history-paragraph {
+        font-size: clamp(1.02rem, 0.98rem + 0.3vw, 1.12rem) !important;
+        line-height: 1.68 !important;
+        text-align: left !important;
+        margin-bottom: 1.1rem !important;
+    }
+
+    .mission-image video {
+        min-height: 320px !important;
+        max-height: 480px !important;
+    }
+
+    .mission-content {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Padding de tarjetas con glassmorphism en móvil */
+    .contracts-header-card,
+    .section-header-card {
+        padding: 1.5rem 1.15rem !important;
+        border-radius: 14px !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+/* Optimización para teléfonos (< 640px) */
+@media (max-width: 640px) {
+    /* Hero Buttons en móvil: espaciado y botones táctiles optimizados */
+    .hero-buttons {
+        gap: 0.75rem !important;
+    }
+
+    .hero-buttons .btn-ryf-primary,
+    .hero-buttons .btn-ryf-secondary {
+        min-height: 48px !important;
+        padding: 0.85rem 1.25rem !important;
+        font-size: 0.92rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Reducción de padding de secciones para evitar scroll excesivo */
+    .mission-section,
+    .standards-editorial-section,
+    .services-editorial-section,
+    .services-portfolio-section,
+    #maquinaria,
+    .gallery-section,
+    .ryf-sectors-section,
+    .contracts-section,
+    .clients-seamless-section,
+    .faq-section {
+        padding: clamp(3.5rem, 8vw, 4.5rem) 0 !important;
+    }
+
+    /* Manifiesto y tarjetas de soporte */
+    #quienes-somos > .container > div[style*="padding: 2rem 2.5rem"] {
+        padding: 1.25rem 1rem !important;
+        border-radius: 0 12px 12px 0 !important;
+    }
+
+    /* Mejorar la legibilidad de tablas y badges con scroll táctil suave */
+    .table-responsive {
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* Desactivar parallax en móvil para rendimiento y evitar saltos visuales */
+    #servicios,
+    #quienes-somos,
+    #maquinaria,
+    #contratos {
+        background-attachment: scroll !important;
+    }
+
+    /* Asegurar que las imágenes no desborden ni pierdan proporción */
+    img, video {
+        max-width: 100% !important;
+        height: auto;
+    }
+
+    .mission-image video {
+        height: auto !important;
+        min-height: 260px !important;
+    }
+
+    .mission-image video {
+        width: 100%;
+        max-height: 350px !important;
+        border-radius: 12px !important;
+    }
 }
 
